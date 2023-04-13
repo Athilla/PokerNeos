@@ -1,0 +1,6 @@
+- Type: EntityView
+  Name: UserAccountUserRoleView
+- Type: EntityView
+  Name: UserAccountView
+- Type: EntityView
+  Name: UserRoleView

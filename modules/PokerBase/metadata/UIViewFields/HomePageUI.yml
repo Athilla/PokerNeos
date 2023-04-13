@@ -1,0 +1,9 @@
+- Name: Frames
+  DefaultValue: new List<IFrame>()
+  DotNetDataType: System.Collections.Generic.List<GroupeIsa.Neos.Designer.UIAbstractions.IFrame>
+- Name: NbFrames
+  DefaultValue: 0
+  DotNetDataType: int
+- Name: SelectedTabIndex
+  DefaultValue: -1
+  DotNetDataType: int

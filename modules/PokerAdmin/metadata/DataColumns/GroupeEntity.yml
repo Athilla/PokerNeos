@@ -1,0 +1,7 @@
+- Name: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: Name
+- Name: Uid
+  DataType: Integer
+  Required: true

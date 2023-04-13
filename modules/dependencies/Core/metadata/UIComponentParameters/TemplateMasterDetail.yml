@@ -1,0 +1,13 @@
+- Name: editable
+  DefaultValue: false
+  Description: editable
+  DotNetDataType: bool
+- Name: initialMasterSize
+  DefaultValue: 35
+  DotNetDataType: int
+- Name: message
+  DotNetDataType: string
+- Name: title
+  DefaultValue: 'null'
+  Description: Title
+  DotNetDataType: string?

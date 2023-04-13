@@ -1,0 +1,16 @@
+- Name: Fully
+  Caption: Full Access
+  PersistedValue: Fully
+  Position: 1
+- Name: None
+  Caption: ' '
+  PersistedValue: None
+  Position: 4
+- Name: Partially
+  Caption: Partial Access
+  PersistedValue: Partially
+  Position: 2
+- Name: Refused
+  Caption: Access Refused
+  PersistedValue: Refused
+  Position: 3

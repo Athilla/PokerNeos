@@ -1,0 +1,15 @@
+EntityViewName: GroupeView
+Template: |-
+  <template-master-detail initial-master-size="50" title="@Title">
+      <master-template>
+          <datagrid editable="true">
+          </datagrid>
+      </master-template>
+      <detail-template>
+          <heading level="3" layout:padding="small">
+              Tu veux qui dans ton groupe ?
+          </heading>
+          <ui-view relation-property-name="UserAccountList" />
+      </detail-template>
+  </template-master-detail>
+Title: GroupeListUi

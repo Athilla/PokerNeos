@@ -1,0 +1,9 @@
+- Name: Description
+  DataType: LocalizableString
+- Name: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: Name
+  DataType: LocalizableString
+  Required: true
+- Name: Type

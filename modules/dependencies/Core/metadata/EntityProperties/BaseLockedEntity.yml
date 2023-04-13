@@ -1,0 +1,8 @@
+- Name: Locked
+  Caption: Locked
+  DataType: Boolean
+  DefaultValue: false
+  Required: true
+- Name: LockedDate
+  Caption: Locked date
+  DataType: DateTime

@@ -1,0 +1,14 @@
+- Name: IsNodeSelected
+  DefaultValue: false
+  Description: Is Node Selected
+  Documentation: True if a node of the tree-view is selected, false if not
+  DotNetDataType: bool
+- Name: SelectedNode
+  Description: Selected Node
+  Documentation: The selected node in the tree-view
+  DotNetDataType: Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature
+- Name: TreeViewSource
+  DefaultValue: new System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature>(){}
+  Description: The tree-view source
+  Documentation: Used to store the source of the tree-view
+  DotNetDataType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature>

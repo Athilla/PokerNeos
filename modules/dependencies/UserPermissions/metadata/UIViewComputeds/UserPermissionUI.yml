@@ -1,0 +1,5 @@
+- Name: SelectedNodeName
+  Description: Selected Node Name
+  Documentation: Return the name of the selected node, return an empty string if the no node is selected
+  DotNetDataType: string
+  Getter: 'return Fields.IsNodeSelected ? Fields.SelectedNode?.Name ?? string.Empty : string.Empty;'

@@ -1,0 +1,23 @@
+Template: |-
+  <grid-layout layout:height="fill" layout:margin="extralarge">
+      <grid-layout-definition>
+          <grid-layout-columns>
+              <grid-layout-column width="fit" />
+              <grid-layout-column />
+          </grid-layout-columns>
+      </grid-layout-definition>
+      <grid-layout-content>
+          <card layout:height="fill" align="left" style:corner-radius="small none none small">
+              <horizontal-layout wrap="false">
+                  <image name="@Parameters.Icon" />
+                  <text weight="strong" layout:width="160">
+                      @Parameters.Title
+                  </text>
+              </horizontal-layout>
+              <content name="leftPanel" />
+          </card>
+          <card layout:height="fill" style:corner-radius="none small small none">
+              <content name="rightPanel" />
+          </card>
+      </grid-layout-content>
+  </grid-layout>

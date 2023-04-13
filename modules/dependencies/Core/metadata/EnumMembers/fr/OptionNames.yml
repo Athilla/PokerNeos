@@ -1,0 +1,10 @@
+- Name: DefaultCompany
+  Caption: Société standard
+- Name: DefaultCurrency
+  Caption: Devise par défaut
+- Name: MultiCompanies
+  Caption: Multi sociétés
+- Name: MultiCurrencies
+  Caption: Multi devises
+- Name: MultiSites
+  Caption: Multi sites

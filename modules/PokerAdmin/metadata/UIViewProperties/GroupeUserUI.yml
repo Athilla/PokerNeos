@@ -1,0 +1,17 @@
+- Name: GroupeId
+  Sortable: false
+- Name: User
+  DatagridMaxWidth: 600
+  DatagridMinWidth: 300
+  DatagridPosition: 1
+  DatagridVisible: true
+  DatagridWidth: 350
+  LookupName: UserLookup
+- Name: User.FirstName
+  DatagridPosition: 2
+  DatagridVisible: true
+  Filterable: false
+- Name: User.LastName
+  DatagridPosition: 3
+  DatagridVisible: true
+  Filterable: false

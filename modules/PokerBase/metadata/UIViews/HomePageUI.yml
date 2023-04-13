@@ -1,0 +1,26 @@
+Description: HomePageUI
+LoadDataOnStart: false
+Template: |-
+  <horizontal-layout full-height="true" layout:width="fill" wrap="false" space="none">
+      <panel-menu automation:id="MainPanelMenu" logo="Neos" title="@Computeds.Title" items="@ApplicationContext.MenuItems" />
+      <vertical-layout layout:height="fill" layout:width="fill" space="none">
+          <horizontal-layout vertical-align="center" layout:padding="medium" layout:width="fill" wrap="false" style:background="primary-800">
+              <horizontal-layout align="left">
+                  <heading>@Computeds.Title</heading>
+              </horizontal-layout>
+              <horizontal-layout layout:width="fill" align="center">
+                  <!-- <global-search-button on-search="HandleSearchAsync" style:border-color="input-border" style:background="white" layout:width="560" /> -->
+              </horizontal-layout>
+              <horizontal-layout align="right" vertical-align="center" layout:padding="none small none small" wrap="false">
+                  <!-- <button type="action" action-name="Nouveau" />
+                  <button type="action" action-name="Notification" />
+                  <button type="action" action-name="Help" /> -->
+                  <button type="action" action-name="Settings" />
+                  <user-button />
+              </horizontal-layout>
+          </horizontal-layout>
+          <frames-container container-id="PokerPageContainer" frames="@Fields.Frames" selected-tab-index="@Fields.SelectedTabIndex" layout:width="fill" layout:height="fill"/>
+          <!-- <view-container container-id="PokerPageContainer" /> -->
+      </vertical-layout>
+  </horizontal-layout>
+Title: Home page

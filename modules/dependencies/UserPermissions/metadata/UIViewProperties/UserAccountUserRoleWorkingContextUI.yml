@@ -1,0 +1,6 @@
+- Name: UserAccountUserRole
+  Documentation: 'The relationship between a user account and a user role which is linked to the working context '
+  Sortable: false
+- Name: WorkingContext
+  Documentation: The working context which is linked to the relationship between a user account and a user role
+  Sortable: false

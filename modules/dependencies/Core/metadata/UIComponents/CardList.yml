@@ -1,0 +1,88 @@
+Description: Card list
+Documentation: Components used to display a list of items as a list of cards
+Template: |-
+  <vertical-layout layout:height="fill" space="none" layout:padding="small">
+      <grid-layout>
+          <grid-layout-definition gap="small" device="extralarge">
+              <grid-layout-columns>
+                  <grid-layout-column width="*" />
+                  <grid-layout-column width="*" />
+                  <grid-layout-column width="*" />
+                  <grid-layout-column width="*" />
+              </grid-layout-columns>
+          </grid-layout-definition>
+          <grid-layout-definition gap="small" device="large">
+              <grid-layout-columns>
+                  <grid-layout-column width="*" />
+                  <grid-layout-column width="*" />
+                  <grid-layout-column width="*" />
+              </grid-layout-columns>
+          </grid-layout-definition>
+          <grid-layout-definition gap="small" device="medium">
+              <grid-layout-columns>
+                  <grid-layout-column width="*" />
+                  <grid-layout-column width="*" />
+              </grid-layout-columns>
+          </grid-layout-definition>
+          <grid-layout-definition gap="small" device="small">
+              <grid-layout-columns>
+                  <grid-layout-column width="*" />
+              </grid-layout-columns>
+          </grid-layout-definition>
+          <grid-layout-content>
+              <repeat values="@Parameters.CardInformations" item="Card">
+                  <card>
+                      <grid-layout>
+                          <grid-layout-definition gap="small">
+                              <grid-layout-columns>
+                                  <grid-layout-column width="fit" />
+                                  <grid-layout-column width="*" />
+                                  <grid-layout-column width="fit" />
+                              </grid-layout-columns>
+                          </grid-layout-definition>
+                          <grid-layout-content>
+                              <vertical-layout>
+                                  <if condition="$Card.Icon">
+                                      <image name="$Card.Icon" size="large" layout:vertical-alignment="center" />
+                                  </if>
+                                  <else>
+                                      <image name="imageEmpty" size="extralarge" layout:width="auto" layout:height="fill" />
+                                  </else>
+                              </vertical-layout>
+                              <heading level="2" style:color="$Card.Color">
+                                  $Card.Title
+                              </heading>
+                              <vertical-layout align="right">
+                                  <button type="method" method-name="OpenView" size="small" variant="ghost" layout:width="auto">
+                                      <image name="Edit" />
+                                  </button>
+                              </vertical-layout>
+                              <vertical-layout space="none" grid:colspan="3">
+                                  <repeat values="$Card.Lines" item="Line">
+                                      <grid-layout>
+                                          <grid-layout-definition gap="none">
+                                              <grid-layout-columns>
+                                                  <grid-layout-column width="fit" />
+                                                  <grid-layout-column width="*" />
+                                              </grid-layout-columns>
+                                          </grid-layout-definition>
+                                          <grid-layout-content>
+                                              <if condition="$Line.Caption">
+                                                  <text>
+                                                      $Line.Caption :
+                                                  </text>
+                                              </if>
+                                              <text>
+                                                  $Line.Value
+                                              </text>
+                                          </grid-layout-content>
+                                      </grid-layout>
+                                  </repeat>
+                              </vertical-layout>
+                          </grid-layout-content>
+                      </grid-layout>
+                  </card>
+              </repeat>
+          </grid-layout-content>
+      </grid-layout>
+  </vertical-layout>

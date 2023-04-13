@@ -1,0 +1,6 @@
+- Name: GetAvailableUser
+  Caption: Récuperer des utilisateurs
+- Name: SendMail
+  Caption: Envoyer un email
+- Name: SendSMS
+  Caption: Envoyer un sms

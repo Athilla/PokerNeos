@@ -1,0 +1,11 @@
+- Name: UserAccountUserRole
+  ReferencedEntityName: UserAccountUserRole
+  ReferencedEntityNavigationPropertyName: WorkingContexts
+  ScalarProperties:
+  - UserAccountId
+  - UserRoleId
+- Name: WorkingContext
+  ReferencedEntityName: WorkingContext
+  ReferencedEntityNavigationPropertyName: UserAccountUserRoles
+  ScalarProperties:
+  - WorkingContextId

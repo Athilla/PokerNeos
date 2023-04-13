@@ -1,0 +1,9 @@
+- Name: UserAccountId
+  DataType: Integer
+  Required: true
+- Name: UserRoleId
+  DataType: Integer
+  Required: true
+- Name: WorkingContextId
+  DataType: Integer
+  Required: true

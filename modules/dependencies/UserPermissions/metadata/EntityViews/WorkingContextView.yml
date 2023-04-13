@@ -1,0 +1,3 @@
+Description: Working Context
+Documentation: Entity View that manage the working contexts for the user account's roles
+EntityName: WorkingContext

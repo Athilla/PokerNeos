@@ -1,0 +1,3 @@
+- Name: IsAssigned
+  Caption: Assigné
+  Documentation: Vrai si le contexte de travail est assigné à la relation Rôle-Compte utilisateur, faux sinon

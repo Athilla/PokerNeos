@@ -1,0 +1,30 @@
+- Name: FunctionName
+  Sortable: false
+- Name: FunctionType
+  Sortable: false
+- Name: HasAccess
+  FormVisible: =return Fields.IsNodeSelected && !Fields.SelectedNode.HasCRUDAccess;
+  ReadOnly: true
+  Sortable: false
+- Name: HasCreationAccess
+  FormVisible: =return Fields.IsNodeSelected && Fields.SelectedNode.HasCRUDAccess;
+  ReadOnly: true
+  Sortable: false
+- Name: HasDeleteAccess
+  FormVisible: =return Fields.IsNodeSelected && Fields.SelectedNode.HasCRUDAccess;
+  ReadOnly: true
+  Sortable: false
+- Name: HasReadOnlyAccess
+  FormVisible: =return Fields.IsNodeSelected && Fields.SelectedNode.HasCRUDAccess;
+  ReadOnly: true
+  Sortable: false
+- Name: HasUpdateAccess
+  FormVisible: =return Fields.IsNodeSelected && Fields.SelectedNode.HasCRUDAccess;
+  ReadOnly: true
+  Sortable: false
+- Name: Id
+  Filterable: false
+  FormVisible: false
+  Sortable: false
+- Name: UserRoleId
+  Sortable: false

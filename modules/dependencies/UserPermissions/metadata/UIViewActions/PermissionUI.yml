@@ -1,0 +1,17 @@
+- Name: CollapseAll
+  Caption: Collapse all
+  Code: Methods.CollapseAll(null);
+  Description: Collapse all
+  DisplayMode: Icon
+  IconName: Collapse
+  Location: Hidden
+  Style: Ghost
+- Name: ExpandAll
+  Caption: Expand all
+  Code: |
+    Methods.ExpandAll(null);
+  Description: Expand all
+  DisplayMode: Icon
+  IconName: Expand
+  Location: Hidden
+  Style: Ghost

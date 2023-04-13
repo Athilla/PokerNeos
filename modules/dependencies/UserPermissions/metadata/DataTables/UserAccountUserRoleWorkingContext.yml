@@ -1,0 +1,4 @@
+PrimaryKeyColumns:
+- UserAccountId
+- UserRoleId
+- WorkingContextId

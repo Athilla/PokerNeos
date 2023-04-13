@@ -1,0 +1,15 @@
+EntityViewName: GroupeUserView
+Template: |-
+  <vertical-layout layout:height="fill">
+      <heading level="1" layout:padding="small">
+          @Title
+      </heading>
+      <card layout:height="fill">
+          <vertical-layout layout:height="fill" layout:padding="small">
+              <toolbar refresh="true" />
+              <datagrid layout:height="fill" editable="true" />
+              <pagination-bar />
+          </vertical-layout>
+      </card>
+  </vertical-layout>
+Title: GroupeUserAccountUI

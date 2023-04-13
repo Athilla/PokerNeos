@@ -1,0 +1,7 @@
+- Name: Initialized
+  Code: |
+    int userRoleId = (int)ViewContext["UserRoleId"];
+    if(userRoleId != null)
+    {
+        SetFilter(new Filter("UserRoleId",FilterOperator.Equal, userRoleId));
+    }

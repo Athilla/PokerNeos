@@ -1,0 +1,4 @@
+Template: |-
+  <horizontal-layout vertical-align="center" layout:width="fill" space="none" wrap="false">
+      <text layout:width="fill" layout:height="@Parameters.Height" style:background="@Parameters.Color" />
+  </horizontal-layout>

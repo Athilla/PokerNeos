@@ -1,0 +1,7 @@
+Description: User Account User Role Working Context
+Documentation: Entity that makes the link between UserAccountUserRole and the working context
+KeyProperties:
+- UserAccountId
+- UserRoleId
+- WorkingContextId
+TableName: UserAccountUserRoleWorkingContext

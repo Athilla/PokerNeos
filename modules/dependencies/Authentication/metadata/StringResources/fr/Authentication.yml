@@ -1,0 +1,15 @@
+- Name: AuthNeosErrorLoginAlreadyUsedEmail
+  Value: Cet identifiant est déjà présent avec une autre adresse e-mail. Veuillez changer d'identifiant.
+- Name: SaveUsersToAuthenticationServerFailed
+  Value: La synchronisation a échoué.
+- Name: SaveUsersToAuthenticationServerFailedForUsers
+  Value: |-
+    Les utilisateurs suivants n'ont pas pu être synchronisés :
+
+    - {0}
+- Name: SaveUsersToAuthenticationServerMessageTitle
+  Value: Synchronisation
+- Name: SaveUsersToAuthenticationServerSuccessed
+  Value: La synchronisation a réussi.
+- Name: Select
+  Value: Choisir

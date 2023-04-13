@@ -1,0 +1,21 @@
+EntityViewName: UserRoleView
+Template: |-
+  <template-master-detail initial-master-size="50" title="@Title" message="@Resources.UserPermissions.PermissionDescription">
+      <master-template>
+          <datagrid editable="true">
+              <column-template property-name="AssignedUsers">
+                  <button type="method" method-name="DisplayUserAccountsAsync" variant="ghost">
+                      <image size="large" name="RoleUsers" />
+                  </button>
+              </column-template>
+          </datagrid>
+      </master-template>
+      <detail-template>
+          <heading level="3" layout:padding="small">
+              @Fields.PermissionTitle
+          </heading>
+          <checkbox layout:width="auto" property-name="ShowAllPermissions" display-mode="horizontal-radio" true-label="@Resources.UserPermissions.SortedFeatureRadioLabelTrue" false-label="@Resources.UserPermissions.SortedFeatureRadioLabelFalse" />
+          <ui-view relation-property-name="Permissions" />
+      </detail-template>
+  </template-master-detail>
+Title: =return Resources.UserPermissions.RolesText;

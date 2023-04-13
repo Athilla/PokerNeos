@@ -1,0 +1,16 @@
+Description: Datagrid Or Card
+Documentation: Component that manage the display type (Card list or datagrid)
+Template: |-
+  <vertical-layout layout:height="fill">
+      <if condition="@Parameters.ShowFilter">
+          <filter-bar quick-search="false" style:background="primary-1" style:corner-radius="small" layout:padding="small"/>
+      </if>
+      <if condition="@Parameters.ShowCard">
+          <card-list card-informations="@Parameters.CardInformations" open-view="@Parameters.OpenView" />
+      </if>
+      <else>
+           <content>
+              <datagrid editable="@Parameters.Editable" layout:height="fill"/>
+          </content>
+      </else>
+  </vertical-layout>

@@ -1,0 +1,10 @@
+- Name: UserAccount
+  ReferencedEntityName: UserAccount
+  ReferencedEntityNavigationPropertyName: Roles
+  ScalarProperties:
+  - UserAccountId
+- Name: UserRole
+  ReferencedEntityName: UserRole
+  ReferencedEntityNavigationPropertyName: Accounts
+  ScalarProperties:
+  - UserRoleId

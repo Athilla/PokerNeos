@@ -1,0 +1,3 @@
+- Name: ShowFilter
+  DefaultValue: false
+  DotNetDataType: bool

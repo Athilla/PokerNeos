@@ -1,0 +1,3 @@
+Description: User Account User Role
+Documentation: Entity View that make the link between a user account and a user role
+EntityName: UserAccountUserRole

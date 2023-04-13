@@ -1,0 +1,8 @@
+- Name: GroupeId
+  Caption: GroupeId
+  DataType: Integer
+  Required: true
+- Name: UserId
+  Caption: UserId
+  DataType: Integer
+  Required: true

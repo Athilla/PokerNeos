@@ -1,0 +1,15 @@
+- Name: Color
+  Description: Color of the card
+  DotNetDataType: string
+- Name: Icon
+  Description: Icon
+  DotNetDataType: string?
+- Name: Id
+  Description: Item Id
+  DotNetDataType: int?
+- Name: Lines
+  Description: Lines
+  DotNetDataType: System.Collections.Generic.IList<Transversals.Business.Application.Abstractions.DataObjects.CardLine>
+- Name: Title
+  Description: Title
+  DotNetDataType: string

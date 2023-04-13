@@ -1,0 +1,5 @@
+- Name: ClickButtonAsync
+  Asynchronous: true
+  Code: |-
+    //await ShowMessageAsync(MessageType.Info,"Info",$"vous avez selectionné: {Parameters.Value}");
+    Parameters.Selected = !Parameters.Selected;

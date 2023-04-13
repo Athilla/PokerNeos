@@ -1,0 +1,12 @@
+- Name: SelectResultAsync
+  Asynchronous: true
+  Code: |-
+    var listUser = new List<Transversals.Business.CSharpAbstractions.UserAccountAvailableUI>();
+
+    if(this.SelectedItems.Any())
+    {
+        listUser.AddRange(SelectedItems);
+    }
+
+    NavigationResult result = new NavigationResult(NavigationResultState.Ok,listUser);
+    await CloseAsync(false, result);

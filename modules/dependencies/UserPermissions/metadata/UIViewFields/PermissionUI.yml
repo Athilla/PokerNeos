@@ -1,0 +1,12 @@
+- Name: FunctionTreeViewSource
+  DefaultValue: new System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.FunctionTreeNode>(){}
+  DotNetDataType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.FunctionTreeNode>
+- Name: OriginalFunctionTreeViewSource
+  DotNetDataType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.FunctionTreeNode>
+- Name: SelectedNode
+  Description: Selected Node
+  Documentation: The selected node in the tree-view
+  DotNetDataType: Transversals.Business.Application.Abstractions.DataObjects.FunctionTreeNode?
+- Name: ShowAllPermission
+  DefaultValue: false
+  DotNetDataType: bool

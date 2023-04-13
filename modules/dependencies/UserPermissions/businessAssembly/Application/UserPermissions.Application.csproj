@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../build/NeosReferences.Application.gen.props" />
+  <PropertyGroup>
+    <AssemblyName>Transversals.Business.UserPermissions.Application</AssemblyName>
+    <RootNamespace>Transversals.Business.UserPermissions.Application</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\businessAssembly\Domain\Core.Domain.csproj" />
+  </ItemGroup>
+</Project>

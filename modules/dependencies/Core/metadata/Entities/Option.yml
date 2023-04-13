@@ -1,0 +1,5 @@
+Description: option management table
+KeyProperties:
+- Id
+- Name
+TableName: Option

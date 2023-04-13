@@ -1,0 +1,30 @@
+- Name: Close
+  Value: Close
+- Name: CounterDescription
+  Value: Assign a sequential number to a record.
+- Name: CounterNewTitle
+  Value: New Counter
+- Name: CounterNullValueExceptionMessage
+  Value: This counter has no value
+- Name: CounterTitle
+  Value: Counters
+- Name: CurrencyActiveWithMonoCurrencyOptionMustExist
+  Value: An active currency is required.
+- Name: CurrencyActiveWithMonoCurrencyOptionReferenceCurrencyErrorMessage
+  Value: Unable to deactivate reference currency.
+- Name: CurrencyActiveWithMonoCurrencyOptionUnicityErrorMessage
+  Value: In single currency mode you can only have one active currency.
+- Name: MaxValueExceptionMessage
+  Value: The maximum value of the counter has been reached.
+- Name: OptionFactoryError
+  Value: Invalid option
+- Name: OptionsTitle
+  Value: Options
+- Name: SaveErrorTitle
+  Value: Save error
+- Name: SavingDateErrorMessage
+  Value: From date must be earlier than thru date.
+- Name: ShowAllTitle
+  Value: Show all
+- Name: ShowEnabledTitle
+  Value: Show enabled

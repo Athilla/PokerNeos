@@ -1,0 +1,6 @@
+- Name: color
+  DefaultValue: '"border"'
+  DotNetDataType: string
+- Name: height
+  DefaultValue: '"1"'
+  DotNetDataType: string

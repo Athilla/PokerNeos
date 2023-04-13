@@ -1,0 +1,4 @@
+Description: Save Users To Authentication Server
+Documentation: Send users passed in parameter to the Neos authentication server.
+DotNetReturnType: System.Threading.Tasks.Task<Transversals.Business.Application.Abstractions.DataObjects.ServerMethodResult>
+ExposeAsApi: true

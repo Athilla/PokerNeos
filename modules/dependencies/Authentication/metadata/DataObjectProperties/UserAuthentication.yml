@@ -1,0 +1,18 @@
+- Name: ConfirmationRedirectUrl
+  Description: Confirmation redirection URL
+  DotNetDataType: string?
+- Name: Email
+  Description: Email address
+  DotNetDataType: string
+- Name: FirstName
+  Description: First name
+  DotNetDataType: string
+- Name: Language
+  Description: Language
+  DotNetDataType: string?
+- Name: LastName
+  Description: Last Name
+  DotNetDataType: string
+- Name: Name
+  Description: User name
+  DotNetDataType: string

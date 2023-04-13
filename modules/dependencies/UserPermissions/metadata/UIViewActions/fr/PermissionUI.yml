@@ -1,0 +1,6 @@
+- Name: CollapseAll
+  Caption: Tout refermer
+  Description: Tout refermer
+- Name: ExpandAll
+  Caption: Tout développer
+  Description: Tout développer

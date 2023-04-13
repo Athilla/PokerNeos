@@ -1,0 +1,16 @@
+- Name: Description
+  Caption: Description
+  DataType: LocalizableString
+- Name: Id
+  Caption: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: Name
+  Caption: Name
+  DataType: LocalizableString
+  MaxLength: 50
+  Required: true
+- Name: Type
+  Caption: Type
+  DataType: Enum
+  EnumTypeName: RoleType

@@ -1,0 +1,8 @@
+- Name: UserAccountId
+  DataType: Integer
+  Documentation: The user account Id which is assigned to the user role
+  Required: true
+- Name: UserRoleId
+  DataType: Integer
+  Documentation: The user role Id which is assigned to the user account
+  Required: true

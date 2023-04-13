@@ -1,0 +1,37 @@
+CreationAllowed: false
+DeletionAllowed: false
+Description: Permission
+Documentation: Entity UI that does not load data, this UI is used to display the permissions for a user on features. They are retreived from a server method.
+EntityViewName: PermissionView
+LoadDataOnStart: false
+OpenMode: PopupAutoSize
+Template: |-
+  <grid-layout layout:min-height="400" layout:min-width="500" layout:height="fill">
+      <grid-layout-definition gap="small">
+          <grid-layout-columns>
+              <grid-layout-column />
+              <grid-layout-column />
+          </grid-layout-columns>
+      </grid-layout-definition>
+      <grid-layout-content>
+          <tree-view layout:height="fill" source="@Fields.TreeViewSource" caption-property="Name" selected-property="Selected" children-property="Children" node-click="OnClickMethodNodeAsync" node-load="OnLoadMethodNodeAsync" active-node-background="neutral-4" active-node-hover-background="neutral-6">
+              <tree-view-node item="Node">
+                  <text>
+                      $Node.Name $Node.Icon
+                  </text>
+              </tree-view-node>
+          </tree-view>
+          <vertical-layout>
+              <text weight="strong" size="large">
+                  @Computeds.SelectedNodeName
+              </text>
+              <form-field property-name="HasReadOnlyAccess" />
+              <form-field property-name="HasCreationAccess" />
+              <form-field property-name="HasUpdateAccess" />
+              <form-field property-name="HasDeleteAccess" />
+              <form-field property-name="HasAccess" />
+          </vertical-layout>
+      </grid-layout-content>
+  </grid-layout>
+Title: =return Resources.UserPermissions.UserPermissionTitle;
+UpdateAllowed: false

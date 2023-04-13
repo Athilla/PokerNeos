@@ -1,0 +1,31 @@
+- Name: Email
+  Documentation: Email is used to authenticate to Neos server
+  Source: Email
+- Name: ExpirationDate
+  Source: ExpirationDate
+- Name: FirstName
+  QuickSearch: true
+  Source: FirstName
+- Name: Id
+  Source: Id
+- Name: IsActive
+  Source: IsActive
+- Name: LastConnection
+  Documentation: Date since the last connection of the user
+  Source: LastConnection
+- Name: LastName
+  QuickSearch: true
+  Source: LastName
+- Name: Login
+  Source: Login
+- Name: PhoneNumber
+  Source: PhoneNumber
+- Name: Roles
+  Caption: Roles
+  Documentation: collection of UserAccountUserRole link to the user and a user role
+  RelatedEntityViewName: UserAccountUserRoleView
+  Source: Roles
+  Type: Collection
+- Name: Synchronized
+  Documentation: Synchronized with authentication module
+  Source: Synchronized

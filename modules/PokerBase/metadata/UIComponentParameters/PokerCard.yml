@@ -1,0 +1,13 @@
+- Name: selected
+  BindingMode: TwoWay
+  DefaultValue: false
+  DotNetDataType: bool
+- Name: selectedColor
+  DefaultValue: '"info-500"'
+  DotNetDataType: string
+- Name: selectedTextColor
+  DefaultValue: '"black"'
+  DotNetDataType: string
+- Name: value
+  DefaultValue: '"0"'
+  DotNetDataType: string

@@ -1,0 +1,5 @@
+- Name: GroupPoker
+  Caption: Groupe des pokers
+  Code: Methods.CheckAndNavigateAsync("GroupeListUi");
+  Location: Hidden
+  Style: Ghost

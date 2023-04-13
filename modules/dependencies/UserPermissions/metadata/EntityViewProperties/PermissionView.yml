@@ -1,0 +1,24 @@
+- Name: FunctionName
+  Source: FunctionName
+- Name: FunctionType
+  Source: FunctionType
+- Name: HasAccess
+  Documentation: True if the permission give access to the feature and that the feature does not have a CRUD access, else if not
+  Source: HasAccess
+- Name: HasCreationAccess
+  Documentation: True if the permission give access to the feature on creation and that the feature does have a CRUD access, else if not
+  Source: HasCreationAccess
+- Name: HasDeleteAccess
+  Documentation: True if the permission give access to the feature on deletion and that the feature does have a CRUD access, else if not
+  Source: HasDeleteAccess
+- Name: HasReadOnlyAccess
+  Documentation: True if the permission give access to the feature on reading and that the feature does have a CRUD access, else if not
+  Source: HasReadOnlyAccess
+- Name: HasUpdateAccess
+  Documentation: True if the permission give access to the feature on update and that the feature does have a CRUD access, else if not
+  Source: HasUpdateAccess
+- Name: Id
+  Source: Id
+- Name: UserRoleId
+  Documentation: The User Role Id on which the permission is applied
+  Source: UserRoleId

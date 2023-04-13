@@ -1,0 +1,6 @@
+- Name: Caption
+  DotNetDataType: string?
+- Name: Message
+  DotNetDataType: string?
+- Name: Result
+  DotNetDataType: string?

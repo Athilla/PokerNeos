@@ -1,0 +1,11 @@
+- Name: Code
+  Caption: Code
+  MaxLength: 10
+  Required: true
+- Name: Name
+  Caption: Label
+  DataType: LocalizableString
+  Required: true
+- Name: Order
+  Caption: Order
+  DataType: Integer

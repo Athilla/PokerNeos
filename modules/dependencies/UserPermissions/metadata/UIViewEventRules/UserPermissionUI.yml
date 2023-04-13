@@ -1,0 +1,11 @@
+- Name: Closing
+  Code: AcceptChanges();
+  Event: Closing
+- Name: Initialized
+  Code: |
+    Fields.TreeViewSource = await ServerMethods.GetAssignedFeatureChildrenTreeNode.ExecuteAsync((int)ViewContext["UserId"]);
+    if(Fields.TreeViewSource.Any())
+    {
+        await Methods.OnClickMethodNodeAsync(Fields.TreeViewSource[0]);
+        Fields.TreeViewSource[0].Selected = true;
+    }

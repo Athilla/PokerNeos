@@ -1,0 +1,10 @@
+- Name: Groupe
+  ReferencedEntityName: Groupe
+  ReferencedEntityNavigationPropertyName: UserAccountList
+  ScalarProperties:
+  - GroupeId
+- Name: UserAccount
+  ReferencedEntityName: UserAccount
+  ReferencedEntityNavigationPropertyName: UserGroupes
+  ScalarProperties:
+  - UserId

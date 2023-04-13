@@ -1,0 +1,3 @@
+PrimaryKeyColumns:
+- UserAccountId
+- UserRoleId

@@ -1,0 +1,76 @@
+- Name: HasAccessPropertyChanged
+  Code: |-
+    Methods.SetAccessTextIcon(Item);
+
+    if(!(bool)Item.HasAccess! && Item.HasChanges()) {
+        Methods.DisableChildren(Item.FunctionName);
+    }
+  Event: PropertyChanged
+  PropertyName: HasAccess
+- Name: HasAllPropertyChanged
+  Code: |-
+    if(Item.HasAll != null) {
+        Methods.SetCRUD((bool)Item.HasAll!, Item);
+
+        if(!(bool)Item.HasAll! && Item.HasChanges()) {
+            Methods.DisableChildren(Item.FunctionName);
+        }
+    }
+    Methods.SetAccessTextIcon(Item);
+  Event: PropertyChanged
+  PropertyName: HasAll
+- Name: HasCreationAccessPropertyChanged
+  Code: |-
+    if(Item.HasCreationAccess) {
+        Item.HasReadOnlyAccess = true;
+    }
+    Methods.UpdateHasAll(Item);
+  Event: PropertyChanged
+  PropertyName: HasCreationAccess
+- Name: HasDeleteAccessPropertyChanged
+  Code: |-
+    if(Item.HasDeleteAccess) {
+        Item.HasReadOnlyAccess = true;
+    }
+    Methods.UpdateHasAll(Item);
+  Event: PropertyChanged
+  PropertyName: HasDeleteAccess
+- Name: HasReadOnlyAccessPropertyChanged
+  Code: |-
+    if(!Item.HasReadOnlyAccess) {
+        Methods.SetCRUD(false, Item);
+    }
+    Methods.UpdateHasAll(Item);
+  Event: PropertyChanged
+  PropertyName: HasReadOnlyAccess
+- Name: HasUpdateAccessPropertyChanged
+  Code: |-
+    if(Item.HasUpdateAccess) {
+        Item.HasReadOnlyAccess = true;
+    }
+    Methods.UpdateHasAll(Item);
+  Event: PropertyChanged
+  PropertyName: HasUpdateAccess
+- Name: Retrieved
+  Code: |-
+    foreach(var item in Arguments.Items) {
+        Methods.UpdateHasAll(item);
+    }
+
+    FunctionTreeNode? firstNode = Fields.FunctionTreeViewSource.FirstOrDefault();
+    if(firstNode != null)
+    {
+        Methods.OnClickMethodNodeAsync(firstNode);
+
+    }
+  Event: Retrieved
+- Name: Retrieving
+  Code: |
+    Fields.OriginalFunctionTreeViewSource = await ServerMethods.GetFunctionTree.ExecuteAsync();
+    Methods.DisplayAllFeatures();
+    if(Fields.FunctionTreeViewSource.Any())
+    {
+        await Methods.OnClickMethodNodeAsync(Fields.FunctionTreeViewSource.First());
+    }
+    Methods.ExpandAll(null);
+  Event: Retrieving

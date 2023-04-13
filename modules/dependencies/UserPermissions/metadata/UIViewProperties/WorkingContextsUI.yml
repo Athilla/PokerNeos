@@ -1,0 +1,8 @@
+- Name: Id
+  Filterable: false
+  FormVisible: false
+  Sortable: false
+- Name: Name
+  Caption: Name
+  DatagridPosition: 2
+  DatagridVisible: true

@@ -1,0 +1,12 @@
+- Name: Id
+  Caption: Id
+  Source: Id
+- Name: Name
+  Source: Name
+- Name: UserList
+  Caption: UserAccountList
+  Filterable: false
+  RelatedEntityViewName: GroupeUserView
+  Required: false
+  Source: UserAccountList
+  Type: Collection

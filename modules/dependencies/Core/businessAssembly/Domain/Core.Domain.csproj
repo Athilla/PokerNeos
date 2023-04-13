@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../build/NeosReferences.Domain.gen.props" />
+  <PropertyGroup>
+    <AssemblyName>Transversals.Business.Core.Domain</AssemblyName>
+    <RootNamespace>Transversals.Business.Core.Domain</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.9.0-beta.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
+	  <PackageReference Include="Microsoft.Graph" Version="4.47.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Core.Application.csproj" />
+  </ItemGroup>
+</Project>

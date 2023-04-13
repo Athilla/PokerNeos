@@ -1,0 +1,4 @@
+Multitenant: true
+PrimaryKeyColumns:
+- Id
+- Name

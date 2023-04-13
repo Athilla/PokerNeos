@@ -1,0 +1,3 @@
+- Name: SynchronizeUsers
+  Caption: Synchroniser
+  Description: Synchronise les utilisateurs sélectionnés avec le serveur d'authentification.

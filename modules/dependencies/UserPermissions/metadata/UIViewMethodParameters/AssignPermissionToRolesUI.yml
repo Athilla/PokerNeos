@@ -1,0 +1,4 @@
+- UIViewMethodName: DisplayUserAccountsAsync
+  Name: role
+  DotNetDataType: Transversals.Business.CSharpAbstractions.AssignPermissionToRolesUI
+  Position: 1

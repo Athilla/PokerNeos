@@ -1,0 +1,12 @@
+- Name: Editor
+  Caption: Editor
+  PersistedValue: Editor
+  Position: 3
+- Name: External
+  Caption: External
+  PersistedValue: External
+  Position: 2
+- Name: Internal
+  Caption: Internal
+  PersistedValue: Internal
+  Position: 1

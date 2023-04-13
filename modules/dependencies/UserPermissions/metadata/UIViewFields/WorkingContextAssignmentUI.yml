@@ -1,0 +1,8 @@
+- Name: UserAccount
+  DefaultValue: (IUserAccountView)ViewContext["UserAccount"]
+  Documentation: User account of the role-user account relationship on which we assign work contexts
+  DotNetDataType: Transversals.Business.Application.Abstractions.EntityViews.IUserAccountView
+- Name: UserRole
+  DefaultValue: (IUserRoleView)ViewContext["UserRole"]
+  Documentation: User role of the role-user account relationship on which we assign work contexts
+  DotNetDataType: Transversals.Business.Application.Abstractions.EntityViews.IUserRoleView

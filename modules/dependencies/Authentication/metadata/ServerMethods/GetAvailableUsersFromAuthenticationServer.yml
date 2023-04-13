@@ -1,0 +1,3 @@
+DotNetReturnType: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<Transversals.Business.Application.Abstractions.DataObjects.UserAuthentication>>
+ExposeAsApi: true
+HttpMethod: Get

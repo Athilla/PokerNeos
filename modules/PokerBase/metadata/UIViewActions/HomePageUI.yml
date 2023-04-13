@@ -1,0 +1,26 @@
+- Name: ManageGroup
+  ActionType: OpenView
+  Caption: Gestion des groupes
+  IconName: RoleUsers
+  Location: ActionsMenu
+  ParentActionName: Settings
+  Position: 2
+  Style: Ghost
+  UIViewToOpenName: GroupeListUi
+- Name: Settings
+  ActionType: None
+  Caption: Parametres
+  Description: Parametres
+  DisplayMode: Icon
+  IconName: General_settings
+  Location: Hidden
+  Size: Large
+- Name: UsersAndRightSettings
+  ActionType: OpenView
+  Caption: Utilisateurs et droit
+  IconName: RoleUsers
+  Location: ActionsMenu
+  ParentActionName: Settings
+  Position: 1
+  Style: Ghost
+  UIViewToOpenName: UserAndRightSettings

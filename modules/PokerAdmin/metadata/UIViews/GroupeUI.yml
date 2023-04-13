@@ -1,0 +1,35 @@
+EntityViewName: GroupeView
+MonoRecord: true
+Template: |-
+  <vertical-layout layout:height="fill">
+
+       <toolbar/>
+     <grid-layout layout:height="fill">
+          <grid-layout-definition>
+              <grid-layout-rows>
+                  <grid-layout-row />
+              </grid-layout-rows>
+              <grid-layout-columns>
+                  <grid-layout-column width="fit" />
+                  <grid-layout-column width="*" />
+              </grid-layout-columns>
+          </grid-layout-definition>
+          <grid-layout-content>
+              <!-- CONTENT -->
+              <card layout:height="fill">
+                  <vertical-layout layout:height="fill" layout:padding="small">
+                      <form-field property-name="Name" />
+                  </vertical-layout>
+              </card>
+              <card layout:height="fill">
+                  <context relation-property-name="UserAccountList">
+                      <vertical-layout layout:height="fill" layout:padding="small">
+                          <toolbar clone="true" />
+                          <datagrid layout:height="fill" editable="true" />
+                      </vertical-layout>
+                  </context>
+              </card>
+          </grid-layout-content>
+      </grid-layout>
+  </vertical-layout>
+Title: GroupeUI

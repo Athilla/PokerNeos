@@ -1,0 +1,15 @@
+- Name: background
+  DefaultValue: '"primary"'
+  DotNetDataType: string
+- Name: color
+  DefaultValue: '"white"'
+  DotNetDataType: string
+- Name: number
+  DefaultValue: 0
+  DotNetDataType: int
+- Name: size
+  DefaultValue: '"medium"'
+  DotNetDataType: string
+- Name: visible
+  DefaultValue: false
+  DotNetDataType: bool

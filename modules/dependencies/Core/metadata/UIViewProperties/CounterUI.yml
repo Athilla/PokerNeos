@@ -1,0 +1,33 @@
+- Name: Id
+  Filterable: false
+  FormVisible: false
+  Sortable: false
+- Name: Locked
+  Sortable: false
+- Name: Name
+  DatagridMaxWidth: 400
+  DatagridMinWidth: 250
+  DatagridPosition: 1
+  DatagridVisible: true
+  ReadOnly: =return !Item.IsNew();
+  Sortable: false
+- Name: Prefixe
+  DatagridMinWidth: 80
+  DatagridPosition: 2
+  DatagridVisible: true
+  Filterable: false
+  Sortable: false
+- Name: Suffixe
+  DatagridPosition: 4
+  DatagridVisible: true
+  Filterable: false
+  Sortable: false
+- Name: Value
+  DatagridMaxWidth: 120
+  DatagridMinWidth: 70
+  DatagridPosition: 3
+  DatagridVisible: true
+  Filterable: false
+  ReadOnly: =return !Item.IsNew();
+  Required: true
+  Sortable: false

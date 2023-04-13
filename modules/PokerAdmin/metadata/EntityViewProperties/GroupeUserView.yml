@@ -1,0 +1,8 @@
+- Name: GroupeId
+  Source: GroupeId
+- Name: User
+  Caption: Utilisateur
+  Filterable: false
+  RelatedEntityViewName: UserAccountView
+  Source: UserAccount
+  Type: Reference

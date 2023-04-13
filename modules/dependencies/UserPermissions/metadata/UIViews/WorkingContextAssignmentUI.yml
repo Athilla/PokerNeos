@@ -1,0 +1,19 @@
+CreationAllowed: false
+DeletionAllowed: false
+Description: Working Context Assignment
+Documentation: UI That allow the user to assign the working context to a relationship between a use account and a user role
+EntityViewName: WorkingContextView
+OpenMode: PopupFullSize
+Template: |-
+  <template-list>
+      <grid>
+          <datagrid editable="true" />
+          <context relation-property-name="UserAccountUserRoles" />
+      </grid>
+  </template-list>
+Title: |-
+  =if(Fields.UserAccount != null && Fields.UserRole != null)
+  {
+      return String.Format(Resources.UserPermissions.AssignWorkingContextToUserAccountUserRoleTitleWithUserAndRole, Fields.UserAccount.FirstName, Fields.UserAccount.LastName, Fields.UserRole.Name);
+  }
+  return Resources.UserPermissions.AssignWorkingContextToUserAccountUserRoleTitle;

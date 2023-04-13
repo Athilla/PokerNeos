@@ -1,0 +1,2 @@
+- Name: Initialized
+  Code: Methods.CheckAndNavigateAsync("UserAccountListUI");

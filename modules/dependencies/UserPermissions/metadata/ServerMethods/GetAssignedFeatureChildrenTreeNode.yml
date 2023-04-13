@@ -1,0 +1,5 @@
+Description: Get Assigned Feature Children Tree Node
+Documentation: Gets the child functions of the parent function whose Id is given that are assigned to the user
+DotNetReturnType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature>
+ExposeAsApi: true
+HttpMethod: Get

@@ -1,0 +1,15 @@
+- Name: AssignPermission
+  Caption: Roles and permissions
+  Code: Methods.CheckAndNavigateAsync("AssignPermissionToRolesUI");
+  Location: Hidden
+  Style: Ghost
+- Name: UserAccount
+  Caption: Users
+  Code: Methods.CheckAndNavigateAsync("UserAccountListUI");
+  Location: Hidden
+  Style: Ghost
+- Name: WorkingContext
+  Caption: Working contexts
+  Code: Methods.CheckAndNavigateAsync("WorkingContextsUI");
+  Location: Hidden
+  Style: Ghost

@@ -1,0 +1,3 @@
+Description: Permission
+Documentation: Entity View that represent the permission given between a Feature and a UserRole
+EntityName: Permission

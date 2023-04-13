@@ -1,0 +1,4 @@
+KeyProperties:
+- UserId
+- GroupeId
+TableName: GroupeUserAccount

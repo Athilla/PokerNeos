@@ -1,0 +1,9 @@
+- Name: SelectedColor
+  DefaultValue: '"info-500"'
+  DotNetDataType: string
+- Name: SelectedTextColor
+  DefaultValue: '"black"'
+  DotNetDataType: string
+- Name: Value
+  DefaultValue: '"0"'
+  DotNetDataType: string

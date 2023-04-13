@@ -1,0 +1,7 @@
+- Name: Id
+- Name: Name
+  DatagridPosition: 1
+  DatagridVisible: true
+  FilterPosition: 1
+  FilterVisible: true
+  Required: true

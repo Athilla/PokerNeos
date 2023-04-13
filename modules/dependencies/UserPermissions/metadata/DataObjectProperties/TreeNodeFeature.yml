@@ -1,0 +1,50 @@
+- Name: Children
+  Description: Children
+  DotNetDataType: System.Collections.Generic.IList<Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature>
+- Name: Code
+  Description: Code
+  DotNetDataType: string
+- Name: FeatureHasNoPermission
+  DefaultValue: false
+  Description: The boolean to display none access
+  DotNetDataType: bool
+- Name: HasAccess
+  DefaultValue: false
+  Description: Has Access
+  DotNetDataType: bool
+- Name: HasCreationAccess
+  DefaultValue: false
+  Description: Has Creation Access
+  DotNetDataType: bool
+- Name: HasCRUDAccess
+  DefaultValue: false
+  Description: Has CRUD Access
+  DotNetDataType: bool
+- Name: HasDeleteAccess
+  DefaultValue: false
+  Description: Has Delete Access
+  DotNetDataType: bool
+- Name: HasReadOnlyAccess
+  DefaultValue: false
+  Description: Has Read Only Access
+  DotNetDataType: bool
+- Name: HasUpdateAccess
+  DefaultValue: false
+  Description: Has Update Access
+  DotNetDataType: bool
+- Name: Icon
+  Description: Icon
+  DotNetDataType: string
+- Name: Id
+  Description: Id
+  DotNetDataType: int
+- Name: Name
+  Description: Name
+  DotNetDataType: string
+- Name: ParentFeatureId
+  Description: Parent Feature Id
+  DotNetDataType: int?
+- Name: Selected
+  DefaultValue: false
+  Description: Selected
+  DotNetDataType: bool

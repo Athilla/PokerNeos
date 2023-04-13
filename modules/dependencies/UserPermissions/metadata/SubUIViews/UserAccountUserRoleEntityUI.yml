@@ -1,0 +1,3 @@
+- Name: WorkingContexts
+  RelationPropertyName: WorkingContexts
+  SubUIViewName: UserAccountUserRoleWorkingContextUI

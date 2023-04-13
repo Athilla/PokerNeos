@@ -1,0 +1,8 @@
+- Name: Id
+  Caption: Id
+- Name: Name
+  Caption: Nom
+- Name: Type
+  Caption: Type
+- Name: Value
+  Caption: Valeur

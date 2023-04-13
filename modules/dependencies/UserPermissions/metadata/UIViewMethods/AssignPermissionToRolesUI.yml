@@ -1,0 +1,7 @@
+- Name: DisplayUserAccountsAsync
+  Asynchronous: true
+  Code: |-
+    NavigationOptions options = new NavigationOptions("UsersAssignedToRoleUI")
+    .WithParameter("UserRoleId", role.Id);
+    await NavigateAsync(options);
+  Description: Navigate to a popup showing the list of the users who have the selected role

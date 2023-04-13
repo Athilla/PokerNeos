@@ -1,0 +1,6 @@
+- Name: AssignPermission
+  Caption: Rôles et permissions
+- Name: UserAccount
+  Caption: Utilisateurs
+- Name: WorkingContext
+  Caption: Contextes de travail

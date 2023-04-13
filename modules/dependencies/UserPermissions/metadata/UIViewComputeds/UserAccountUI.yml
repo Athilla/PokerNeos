@@ -1,0 +1,8 @@
+- Name: IsAzureAdB2C
+  DotNetDataType: bool
+  Getter: |-
+    if(ApplicationContext.ContainsKey("AuthProvider"))
+    {
+        return ApplicationContext.GetValue<string>("AuthProvider") == "AzureB2C";
+    }
+    return false;

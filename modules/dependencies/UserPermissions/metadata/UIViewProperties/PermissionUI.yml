@@ -1,0 +1,44 @@
+- Name: FunctionName
+  Sortable: false
+- Name: FunctionType
+  Sortable: false
+- Name: HasAccess
+  DatagridPosition: 7
+  DatagridVisible: =return true;
+  Documentation: True if the permission give acces to the feature and that the feature does not have a CRUD access, else if not
+  FormVisible: =return Fields.SelectedNode?.FunctionType != FunctionType.CRUD && (Fields.SelectedNode?.Selected ?? false);
+  ReadOnly: =return false;
+- Name: HasAll
+  Caption: Has all
+  DataType: Boolean
+  Filterable: false
+  Multiline: false
+  ReadOnly: false
+  Required: false
+  Sortable: false
+- Name: HasCreationAccess
+  DatagridPosition: 4
+  DatagridVisible: =return true;
+  FormVisible: =return Fields.SelectedNode?.FunctionType == FunctionType.CRUD && (Fields.SelectedNode?.Selected ?? false);
+  ReadOnly: =return false;
+- Name: HasDeleteAccess
+  DatagridPosition: 6
+  DatagridVisible: =return false;
+  FormVisible: =return Fields.SelectedNode?.FunctionType == FunctionType.CRUD && (Fields.SelectedNode?.Selected ?? false);
+  ReadOnly: =return false;
+- Name: HasReadOnlyAccess
+  DatagridPosition: 3
+  DatagridVisible: =return false;
+  FormVisible: =return Fields.SelectedNode?.FunctionType == FunctionType.CRUD && (Fields.SelectedNode?.Selected ?? false);
+  ReadOnly: =return false;
+- Name: HasUpdateAccess
+  DatagridPosition: 5
+  DatagridVisible: =return false;
+  FormVisible: =return Fields.SelectedNode?.FunctionType == FunctionType.CRUD && (Fields.SelectedNode?.Selected ?? false);
+  ReadOnly: =return false;
+- Name: Id
+  Filterable: false
+  FormVisible: false
+  Sortable: false
+- Name: UserRoleId
+  Sortable: false

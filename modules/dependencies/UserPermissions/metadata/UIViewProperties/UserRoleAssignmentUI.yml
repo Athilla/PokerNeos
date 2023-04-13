@@ -1,0 +1,84 @@
+- Name: AssignWorkingContext
+  Caption: Assign working context
+  DatagridPosition: 5
+  DatagridVisible: true
+  DataType: String
+  Filterable: false
+  Multiline: false
+  ReadOnly: false
+  Required: false
+  Sortable: false
+- Name: Description
+  DatagridPosition: 3
+  DatagridVisible: true
+  Filterable: false
+- Name: Id
+  Filterable: false
+  FormVisible: false
+  Sortable: false
+- Name: IsAssigned
+  Caption: Is Assigned
+  DatagridPosition: 1
+  DatagridVisible: true
+  DataType: Boolean
+  Documentation: True if the user account is assigned to the user role, false if not
+  Filterable: false
+  Getter: =return Item.Accounts.Any(e => e.UserAccount.Id == Fields.UserAccount.Id);
+  Multiline: false
+  ReadOnly: false
+  Required: true
+  Setter: |-
+    =if(value)
+    {
+        UserAccountUserRoleEntityUI newAssignation = new UserAccountUserRoleEntityUI();
+        newAssignation.UserAccount = (IUserAccountView) Fields.UserAccount;
+        Item.Accounts.Add(newAssignation);
+    }
+    else
+    {
+        Item.Accounts.Remove(Item.Accounts.SingleOrDefault(e=>e.UserAccount.Id == Fields.UserAccount.Id));
+    }
+  Sortable: false
+- Name: IsAssignedAndIsNotNew
+  Caption: Is Assigned And Is Not New
+  DataType: Boolean
+  Documentation: True if the user account is assigned to the user role and that the assignation is saved, false if not
+  Filterable: false
+  FormVisible: false
+  Getter: |-
+    =UserAccountUserRoleEntityUI? relationEntity = Item.Accounts.FirstOrDefault(e => e.UserAccount.Id == Fields.UserAccount.Id);
+    if(relationEntity != null)
+    {
+        return !relationEntity.IsNew();
+    }
+    return false;
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: Name
+  DatagridPosition: 2
+  DatagridVisible: true
+  ReadOnly: true
+- Name: Type
+  Filterable: false
+  Sortable: false
+- Name: WorkingContextsName
+  Caption: Working Contexts
+  DatagridPosition: 4
+  DatagridVisible: true
+  DataType: StringArray
+  Documentation: Property that correspond to the list of the role-account relationship's working contexts names
+  Filterable: false
+  Getter: |-
+    =List<string> result = new List<string>();
+    IEnumerable<IEnumerable<string>> arrayOfNames = Item.Accounts.Where(a => a.UserAccount.Id == Fields.UserAccount.Id).Select(e => e.WorkingContexts.Select(wc => wc.WorkingContext.Name)).ToArray();
+    foreach(IEnumerable<string> temp in arrayOfNames)
+    {
+        result.AddRange(temp);
+    }
+    return result;
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false

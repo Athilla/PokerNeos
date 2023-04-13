@@ -1,0 +1,4 @@
+- Name: email
+  Description: Email
+  DotNetDataType: System.String?
+  Position: 1

@@ -1,0 +1,4 @@
+ColumnsList:
+- UserId
+ReferencedTableName: UserAccount
+TableName: GroupeUserAccount

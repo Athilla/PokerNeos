@@ -1,0 +1,6 @@
+- Name: UserAccountId
+  DataType: Integer
+  Required: true
+- Name: UserRoleId
+  DataType: Integer
+  Required: true

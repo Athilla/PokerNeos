@@ -1,0 +1,50 @@
+- Name: GetAvailableUser
+  Caption: Get available user
+  Code: |
+    if(this.HasChanges)
+    {
+        ShowMessageAsync(MessageType.Danger,
+                Resources.Authentication.SaveBeforeUseTitle,
+                Resources.Authentication.SaveBeforeUse);
+    }
+    else
+    {
+
+        NavigationOptions options = new NavigationOptions("UserAccountAvailableUI")
+        .WithCallback<List<UserAccountAvailableUI>>(async r =>
+        {
+            if (r.State == NavigationResultState.Ok && r.Value != null)
+            {
+                foreach(var userAccount in r.Value)
+                {
+                    var item = await this.AddNewAsync();
+                    item.Login = userAccount.Email;
+                    item.Email = userAccount.Email;
+                    item.FirstName = userAccount.FirstName;
+                    item.LastName = userAccount.LastName;
+                    item.Synchronized = true;
+                }
+            }
+        });
+        NavigateAsync(options);
+    }
+  Location: ActionsMenu
+  ParentActionName: More
+  Position: 3
+  Style: Ghost
+- Name: SendMail
+  Caption: Send mail
+  Code: SystemEnvironment.Window.OpenUrl("mailto:" + Item.Email);
+  DisplayMode: Icon
+  IconName: SendEmail
+  Location: Hidden
+  Style: GhostPrimary
+  Visible: =return Item.Email != null;
+- Name: SendSMS
+  Caption: Send SMS
+  Code: SystemEnvironment.Window.OpenUrl("tel:" + Item.PhoneNumber);
+  DisplayMode: Icon
+  IconName: SendSMS
+  Location: Hidden
+  Style: GhostPrimary
+  Visible: =return Item.PhoneNumber != null;

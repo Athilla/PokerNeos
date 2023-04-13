@@ -1,0 +1,30 @@
+EntityViewName: UserAccountView
+Icon: UserAccount
+OpenMode: PopupAutoSize
+Template: |-
+  <grid-layout>
+      <grid-layout-definition gap="small">
+          <grid-layout-columns>
+              <grid-layout-column />
+              <grid-layout-column />
+          </grid-layout-columns>
+      </grid-layout-definition>
+      <grid-layout-content>
+          <!-- CONTENT -->
+          <form-field property-name="IsActive" />
+          <form-field property-name="Synchronized" />
+          <if-not condition="@Computeds.IsAzureAdB2C">
+              <form-field property-name="Login" grid:colspan="2" />
+          </if-not>
+          <form-field property-name="Email" grid:colspan="2" />
+          <form-field property-name="FirstName" grid:colspan="2" />
+          <form-field property-name="LastName" grid:colspan="2" />
+          <form-field property-name="PhoneNumber" grid:colspan="2" />
+          <form-field property-name="ExpirationDate" grid:colspan="2" />
+          <horizontal-layout grid:colspan="2" align="right">
+              <button type="save" />
+              <button type="close" />
+          </horizontal-layout>
+      </grid-layout-content>
+  </grid-layout>
+Title: '=return DatasourceCurrent.IsNew() ? Resources.UserPermissions.UserAccountNewMessage : $"{DatasourceCurrent.FirstName} {DatasourceCurrent.LastName}";'

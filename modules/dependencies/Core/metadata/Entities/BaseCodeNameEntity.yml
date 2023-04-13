@@ -1,0 +1,3 @@
+Abstract: true
+BaseEntityName: BaseStateEntity
+Description: Base code label entity

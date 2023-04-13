@@ -1,0 +1,116 @@
+- Name: AssignedFeatures
+  Caption: Assigned features
+  DatagridPosition: 11
+  DatagridVisible: true
+  DataType: String
+  Documentation: Correspond to the button in the datagrid that allow the user to display the assigned features for the selected user.
+  Filterable: false
+  FormVisible: false
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: AssignRoles
+  Caption: ' '
+  DatagridPosition: 10
+  DatagridVisible: true
+  DataType: String
+  Filterable: false
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: Email
+  DatagridMinWidth: 250
+  DatagridPosition: 3
+  DatagridVisible: true
+  ReadOnly: =return !Item.IsNew();
+- Name: ExpirationDate
+  DatagridMaxWidth: 200
+  DatagridMinWidth: 150
+  DatagridPosition: 7
+  DatagridVisible: true
+  Filterable: false
+  FormVisible: false
+- Name: FirstName
+  Sortable: false
+- Name: IconColor
+  Caption: Type
+  DatagridMaxWidth: 100
+  DatagridPosition: 1
+  DatagridVisible: true
+  DataType: String
+  Filterable: false
+  FormVisible: false
+  Getter: '=return Item.IsActive ? "positive" : "danger";'
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: Id
+  Filterable: false
+  FormVisible: false
+  Sortable: false
+- Name: IsActive
+  Documentation: True if the user account is active, else if noit
+  FilterPosition: 1
+  FilterVisible: true
+  Sortable: false
+- Name: IsNew
+  Caption: New
+  DataType: Boolean
+  Filterable: false
+  Getter: =return !Item.IsNew();
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: LastConnection
+  DatagridMaxWidth: 200
+  DatagridMinWidth: 150
+  DatagridPosition: 8
+  DatagridVisible: true
+  Filterable: false
+  FormVisible: false
+- Name: LastName
+  DatagridMaxWidth: 250
+  DatagridMinWidth: 150
+  DatagridPosition: 2
+  DatagridVisible: true
+- Name: Login
+  ReadOnly: =return !Item.IsNew();
+  Sortable: false
+- Name: PhoneNumber
+  DatagridMaxWidth: 150
+  DatagridMinWidth: 150
+  DatagridPosition: 5
+  DatagridVisible: true
+- Name: RolesName
+  Caption: Roles
+  DatagridPosition: 9
+  DatagridVisible: true
+  DataType: StringArray
+  Documentation: Property that correspond to the list of the user's roles name
+  Filterable: false
+  FormVisible: false
+  Getter: |-
+    =List<string> roleNames = new List<string>();
+    foreach(UserAccountUserRoleEntityUI role in Item.Roles)
+    {
+        if(role.WorkingContexts.Any(e => e.UserAccountUserRole.UserAccount.Id == Item.Id))
+        {
+            roleNames.Add(role.UserRole.Name.GetCurrentValue() ?? role.UserRole.Name.DefaultTranslation + "*");
+        }
+        else{
+            roleNames.Add(role.UserRole.Name.GetCurrentValue() ?? role.UserRole.Name.DefaultTranslation);
+        }
+    }
+    return roleNames;
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: Synchronized
+  DatagridPosition: 7
+  DatagridVisible: true
+  ReadOnly: true

@@ -1,0 +1,37 @@
+- Name: Email
+  Caption: E-mail
+  Documentation: Email is used to authenticate to Neos server
+  MaxLength: 50
+  Required: true
+- Name: ExpirationDate
+  Caption: Expiration date
+  DataType: Date
+- Name: FirstName
+  Caption: First name
+  MaxLength: 50
+  Required: true
+- Name: Id
+  Caption: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: LastConnection
+  Caption: Last connection
+  DataType: DateTime
+  Documentation: Date since the last connection of the user
+- Name: LastName
+  Caption: Last name
+  MaxLength: 50
+  Required: true
+- Name: Login
+  Caption: User identification
+  MaxLength: 50
+  Required: true
+- Name: PhoneNumber
+  Caption: Phone number
+  MaxLength: 15
+- Name: Synchronized
+  Caption: Synchronized
+  DataType: Boolean
+  DefaultValue: false
+  Documentation: Synchronized with authentication module
+  Required: true

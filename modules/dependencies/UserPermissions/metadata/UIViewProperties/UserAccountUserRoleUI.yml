@@ -1,0 +1,21 @@
+- Name: UserAccount
+  Documentation: The user account which is assigned to the user role
+  Sortable: false
+- Name: UserName
+  Caption: Name
+  DatagridPosition: 3
+  DatagridVisible: true
+  DataType: String
+  Documentation: User firstname and name concatenated
+  Filterable: false
+  Getter: =return Item.UserAccount.LastName + " " + Item.UserAccount.FirstName;
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
+- Name: UserRole
+  Documentation: The user role which is assigned to the user account
+  Sortable: false
+- Name: UserRole.Name
+  Filterable: false
+  Sortable: false

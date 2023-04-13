@@ -1,0 +1,23 @@
+BaseUIViewName: Settings
+CreationAllowed: false
+DeletionAllowed: false
+Icon: General_settings
+LoadDataOnStart: false
+OverridenValues:
+- ModuleName
+- Template
+- Title
+Template: |+
+  <template-setting title="@Title" icon="@Icon">
+      <left-panel>
+          <button type="action" action-name="UserAccount" />
+          <button type="action" action-name="AssignPermission" />
+          <button type="action" action-name="WorkingContext" />
+      </left-panel>
+      <right-panel>
+          <view-container container-id="UserAndRightSettingsContainerId" layout:height="fill" />
+      </right-panel>
+  </template-setting>
+
+Title: =return Resources.UserPermissions.UsersAndRightsSettingTitle;
+UpdateAllowed: false

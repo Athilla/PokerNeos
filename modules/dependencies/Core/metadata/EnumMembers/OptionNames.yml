@@ -1,0 +1,20 @@
+- Name: DefaultCompany
+  Caption: Standard company
+  PersistedValue: DefaultCompany
+  Position: 3
+- Name: DefaultCurrency
+  Caption: Default currency
+  PersistedValue: DefaultCurrency
+  Position: 1
+- Name: MultiCompanies
+  Caption: Multi companies
+  PersistedValue: MultiCompanies
+  Position: 4
+- Name: MultiCurrencies
+  Caption: Multi currencies
+  PersistedValue: MultiCurrencies
+  Position: 2
+- Name: MultiSites
+  Caption: Multi sites
+  PersistedValue: MultiSites
+  Position: 5

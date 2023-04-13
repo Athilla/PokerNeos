@@ -1,0 +1,22 @@
+- Name: BackGroundColor
+  DotNetDataType: string
+  Getter: |
+    if(Parameters.Selected)
+    {
+        return Parameters.SelectedColor;
+    }
+    else
+    {
+        return "white";
+    }
+- Name: TextColor
+  DotNetDataType: string
+  Getter: |
+    if(Parameters.Selected)
+    {
+        return Parameters.SelectedTextColor;
+    }
+    else
+    {
+        return "primary";
+    }

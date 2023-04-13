@@ -1,0 +1,4 @@
+- UIViewMethodName: HandleSearchAsync
+  Name: searchText
+  DotNetDataType: string
+  Position: 1

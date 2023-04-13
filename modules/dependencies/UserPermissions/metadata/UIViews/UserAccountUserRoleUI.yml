@@ -1,0 +1,15 @@
+Description: User Account User Role
+Documentation: Entity UI that get the UserAccountUserRole filtered by the user role Id
+EntityViewName: UserAccountUserRoleView
+OpenMode: PopupAutoSize
+Template: |-
+  <vertical-layout layout:height="fill">
+      <heading level="1">@Title</heading>
+      <splitter>
+          <splitter-panel size="60">
+              <datagrid />
+              <pagination-bar />
+          </splitter-panel>
+      </splitter>
+  </vertical-layout>
+Title: =return Resources.UserPermissions.UserAccountUserRoleTitle;

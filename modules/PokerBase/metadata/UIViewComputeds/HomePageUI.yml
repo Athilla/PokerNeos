@@ -1,0 +1,3 @@
+- Name: Title
+  DotNetDataType: string
+  Getter: return $"{ApplicationContext.GetValue<string>("ClusterTitle")} {ApplicationContext.GetValue<string>("ClusterVersion")}";

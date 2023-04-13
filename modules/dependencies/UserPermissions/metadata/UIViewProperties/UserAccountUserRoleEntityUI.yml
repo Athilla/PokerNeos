@@ -1,0 +1,6 @@
+- Name: UserAccount
+  Documentation: The user account which is assigned to the user role
+  Sortable: false
+- Name: UserRole
+  Documentation: The user role which is assigned to the user account
+  Sortable: false

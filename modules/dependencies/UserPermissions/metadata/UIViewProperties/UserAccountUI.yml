@@ -1,0 +1,13 @@
+- Name: Email
+- Name: ExpirationDate
+- Name: FirstName
+- Name: Id
+  Filterable: false
+  FormVisible: false
+- Name: IsActive
+- Name: LastConnection
+  ReadOnly: true
+- Name: LastName
+- Name: Login
+- Name: PhoneNumber
+- Name: Synchronized
