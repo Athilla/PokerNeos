@@ -11,6 +11,7 @@ Template: |-
           <poker-card value="3" selected="@Computeds.Selected3"/>
           <poker-card value="5" selected="@Computeds.Selected5"/>
           <poker-card value="8" selected="@Computeds.Selected8"/>
+          <poker-card value="13" selected="@Computeds.Selected13"/>
       </horizontal-layout>
   </vertical-layout>
 Title: ShowCardUI

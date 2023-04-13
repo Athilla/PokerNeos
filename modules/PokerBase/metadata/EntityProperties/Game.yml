@@ -1,0 +1,9 @@
+- Name: GroupeId
+  DataType: Integer
+  Required: true
+- Name: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: Name
+  Caption: Nom du poker
+  Required: true

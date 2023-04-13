@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../build/NeosReferences.Application.gen.props" />
   <PropertyGroup>
-    <AssemblyName>pokerNeos.PokerAdmin.Application</AssemblyName>
-    <RootNamespace>pokerNeos.PokerAdmin.Application</RootNamespace>
+    <AssemblyName>PokerNeos.PokerAdmin.Application</AssemblyName>
+    <RootNamespace>PokerNeos.PokerAdmin.Application</RootNamespace>
   </PropertyGroup>
 </Project>

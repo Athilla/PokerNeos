@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../build/NeosReferences.Domain.gen.props" />
   <PropertyGroup>
-    <AssemblyName>pokerNeos.PokerBase.Domain</AssemblyName>
-    <RootNamespace>pokerNeos.PokerBase.Domain</RootNamespace>
+    <AssemblyName>PokerNeos.PokerBase.Domain</AssemblyName>
+    <RootNamespace>PokerNeos.PokerBase.Domain</RootNamespace>
   </PropertyGroup>
 </Project>

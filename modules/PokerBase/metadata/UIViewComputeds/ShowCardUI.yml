@@ -11,20 +11,8 @@
         Fields.Selected3 = false;
         Fields.Selected5 = false;
         Fields.Selected8 = false;
-    }
-- Name: Selected12
-  DotNetDataType: bool
-  Getter: return Fields.Selected12;
-  Setter: |-
-    if(value)
-    {
-        Fields.Selected0 = false;
-        Fields.Selected12 = true;
-        Fields.Selected1 = false;
-        Fields.Selected2 = false;
-        Fields.Selected3 = false;
-        Fields.Selected5 = false;
-        Fields.Selected8 = false;
+        Fields.Selected13 = false;
+
     }
 - Name: Selected1
   DotNetDataType: bool
@@ -39,6 +27,37 @@
         Fields.Selected3 = false;
         Fields.Selected5 = false;
         Fields.Selected8 = false;
+        Fields.Selected13 = false;
+    }
+- Name: Selected12
+  DotNetDataType: bool
+  Getter: return Fields.Selected12;
+  Setter: |-
+    if(value)
+    {
+        Fields.Selected0 = false;
+        Fields.Selected12 = true;
+        Fields.Selected1 = false;
+        Fields.Selected2 = false;
+        Fields.Selected3 = false;
+        Fields.Selected5 = false;
+        Fields.Selected8 = false;
+        Fields.Selected13 = false;
+    }
+- Name: Selected13
+  DotNetDataType: bool
+  Getter: return Fields.Selected13;
+  Setter: |-
+    if(value)
+    {
+        Fields.Selected0 = false;
+        Fields.Selected12 = false;
+        Fields.Selected1 = false;
+        Fields.Selected2 = false;
+        Fields.Selected3 = false;
+        Fields.Selected5 = false;
+        Fields.Selected8 = false;
+        Fields.Selected13 = true;
     }
 - Name: Selected2
   DotNetDataType: bool
@@ -53,6 +72,7 @@
         Fields.Selected3 = false;
         Fields.Selected5 = false;
         Fields.Selected8 = false;
+        Fields.Selected13 = false;
     }
 - Name: Selected3
   DotNetDataType: bool
@@ -67,6 +87,7 @@
         Fields.Selected3 = true;
         Fields.Selected5 = false;
         Fields.Selected8 = false;
+        Fields.Selected13 = false;
     }
 - Name: Selected5
   DotNetDataType: bool
@@ -81,6 +102,7 @@
         Fields.Selected3 = false;
         Fields.Selected5 = true;
         Fields.Selected8 = false;
+        Fields.Selected13 = false;
     }
 - Name: Selected8
   DotNetDataType: bool
@@ -95,4 +117,5 @@
         Fields.Selected3 = false;
         Fields.Selected5 = false;
         Fields.Selected8 = true;
+        Fields.Selected13 = false;
     }

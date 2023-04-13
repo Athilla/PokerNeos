@@ -1,0 +1,10 @@
+- Name: GroupeId
+  DatagridPosition: 2
+  DatagridVisible: true
+  LookupName: GroupeLookup
+- Name: Id
+  FormVisible: false
+  Sortable: false
+- Name: Name
+  DatagridPosition: 3
+  DatagridVisible: true

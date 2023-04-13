@@ -1,0 +1,8 @@
+- Name: GroupeId
+  Caption: GroupeId
+  Source: GroupeId
+- Name: Id
+  Caption: Id
+  Source: Id
+- Name: Name
+  Source: Name

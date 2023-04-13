@@ -1,0 +1,6 @@
+- Name: GroupeName
+  DotNetDataType: string
+- Name: RomName
+  DotNetDataType: string
+- Name: UserList
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PokerUserDescription>

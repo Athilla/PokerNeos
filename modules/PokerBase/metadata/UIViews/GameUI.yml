@@ -1,0 +1,26 @@
+EntityViewName: GameView
+Template: |-
+  <vertical-layout layout:height="fill">
+      <heading level="1" layout:padding="small">
+          @Title
+      </heading>
+      <card layout:height="fill">
+          <splitter layout:height="fill">
+              <splitter-panel size="60">
+                  <vertical-layout layout:height="fill" layout:padding="small">
+                      <toolbar refresh="true" />
+                      <datagrid layout:height="fill" />
+                      <pagination-bar />
+                  </vertical-layout>
+              </splitter-panel>
+              <splitter-panel>
+                  <vertical-layout layout:height="fill" layout:padding="small">
+                      <form-field property-name="Id" />
+                      <form-field property-name="GroupeId" />
+                      <form-field property-name="Name" />
+                  </vertical-layout>
+              </splitter-panel>
+          </splitter>
+      </card>
+  </vertical-layout>
+Title: GameUI

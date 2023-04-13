@@ -1,0 +1,6 @@
+- Name: Logo
+  DotNetDataType: string
+- Name: Order
+  DotNetDataType: int
+- Name: UserName
+  DotNetDataType: string
