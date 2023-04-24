@@ -1,0 +1,11 @@
+- Name: Description
+  Sortable: false
+- Name: GameId
+  Sortable: false
+- Name: Id
+  Sortable: false
+- Name: Link
+  Sortable: false
+- Name: Name
+  DatagridPosition: 1
+  DatagridVisible: true

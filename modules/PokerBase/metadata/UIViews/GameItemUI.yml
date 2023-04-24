@@ -1,0 +1,14 @@
+EntityViewName: GameItemView
+Template: |-
+  <vertical-layout layout:height="fill">
+      <template-master-detail title="@Title" initial-master-size="30">
+            <detail-template>
+                <vertical-layout layout:height="fill" layout:padding="small">
+                      <form-field property-name="Name" />
+                      <form-field property-name="Link" />
+                      <form-field property-name="Description" />
+                </vertical-layout>
+            </detail-template>
+      </template-master-detail>
+  </vertical-layout>
+Title: =return Resources.PokerBase.GameItemUiTitle;

@@ -1,6 +1,6 @@
 - Name: Selected0
   DotNetDataType: bool
-  Getter: return Fields.Selected0;
+  Getter: 'return Fields.Selected0; '
   Setter: |-
     if(value)
     {
@@ -119,3 +119,6 @@
         Fields.Selected8 = true;
         Fields.Selected13 = false;
     }
+- Name: ValuesOfCard
+  DotNetDataType: string[]
+  Getter: return new string []{"0","1/2", "1", "2", "3", "5", "8", "13"};

@@ -1,3 +1,10 @@
+- Name: GameItemList
+  Caption: GameItemList
+  Filterable: false
+  RelatedEntityViewName: GameItemView
+  Required: false
+  Source: GameItemList
+  Type: Collection
 - Name: GroupeId
   Caption: GroupeId
   Source: GroupeId

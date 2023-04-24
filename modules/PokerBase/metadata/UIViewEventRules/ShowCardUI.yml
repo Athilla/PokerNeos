@@ -1,0 +1,13 @@
+- Name: Initialized
+  Code: |
+    //init the game with all Cards => 0-1/2-1-2-3-5-8-13
+    Fields.PokerCardList = new List<PlayingCardInformation>();
+    for(int i=0; i<8; i++)
+    {
+        var card = new Abstractions.DataObjects.PlayingCardInformation();
+        card.Valeur = Computeds.ValuesOfCard[i];
+        card.Selected = false;
+        Console.WriteLine(card);
+        Fields.PokerCardList.Add(card);
+    }
+    Console.WriteLine(Fields.PokerCardList);

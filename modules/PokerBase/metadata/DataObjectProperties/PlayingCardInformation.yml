@@ -1,0 +1,6 @@
+- Name: Selected
+  DefaultValue: false
+  DotNetDataType: bool
+- Name: Valeur
+  DefaultValue: '"0"'
+  DotNetDataType: string

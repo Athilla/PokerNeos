@@ -1,3 +1,7 @@
+- Name: PokerCardList
+  DefaultValue: new System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>()
+  Description: ' '
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>
 - Name: Selected0
   DefaultValue: false
   DotNetDataType: bool

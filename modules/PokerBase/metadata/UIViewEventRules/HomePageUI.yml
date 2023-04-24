@@ -1,0 +1,2 @@
+- Name: Initialized
+  Code: NavigateAsync(new NavigationOptions("GameUI").WithCloseable(false));

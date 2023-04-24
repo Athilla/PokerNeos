@@ -1,0 +1,4 @@
+- Name: Groupe
+  ReferencedEntityName: Groupe
+  ScalarProperties:
+  - GroupeId

@@ -1,0 +1,16 @@
+- Name: Description
+  Caption: Description
+  Source: Description
+- Name: GameId
+  Caption: GameId
+  Source: GameId
+- Name: Id
+  Caption: Id
+  Source: Id
+- Name: Link
+  Caption: Link
+  Source: Link
+- Name: Name
+  Caption: Name
+  QuickSearch: true
+  Source: Name

@@ -1,0 +1,5 @@
+- Name: GameItems
+  ReferencedEntityName: Game
+  ReferencedEntityNavigationPropertyName: GameItemList
+  ScalarProperties:
+  - GameId

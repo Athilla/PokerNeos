@@ -1,0 +1,6 @@
+Template: |-
+  <horizontal-layout>
+      <repeat values="@Parameters.CardList" item="card">
+          <poker-card    value="$card.Valeur" selected="$card.Selected" full-list="@Parameters.CardList"/>
+      </repeat>
+  </horizontal-layout>

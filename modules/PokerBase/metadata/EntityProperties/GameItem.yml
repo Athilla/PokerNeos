@@ -1,0 +1,12 @@
+- Name: Description
+  MaxLength: 500
+  Multiline: true
+- Name: GameId
+  DataType: Integer
+- Name: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: Link
+  MaxLength: 150
+- Name: Name
+  Required: true

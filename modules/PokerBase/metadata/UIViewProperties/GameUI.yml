@@ -1,4 +1,5 @@
 - Name: GroupeId
+  Caption: Groupe
   DatagridPosition: 2
   DatagridVisible: true
   LookupName: GroupeLookup

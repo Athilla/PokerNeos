@@ -1,12 +1,8 @@
 - Name: fullList
   BindingMode: TwoWay
   DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>
-- Name: selected
-  BindingMode: TwoWay
-  DefaultValue: false
-  DotNetDataType: bool
-- Name: selectedColor
-  DefaultValue: '"info-500"'
+- Name: name
+  DefaultValue: '"player name"'
   DotNetDataType: string
 - Name: selectedTextColor
   DefaultValue: '"black"'

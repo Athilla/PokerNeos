@@ -1,9 +1,12 @@
 Template: |-
   <vertical-layout layout:height="fill" layout:width="fill">
-      <horizontal-layout layout:height="fill">
-
+      <horizontal-layout layout:height="fill" layout:width="500">
+          <table-cards/>
       </horizontal-layout>
       <horizontal-layout>
+          <poker-cards  card-list="@Fields.PokerCardList"/>
+      </horizontal-layout>
+      <!-- <horizontal-layout>
           <poker-card value="0" selected="@Computeds.Selected0"/>
           <poker-card value="1/2" selected="@Computeds.Selected12"/>
           <poker-card value="1" selected="@Computeds.Selected1"/>
@@ -12,6 +15,6 @@ Template: |-
           <poker-card value="5" selected="@Computeds.Selected5"/>
           <poker-card value="8" selected="@Computeds.Selected8"/>
           <poker-card value="13" selected="@Computeds.Selected13"/>
-      </horizontal-layout>
+      </horizontal-layout> -->
   </vertical-layout>
 Title: ShowCardUI

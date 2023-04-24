@@ -1,0 +1,3 @@
+- Name: cardList
+  BindingMode: TwoWay
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>
