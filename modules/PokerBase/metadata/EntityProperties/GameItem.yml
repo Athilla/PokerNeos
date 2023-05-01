@@ -10,3 +10,4 @@
   MaxLength: 150
 - Name: Name
   Required: true
+- Name: Note

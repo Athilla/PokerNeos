@@ -14,3 +14,6 @@
   Caption: Name
   QuickSearch: true
   Source: Name
+- Name: Note
+  Caption: Note
+  Source: Note

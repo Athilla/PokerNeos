@@ -1,6 +1,9 @@
 Description: HomePageUI
 LoadDataOnStart: false
-Template: |-
+Template: |2-
+
+
+
   <horizontal-layout full-height="true" layout:width="fill" wrap="false" space="none">
       <panel-menu automation:id="MainPanelMenu" logo="Neos" title="@Computeds.Title" items="@ApplicationContext.MenuItems" />
       <vertical-layout layout:height="fill" layout:width="fill" space="none">

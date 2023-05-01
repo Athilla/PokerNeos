@@ -1,0 +1,11 @@
+EntityViewName: GameView
+Template: |-
+  <vertical-layout layout:height="fill" layout:width="fill">
+      <horizontal-layout layout:height="fill" layout:width="500">
+          <table-cards/>
+      </horizontal-layout>
+      <horizontal-layout>
+          <poker-cards  card-list="@Fields.PokerCardList"/>
+      </horizontal-layout>
+  </vertical-layout>
+Title: ShowCardUI

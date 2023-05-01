@@ -1,3 +1,4 @@
+- Name: GameState
 - Name: GroupeId
   DataType: Integer
   Required: true
@@ -6,3 +7,4 @@
   Required: true
 - Name: Name
   Required: true
+- Name: State

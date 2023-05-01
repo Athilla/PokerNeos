@@ -1,0 +1,16 @@
+- Name: Canceled
+  Caption: Annulé
+  PersistedValue: Canceled
+  Position: 4
+- Name: Closed
+  Caption: Terminé
+  PersistedValue: Closed
+  Position: 3
+- Name: None
+  Caption: None
+  PersistedValue: None
+  Position: 1
+- Name: Started
+  Caption: Demaré
+  PersistedValue: Started
+  Position: 2

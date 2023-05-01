@@ -1,0 +1,4 @@
+ColumnsList:
+- GroupeId
+ReferencedTableName: Groupe
+TableName: Game

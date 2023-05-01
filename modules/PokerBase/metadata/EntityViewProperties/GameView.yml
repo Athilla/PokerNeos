@@ -5,6 +5,9 @@
   Required: false
   Source: GameItemList
   Type: Collection
+- Name: GameState
+  Caption: State
+  Source: State
 - Name: GroupeId
   Caption: GroupeId
   Source: GroupeId

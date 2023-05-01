@@ -1,2 +1,8 @@
 - Name: Initialized
-  Code: NavigateAsync(new NavigationOptions("GameUI").WithCloseable(false));
+  Code: |-
+    NavigateAsync(new NavigationOptions("GameUI").WithCloseable(false));
+
+    //Si GameUi est effectivement toujours afficher on pourrait deplacer les handler dans GameUI ou l'ui qui la replacera...
+    // Notifications.ServerStateChanged.AddHandler(args => Methods.HandleServerStateChanged(args));
+
+    // Notifications.GenerationNeeded.AddHandler(() => Methods.HandleGenerationNeededNotification());
