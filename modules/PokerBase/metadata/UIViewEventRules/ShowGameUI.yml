@@ -1,5 +1,14 @@
+- Name: GameIdPropertyChanged
+  Code: |-
+    if(Item.GameId != null)
+    {
+        Console.WriteLine("ICI3");
+        Fields.ItemList =  await ServerMethods.GetDetailsGame.ExecuteAsync((int)Item.GameId);
+    }
+  Event: PropertyChanged
+  PropertyName: GameId
 - Name: Initialized
-  Code: |
+  Code: |+
     //init the game with all Cards => 0-1/2-1-2-3-5-8-13
     Fields.PokerCardList = new List<PlayingCardInformation>();
     for(int i=0; i<8; i++)
@@ -7,7 +16,22 @@
         var card = new Abstractions.DataObjects.PlayingCardInformation();
         card.Valeur = Computeds.ValuesOfCard[i];
         card.Selected = false;
-        Console.WriteLine(card);
+        //Console.WriteLine(card);
         Fields.PokerCardList.Add(card);
     }
-    Console.WriteLine(Fields.PokerCardList);
+    int gameId = (int)ViewContext["GameId"];
+    EntityViewParameters.GameId =gameId;
+    //LoadDataAsync();
+    // Console.WriteLine(Fields.PokerCardList);
+
+    // Console.WriteLine(Datasource);
+    // Console.WriteLine(this);
+
+- Name: Retrieved
+  Code: |-
+    if(DatasourceCurrent != null)
+    {
+        Console.WriteLine(DatasourceCurrent.GameId);
+        Fields.ItemList =  await ServerMethods.GetDetailsGame.ExecuteAsync((int)DatasourceCurrent.GameId);
+    }
+  Event: Retrieved

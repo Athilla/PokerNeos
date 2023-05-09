@@ -28,6 +28,9 @@ namespace PokerNeos.PokerBase.Application.Methods
         /// <inheritdoc/>
         public async Task<OnTenantResolvedResult> ExecuteAsync()
         {
+
+
+
             return new OnAuthenticatedResult(true, new Dictionary<string, object>() { }, theme: _applicationInfo.Themes.FirstOrDefault(t => t == "default"));
         }
     }

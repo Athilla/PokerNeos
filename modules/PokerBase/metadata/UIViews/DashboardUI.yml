@@ -1,0 +1,51 @@
+Template: |-
+  <vertical-layout layout:height="fill" space="extralarge">
+      <horizontal-layout>
+          <heading>
+              Bonjour @Computeds.GetUserName
+          </heading>
+      </horizontal-layout>
+      <vertical-layout>
+          <heading level="3">
+              Vos pokers en cours ou avenir
+          </heading>
+          <grid-layout>
+              <grid-layout-definition gap="large">
+                  <grid-layout-columns>
+                      <grid-layout-column width="50" />
+                      <grid-layout-column />
+                  </grid-layout-columns>
+              </grid-layout-definition>
+              <grid-layout-content>
+                  <repeat values="@Fields.GamesInformation">
+                      <text></text>
+                      <card style:border-color="black" layout:width="300">
+                          <vertical-layout>
+                              <grid-layout>
+                                  <grid-layout-definition>
+                                      <grid-layout-columns>
+                                          <grid-layout-column width="50" />
+                                          <grid-layout-column />
+                                      </grid-layout-columns>
+                                  </grid-layout-definition>
+                                  <grid-layout-content>
+                                      <button type="method" method-name="OpenGame" variant="ghost" layout:padding="none">
+                                          <image name="play" style:color="primary-500" size="extralarge" />
+                                      </button>
+                                      <heading level="3">
+                                          [$Item.GroupeName] $Item.RomName
+                                      </heading>
+                                      <heading level="6"></heading>
+                                      <heading level="6">
+                                          $Item.ItemsCount Tache(s) a évaluer
+                                      </heading>
+                                  </grid-layout-content>
+                              </grid-layout>
+                          </vertical-layout>
+                      </card>
+                  </repeat>
+              </grid-layout-content>
+          </grid-layout>
+      </vertical-layout>
+  </vertical-layout>
+Title: Mon Activité

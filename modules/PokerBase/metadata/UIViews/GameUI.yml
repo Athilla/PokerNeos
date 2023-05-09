@@ -8,6 +8,7 @@ Template: |-
                       <form-field property-name="Id" />
                       <form-field property-name="GroupeId" />
                       <form-field property-name="Name" />
+                      <form-field property-name="GameState" />
                       <ui-view relation-property-name="GameItemList" />
                   </vertical-layout>
               </detail-template>

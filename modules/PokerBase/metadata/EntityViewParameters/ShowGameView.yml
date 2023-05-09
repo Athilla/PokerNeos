@@ -1,0 +1,4 @@
+- Name: GameId
+  Caption: Id
+  DataType: Integer
+  Required: true

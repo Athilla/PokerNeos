@@ -1,7 +1,7 @@
 - Name: ClickButtonAsync
   Asynchronous: true
   Code: |-
-    Console.WriteLine($"vous avez selectionné: {Parameters.Value}");
+    // Console.WriteLine($"vous avez selectionné: {Parameters.Value}");
     // Parameters.Selected = !Parameters.Selected;
     foreach(PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation card in Parameters.FullList)
     {

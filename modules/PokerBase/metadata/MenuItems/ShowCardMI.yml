@@ -1,3 +1,6 @@
-ActionType: OpenView
+ActionType: Code
 Caption: Show Card
-UIViewToOpenName: ShowGameUI
+Code: |
+  NavigateAsync(new NavigationOptions("ShowGameUI")
+                      .WithParameter("GameId", 2)
+                      .WithCloseable(false));

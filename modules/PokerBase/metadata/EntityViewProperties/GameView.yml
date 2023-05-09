@@ -15,4 +15,5 @@
   Caption: Id
   Source: Id
 - Name: Name
+  QuickSearch: true
   Source: Name

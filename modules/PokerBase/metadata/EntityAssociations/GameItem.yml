@@ -1,4 +1,4 @@
-- Name: GameItems
+- Name: Game
   ReferencedEntityName: Game
   ReferencedEntityNavigationPropertyName: GameItemList
   ScalarProperties:

@@ -1,4 +1,5 @@
 - Name: Description
+  DefaultValue: string.Empty
   MaxLength: 500
   Multiline: true
 - Name: GameId
@@ -7,7 +8,9 @@
   DataType: AutoIncrementedInteger
   Required: true
 - Name: Link
+  DefaultValue: string.Empty
   MaxLength: 150
 - Name: Name
   Required: true
 - Name: Note
+  DefaultValue: string.Empty

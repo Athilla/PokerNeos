@@ -1,0 +1,8 @@
+- Name: CountItem
+  Code: return Parameters.Game.ItemList.Count;
+  DotNetReturnType: int
+- Name: OpenGame
+  Code: |2
+
+
+    //NavigateAsync(new NavigationOptions("DashboardUI").WithCloseable(true));

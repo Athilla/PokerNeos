@@ -1,0 +1,5 @@
+- Name: GetUserName
+  DotNetDataType: string
+  Getter: |
+    // return "Hervé C";
+    return ApplicationContext.GetValue<string>("UserFirstName") + " " +ApplicationContext.GetValue<string>("UserLastName");

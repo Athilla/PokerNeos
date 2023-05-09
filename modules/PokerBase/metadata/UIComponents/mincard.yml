@@ -1,15 +1,15 @@
-Template: |2
-
+Template: |-
   <vertical-layout>
-  <horizontal-layout layout:height="90" layout:width="70" layout:padding="small small small small" style:border-color="black" style:corner-radius="medium" style:background="white">
-      <vertical-layout layout:width="fill">
-          <vertical-layout layout:width="fill" layout:height="fill">
-              <heading level="1" layout:horizontal-alignment="center" layout:height="fill" layout:padding="large small small small" style:color="@Computeds.TextColor">
-                  @Parameters.Value
-              </heading>
+      <horizontal-layout layout:height="90" layout:width="70" layout:padding="small small small small" style:border-color="black" style:corner-radius="medium" style:background="white">
+          <vertical-layout layout:width="fill">
+              <vertical-layout layout:width="fill" layout:height="fill">
+                  <heading level="1" layout:horizontal-alignment="center" layout:height="fill" layout:padding="large small small small" style:color="@Computeds.TextColor">
+                      @Parameters.Value
+                  </heading>
+              </vertical-layout>
           </vertical-layout>
-      </vertical-layout>
-  </horizontal-layout>        <text>
+      </horizontal-layout>
+      <text>
           @Parameters.Name
       </text>
   </vertical-layout>

@@ -1,0 +1,3 @@
+- Name: GamesInformation
+  DefaultValue: new System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PokerGameInformation>()
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PokerGameInformation>

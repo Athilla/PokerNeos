@@ -1,0 +1,10 @@
+- ColorName: Info800
+  IsCustom: false
+  Value: '#ffffff'
+- ColorName: Primary800
+  IsCustom: false
+  Value: '#f2f2f2'
+- ColorName: red
+  Value: '#ff0000'
+- ColorName: yellow
+  Value: '#ffff00'

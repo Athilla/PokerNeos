@@ -1,0 +1,3 @@
+- Name: CountItem
+  DotNetDataType: int
+  Getter: return Parameters.Game.ItemList.Count;

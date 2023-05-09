@@ -8,3 +8,5 @@
   Caption: Nom du poker
   Required: true
 - Name: State
+  DataType: Enum
+  EnumTypeName: GameState

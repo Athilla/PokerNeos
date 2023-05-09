@@ -1,3 +1,8 @@
+- Name: Description
+  DefaultValue: '"descriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptions"'
+  DotNetDataType: string
+- Name: ItemList
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.Item>
 - Name: PokerCardList
   DefaultValue: new System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>()
   Description: ' '

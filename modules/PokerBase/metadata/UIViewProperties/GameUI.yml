@@ -9,3 +9,6 @@
 - Name: Name
   DatagridPosition: 3
   DatagridVisible: true
+- Name: GameState
+  DatagridPosition: 4
+  DatagridVisible: true

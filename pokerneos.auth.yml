@@ -13,3 +13,4 @@ Authentication:
   UserPropertiesMap:
     Name: signInNames.emailAddress
     Email: signInNames.emailAddress
+  OnTenantResolvedServerMethod: OnTenantResolvedMethod

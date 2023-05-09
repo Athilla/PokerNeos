@@ -1,0 +1,25 @@
+Template: |-
+  <card style:border-color="black" layout:width="300">
+      <vertical-layout>
+          <grid-layout>
+              <grid-layout-definition>
+                  <grid-layout-columns>
+                      <grid-layout-column width="50" />
+                      <grid-layout-column />
+                  </grid-layout-columns>
+              </grid-layout-definition>
+              <grid-layout-content>
+                  <button type="method" method-name="OpenGame" variant="ghost" layout:padding="none">
+                      <image name="play" style:color="primary-500" size="extralarge"/>
+                  </button>
+                  <heading level="3">
+                       [@Parameters.Game.GroupeName] @Parameters.Game.RomName
+                  </heading>
+                  <heading level="6"></heading>
+                  <heading level="6">
+                      @Computeds.CountItem Tache(s) a évaluer
+                  </heading>
+              </grid-layout-content>
+          </grid-layout>
+      </vertical-layout>
+  </card>

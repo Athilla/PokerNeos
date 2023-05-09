@@ -1,0 +1,12 @@
+- Name: Game
+  Caption: game
+  ModificationStatePropagation: false
+  RelatedEntityViewName: GameView
+  Required: false
+  Type: Reference
+- Name: GameId
+  Caption: GameId
+  DataType: Integer
+  IsExpression: false
+  Multiline: false
+  Required: true

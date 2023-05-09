@@ -1,0 +1,2 @@
+- Name: game
+  DotNetDataType: PokerNeos.Application.Abstractions.DataObjects.PokerGameInformation

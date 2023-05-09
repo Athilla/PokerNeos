@@ -1,0 +1,4 @@
+- UIViewMethodName: OpenGame
+  Name: item
+  DotNetDataType: PokerNeos.Application.Abstractions.DataObjects.PokerGameInformation
+  Position: 1

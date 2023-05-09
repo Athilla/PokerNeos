@@ -1,0 +1,3 @@
+- Name: Initialized
+  Code: |
+    Fields.GamesInformation = await ServerMethods.GetAvailableGame.ExecuteAsync();

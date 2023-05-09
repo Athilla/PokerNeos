@@ -1,0 +1,8 @@
+- Name: OpenGame
+  Code: |-
+    Console.WriteLine($"Selection du jeu : {item.GameId}");
+    NavigationOptions options = new NavigationOptions("ShowGameUI");
+
+    options.WithParameter("GameId", item.GameId);
+    options.WithFrameId($"Game_{item.GameId}");
+    NavigateAsync(options);

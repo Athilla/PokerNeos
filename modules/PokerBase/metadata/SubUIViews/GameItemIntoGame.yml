@@ -1,0 +1,3 @@
+- Name: GameItemList
+  RelationPropertyName: GameItemList
+  SubUIViewName: GameItemUI

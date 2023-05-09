@@ -1,0 +1,3 @@
+- Name: gameId
+  DotNetDataType: int
+  Position: 1

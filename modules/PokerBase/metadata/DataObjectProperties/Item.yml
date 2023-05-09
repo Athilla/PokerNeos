@@ -1,0 +1,10 @@
+- Name: Description
+  DotNetDataType: string
+- Name: Id
+  DotNetDataType: int
+- Name: Link
+  DotNetDataType: string
+- Name: Name
+  DotNetDataType: string
+- Name: Note
+  DotNetDataType: string
