@@ -3,7 +3,7 @@ DeletionAllowed: false
 EntityViewName: ShowGameView
 MonoRecord: true
 Template: |
-  <grid-layout layout:height="fill" style:border-color="black">
+  <grid-layout layout:height="fill">
       <grid-layout-definition>
           <grid-layout-rows>
               <grid-layout-row />
@@ -15,7 +15,7 @@ Template: |
           </grid-layout-columns>
       </grid-layout-definition>
       <grid-layout-content>
-          <vertical-layout space="large" style:border-color="red">
+          <vertical-layout space="large">
               <horizontal-layout>
                   <heading level="1">
                       Product Backlog Item 14025: [Tiers 360] - POC : Synchroniser la société
@@ -24,13 +24,23 @@ Template: |
               <horizontal-layout layout:height="fill" layout:width="fill">
                   <table-cards />
               </horizontal-layout>
-              <horizontal-layout   style:border-color="yellow">
+              <horizontal-layout>
                   <poker-cards card-list="@Fields.PokerCardList" />
               </horizontal-layout>
           </vertical-layout>
           <text layout:width="1" style:border-color="border"></text>
-          <vertical-layout style:border-color="yellow" >
-              <card layout:width="500" style:background="border" layout:horizontal-alignment="right">
+          <vertical-layout>
+              <horizontal-layout style:background="border">
+                  <button type="action" action-name="RunGame"/>
+                  <button type="action" action-name="StopGame"/>
+                  <button type="action" action-name="PreviousUs"/>
+                  <button type="action" action-name="NextUs"/>
+                  <!-- <button type="method" method-name="RunGame" variant="ghost" layout:padding="none">
+                      <image name="play2" style:color="primary-500" size="large" />
+                  </button> -->
+              </horizontal-layout>
+              <horizontal-line height="3"></horizontal-line>
+              <!-- <card layout:width="500" style:background="border" layout:horizontal-alignment="right">
                   <heading level="6">
                       Product Backlog Item 14025: [Tiers 360] - POC : Synchroniser la société
                   </heading>
@@ -49,7 +59,7 @@ Template: |
                   <heading level="6">
                       Product Backlog Item 14025: [Tiers 360] - POC : Synchroniser la société
                   </heading>
-              </card>
+              </card> -->
               <card layout:width="500" style:background="border" layout:horizontal-alignment="right">
                   <heading level="6">
                       Product Backlog Item 14025: [Tiers 360] - POC : Synchroniser la société
@@ -61,7 +71,7 @@ Template: |
                   </heading>
                   <textbox value="@Fields.Description" label="Description" disabled="true" readonly="true" multi-lines="true" />
               </card>
-              <card layout:width="500" style:background="border" layout:horizontal-alignment="right">
+              <!-- <card layout:width="500" style:background="border" layout:horizontal-alignment="right">
                   <heading level="6">
                       Product Backlog Item 14025: [Tiers 360] - POC : Synchroniser la société
                   </heading>
@@ -85,7 +95,7 @@ Template: |
                   <heading level="6">
                       Product Backlog Item 14025: [Tiers 360] - POC : Synchroniser la société
                   </heading>
-              </card>
+              </card> -->
           </vertical-layout>
       </grid-layout-content>
   </grid-layout>

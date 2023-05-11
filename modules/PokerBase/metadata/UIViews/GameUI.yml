@@ -1,18 +1,16 @@
 EntityViewName: GameView
 Template: |-
   <vertical-layout layout:height="fill">
-      <vertical-layout layout:height="fill">
-          <template-master-detail title="@Title" initial-master-size="30">
-              <detail-template>
-                  <vertical-layout layout:height="fill" layout:padding="small">
-                      <form-field property-name="Id" />
-                      <form-field property-name="GroupeId" />
-                      <form-field property-name="Name" />
-                      <form-field property-name="GameState" />
-                      <ui-view relation-property-name="GameItemList" />
-                  </vertical-layout>
-              </detail-template>
-          </template-master-detail>
-      </vertical-layout>
+      <template-master-detail title="@Title" initial-master-size="30">
+          <detail-template>
+              <vertical-layout layout:height="fill" layout:padding="small">
+                  <form-field property-name="Id" />
+                  <form-field property-name="GroupeId" />
+                  <form-field property-name="Name" />
+                  <form-field property-name="GameState" />
+                  <ui-view relation-property-name="GameItemList" />
+              </vertical-layout>
+          </detail-template>
+      </template-master-detail>
   </vertical-layout>
 Title: GameUI

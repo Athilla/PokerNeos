@@ -1,0 +1,40 @@
+- Name: NextUs
+  Caption: US Suivante
+  Code: Console.WriteLine("runnnnn");
+  DisplayMode: Icon
+  Enabled: =return !Fields.IsLast && Fields.IsStart;
+  IconName: next
+  Location: Hidden
+  Size: Large
+  Style: GhostPrimary
+- Name: PreviousUs
+  Caption: US Précedente
+  Code: Console.WriteLine("runnnnn");
+  DisplayMode: Icon
+  Enabled: =return !Fields.IsFirst && Fields.IsStart;
+  IconName: previous
+  Location: Hidden
+  Size: Large
+  Style: GhostPrimary
+- Name: RunGame
+  Caption: Run game
+  Code: |-
+    Console.WriteLine("runnnnn");
+    Fields.IsStart = true;
+  DisplayMode: Icon
+  IconName: play2
+  Location: Hidden
+  Size: Large
+  Style: GhostPrimary
+  Visible: =return !Fields.IsStart;
+- Name: StopGame
+  Caption: Stop game
+  Code: |-
+    Console.WriteLine("runnnnn");
+    Fields.IsStart = false;
+  DisplayMode: Icon
+  IconName: stop
+  Location: Hidden
+  Size: Large
+  Style: GhostDanger
+  Visible: =return Fields.IsStart;

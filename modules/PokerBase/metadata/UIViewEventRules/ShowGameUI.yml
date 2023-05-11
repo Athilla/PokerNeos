@@ -19,8 +19,15 @@
         //Console.WriteLine(card);
         Fields.PokerCardList.Add(card);
     }
-    int gameId = (int)ViewContext["GameId"];
-    EntityViewParameters.GameId =gameId;
+    int? gameId = (int?)ViewContext["GameId"];
+    if(gameId == null)
+    {
+        this.CloseAsync();
+    }
+    else
+    {
+        EntityViewParameters.GameId = gameId.Value;
+    }
     //LoadDataAsync();
     // Console.WriteLine(Fields.PokerCardList);
 
@@ -29,7 +36,7 @@
 
 - Name: Retrieved
   Code: |-
-    if(DatasourceCurrent != null)
+    if(DatasourceCurrent?.GameId != null)
     {
         Console.WriteLine(DatasourceCurrent.GameId);
         Fields.ItemList =  await ServerMethods.GetDetailsGame.ExecuteAsync((int)DatasourceCurrent.GameId);

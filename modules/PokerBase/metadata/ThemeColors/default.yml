@@ -1,3 +1,5 @@
+- ColorName: green
+  Value: '#66cc94'
 - ColorName: Info800
   IsCustom: false
   Value: '#ffffff'

@@ -7,7 +7,7 @@ Template: |-
       </horizontal-layout>
       <vertical-layout>
           <heading level="3">
-              Vos pokers en cours ou avenir
+              Vos pokers en cours ou a venir
           </heading>
           <grid-layout>
               <grid-layout-definition gap="large">

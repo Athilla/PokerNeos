@@ -40,15 +40,16 @@ namespace PokerNeos.PokerBase.Application.EventRules.ShowGameView
         /// <inheritdoc/>
         public async Task OnRetrievingAsync(IRetrievingRuleArguments<PokerNeos.Application.Abstractions.EntityViews.IShowGameView> args)
         {
-
             // on recupere les informations de la partie
             int key = args.Parameters.GetGameId();
-            Console.WriteLine($"ID récupérer : {key}");
             _logger.LogError($"ID récupérer : {key}");
 
-            IGameView? games = await _gameViewRepository.FindAsync(key);
-            IGameView game = await _gameViewRepository.GetAsync(key);
-            if (game == null) { return; }
+            IGameView? game = await _gameViewRepository.FindAsync(key);
+            if (game == null) 
+            {
+                args.SetItems(new List<IShowGameView>(), 0);
+                return; 
+            }
 
             //on verifie que le joueur est bien dans la partie
             if (!_gameUtil.CheckGroup(game.GroupeId)) { return; }
@@ -57,11 +58,6 @@ namespace PokerNeos.PokerBase.Application.EventRules.ShowGameView
             showGameView.Game = game;
 
             args.SetItems(new List<IShowGameView>() { showGameView }, 1);
-
-            //IShowGameView showGameView = _showGameViewRepository.New();
-            //showGameView.GameId = 99;
-
-            //args.SetItems(new List<IShowGameView>() { showGameView }, 1);
         }
     }
 }

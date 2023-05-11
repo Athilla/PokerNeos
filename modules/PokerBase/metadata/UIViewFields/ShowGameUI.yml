@@ -1,6 +1,15 @@
 - Name: Description
   DefaultValue: '"descriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptions"'
   DotNetDataType: string
+- Name: IsFirst
+  DefaultValue: true
+  DotNetDataType: bool
+- Name: IsLast
+  DefaultValue: false
+  DotNetDataType: bool
+- Name: IsStart
+  DefaultValue: false
+  DotNetDataType: bool
 - Name: ItemList
   DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.Item>
 - Name: PokerCardList
