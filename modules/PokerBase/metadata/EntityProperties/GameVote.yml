@@ -1,0 +1,10 @@
+- Name: GameId
+  DataType: Integer
+- Name: GameItemId
+  DataType: Integer
+  Required: true
+- Name: UserId
+  DataType: Integer
+  Required: true
+- Name: Vote
+  Required: true

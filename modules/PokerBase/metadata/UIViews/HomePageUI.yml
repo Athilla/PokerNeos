@@ -20,7 +20,7 @@ Template: |-
           </horizontal-layout>
       </horizontal-layout>
       <horizontal-layout layout:height="fill" layout:width="fill">
-          <!-- <panel-menu automation:id="MainPanelMenu" logo="Neos" title="@Computeds.Title" items="@ApplicationContext.MenuItems" /> -->
+          <panel-menu automation:id="MainPanelMenu" logo="Neos" title="@Computeds.Title" items="@ApplicationContext.MenuItems" />
           <vertical-layout layout:height="fill" layout:width="fill" space="none">
               <frames-container container-id="PokerPageContainer" frames="@Fields.Frames" selected-tab-index="@Fields.SelectedTabIndex" layout:width="fill" layout:height="fill" />
           </vertical-layout>

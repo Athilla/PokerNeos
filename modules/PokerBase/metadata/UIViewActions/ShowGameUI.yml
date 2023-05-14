@@ -1,6 +1,19 @@
 - Name: NextUs
   Caption: US Suivante
-  Code: Console.WriteLine("runnnnn");
+  Code: |-
+    // Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
+    // Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
+    // Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
+    // Console.WriteLine($"IsLast : {@Fields.IsLast}");
+
+    if(@Fields.CurrentPosition.HasValue && @Fields.CurrentPosition.Value < @Fields.ItemList.Count-1)
+    {
+        Fields.ItemList[@Fields.CurrentPosition.Value].IsCurrent = false;
+        @Fields.CurrentPosition++;
+        Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
+    }
+
+    Methods.UpdateGame();
   DisplayMode: Icon
   Enabled: =return !Fields.IsLast && Fields.IsStart;
   IconName: next
@@ -9,7 +22,19 @@
   Style: GhostPrimary
 - Name: PreviousUs
   Caption: US Précedente
-  Code: Console.WriteLine("runnnnn");
+  Code: |-
+    // Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
+    // Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
+    // Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
+    // Console.WriteLine($"IsLast : {@Fields.IsLast}");
+
+    if(@Fields.CurrentPosition.HasValue && @Fields.CurrentPosition.Value > 0)
+    {
+        Fields.ItemList[@Fields.CurrentPosition.Value].IsCurrent = false;
+        @Fields.CurrentPosition--;
+        Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
+    }
+    Methods.UpdateGame();
   DisplayMode: Icon
   Enabled: =return !Fields.IsFirst && Fields.IsStart;
   IconName: previous
@@ -19,8 +44,24 @@
 - Name: RunGame
   Caption: Run game
   Code: |-
-    Console.WriteLine("runnnnn");
-    Fields.IsStart = true;
+    // Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
+    // Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
+    // Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
+    // Console.WriteLine($"IsLast : {@Fields.IsLast}");
+
+    @Fields.IsStart = true;
+    if(@Fields.CurrentPosition == null)
+    {
+        @Fields.CurrentPosition = 0;
+    }
+
+    @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
+
+    Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
+    Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
+    Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
+    Console.WriteLine($"IsLast : {@Fields.IsLast}");
+    Methods.CoreGameAsync();
   DisplayMode: Icon
   IconName: play2
   Location: Hidden
@@ -30,7 +71,12 @@
 - Name: StopGame
   Caption: Stop game
   Code: |-
-    Console.WriteLine("runnnnn");
+    // Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
+    // Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
+    // Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
+    // Console.WriteLine($"IsLast : {@Fields.IsLast}");
+
+
     Fields.IsStart = false;
   DisplayMode: Icon
   IconName: stop

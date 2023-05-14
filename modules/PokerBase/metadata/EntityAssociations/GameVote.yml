@@ -1,0 +1,5 @@
+- Name: GameInProgress
+  ReferencedEntityName: GameInProgress
+  ReferencedEntityNavigationPropertyName: GameVoteList
+  ScalarProperties:
+  - GameId

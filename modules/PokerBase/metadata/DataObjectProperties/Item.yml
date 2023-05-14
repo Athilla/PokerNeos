@@ -2,6 +2,10 @@
   DotNetDataType: string
 - Name: Id
   DotNetDataType: int
+- Name: IsCurrent
+  DefaultValue: false
+  Description: utiliser pour l'UI
+  DotNetDataType: bool
 - Name: Link
   DotNetDataType: string
 - Name: Name

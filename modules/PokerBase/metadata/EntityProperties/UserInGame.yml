@@ -1,0 +1,6 @@
+- Name: GameId
+  DataType: Integer
+- Name: Nickname
+- Name: UserId
+  DataType: Integer
+  Required: true

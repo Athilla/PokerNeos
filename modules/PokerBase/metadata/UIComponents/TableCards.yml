@@ -2,9 +2,9 @@ Template: |-
   <horizontal-layout style:corner-radius="large" layout:width="fill"  style:background="positive-100" layout:vertical-alignment="center">
       <vertical-layout layout:height="fill" layout:width="fill" layout:vertical-alignment="center">
           <horizontal-layout vertical-align="stretch" full-height="true" space="extralarge" layout:horizontal-alignment="space-between" layout:padding="large">
-              <mincard value="5"/>
-              <mincard value="1/2"/>
-              <mincard value="8"/>
+              <mincard value=""/>
+              <mincard value=""/>
+              <mincard value=""/>
           </horizontal-layout>
           <horizontal-layout>
 

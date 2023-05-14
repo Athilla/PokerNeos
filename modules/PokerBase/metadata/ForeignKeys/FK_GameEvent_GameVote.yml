@@ -1,0 +1,5 @@
+ColumnsList:
+- UserId
+- GameItemId
+ReferencedTableName: GameVote
+TableName: GameEvent

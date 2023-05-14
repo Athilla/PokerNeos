@@ -1,0 +1,3 @@
+- Name: gameEvent
+  DotNetDataType: PokerNeos.Application.Abstractions.DataObjects.GameEvent
+  Position: 1

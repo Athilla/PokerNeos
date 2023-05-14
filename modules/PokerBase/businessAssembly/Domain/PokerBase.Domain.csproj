@@ -4,4 +4,7 @@
     <AssemblyName>PokerNeos.PokerBase.Domain</AssemblyName>
     <RootNamespace>PokerNeos.PokerBase.Domain</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\server\PokerNeos.Application.Abstractions\PokerNeos.Application.Abstractions.csproj" />
+  </ItemGroup>
 </Project>

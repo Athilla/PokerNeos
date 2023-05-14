@@ -1,0 +1,8 @@
+- Name: GameId
+  DataType: Integer
+- Name: GameIdMimeType
+  MaxLength: 
+- Name: Nickname
+- Name: UserId
+  DataType: Integer
+  Required: true

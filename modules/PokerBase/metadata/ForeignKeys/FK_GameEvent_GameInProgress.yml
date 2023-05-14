@@ -1,0 +1,4 @@
+ColumnsList:
+- GameId
+ReferencedTableName: GameInProgress
+TableName: GameEvent

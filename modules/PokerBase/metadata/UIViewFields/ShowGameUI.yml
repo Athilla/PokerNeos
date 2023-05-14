@@ -1,5 +1,7 @@
-- Name: Description
-  DefaultValue: '"descriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptionsdescriptions"'
+- Name: CurrentPosition
+  DefaultValue: 'null'
+  DotNetDataType: int?
+- Name: CurrentTitle
   DotNetDataType: string
 - Name: IsFirst
   DefaultValue: true
@@ -16,3 +18,6 @@
   DefaultValue: new System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>()
   Description: ' '
   DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>
+- Name: Unloaded
+  DefaultValue: false
+  DotNetDataType: bool

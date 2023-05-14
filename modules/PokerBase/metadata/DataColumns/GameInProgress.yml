@@ -1,0 +1,8 @@
+- Name: CurrentItem
+  DataType: Integer
+- Name: GameId
+  DataType: Integer
+  Required: true
+- Name: ShowVote
+  DataType: Boolean
+- Name: State

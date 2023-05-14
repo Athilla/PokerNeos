@@ -1,0 +1,10 @@
+- Name: Event
+  DotNetDataType: PokerNeos.Domain.Enums.Event
+- Name: GameId
+  DotNetDataType: int
+- Name: ItemId
+  DotNetDataType: int
+- Name: State
+  DotNetDataType: PokerNeos.Domain.Enums.GameState
+- Name: Vote
+  DotNetDataType: int

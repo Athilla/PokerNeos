@@ -1,10 +1,13 @@
+- Name: Closing
+  Code: '@Fields.Unloaded = true;'
+  Event: Closing
 - Name: GameIdPropertyChanged
   Code: |-
     if(Item.GameId != null)
     {
-        Console.WriteLine("ICI3");
         Fields.ItemList =  await ServerMethods.GetDetailsGame.ExecuteAsync((int)Item.GameId);
     }
+  Enabled: false
   Event: PropertyChanged
   PropertyName: GameId
 - Name: Initialized
@@ -40,5 +43,7 @@
     {
         Console.WriteLine(DatasourceCurrent.GameId);
         Fields.ItemList =  await ServerMethods.GetDetailsGame.ExecuteAsync((int)DatasourceCurrent.GameId);
+        Methods.InitGame();
+        Methods.KeepAliveAsync();
     }
   Event: Retrieved

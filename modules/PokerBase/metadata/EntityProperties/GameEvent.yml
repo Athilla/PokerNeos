@@ -1,0 +1,15 @@
+- Name: Event
+  DataType: Enum
+  EnumTypeName: Event
+- Name: GameId
+  DataType: Integer
+- Name: GameItemId
+  DataType: Integer
+- Name: Id
+  DataType: AutoIncrementedInteger
+  Required: true
+- Name: State
+  DataType: Enum
+  EnumTypeName: GameState
+- Name: UserId
+  DataType: Integer
