@@ -373,3 +373,6 @@ build/
 Docker/db-data
 Docker/pgadmin-data
 NeosRepositoryPath.yml
+# remove from repository for protecting secret :)
+appsettings.Development.json
+pokerneos.auth.yml
