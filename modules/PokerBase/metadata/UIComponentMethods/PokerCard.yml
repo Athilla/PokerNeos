@@ -3,7 +3,7 @@
   Code: |-
     // Console.WriteLine($"vous avez selectionné: {Parameters.Value}");
     // Parameters.Selected = !Parameters.Selected;
-    foreach(PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation card in Parameters.FullList)
+    foreach(PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformationDO card in Parameters.FullList)
     {
         if(card.Valeur == Parameters.Value)
         {

@@ -1,2 +1,3 @@
 PrimaryKeyColumns:
 - UserId
+- GameId

@@ -1,5 +1,5 @@
 - Name: GameInProgress
   ReferencedEntityName: GameInProgress
-  ReferencedEntityNavigationPropertyName: EventList
+  ReferencedEntityNavigationPropertyName: UserList
   ScalarProperties:
   - GameId

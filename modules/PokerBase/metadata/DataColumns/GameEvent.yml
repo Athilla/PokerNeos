@@ -9,3 +9,4 @@
 - Name: State
 - Name: UserId
   DataType: Integer
+- Name: Vote

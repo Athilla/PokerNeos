@@ -13,3 +13,4 @@
   EnumTypeName: GameState
 - Name: UserId
   DataType: Integer
+- Name: Vote

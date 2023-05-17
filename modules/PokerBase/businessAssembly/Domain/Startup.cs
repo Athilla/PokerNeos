@@ -24,6 +24,10 @@ namespace PokerNeos.PokerBase.Domain
         {
             services.AddScoped<IUserInformation, UserInformation>();
             services.AddScoped<IGamesInformation, GamesInformation>();
+            services.AddScoped<IGameInProgress, GameInProgress>();
+            services.AddScoped<IGameEvent, GameEvent>();
+            services.AddScoped<IUserInGame, UserInGame>();
+            services.AddScoped<IGameVote, GameVote>();
         }
 
     }

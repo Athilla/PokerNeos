@@ -1,0 +1,12 @@
+- Name: GameId
+  DotNetDataType: int
+- Name: GroupeName
+  DotNetDataType: string
+- Name: ItemList
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.ItemDO>
+- Name: ItemsCount
+  DotNetDataType: int
+- Name: RomName
+  DotNetDataType: string
+- Name: UserList
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PokerUserDescriptionDO>

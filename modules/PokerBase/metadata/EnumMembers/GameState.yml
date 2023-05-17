@@ -14,3 +14,7 @@
   Caption: Demaré
   PersistedValue: Started
   Position: 2
+- Name: Stopped
+  Caption: Stopé
+  PersistedValue: Stopped
+  Position: 5

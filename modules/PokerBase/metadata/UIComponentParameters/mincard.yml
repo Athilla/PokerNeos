@@ -1,6 +1,6 @@
 - Name: fullList
   BindingMode: TwoWay
-  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformationDO>
 - Name: name
   DefaultValue: '"player name"'
   DotNetDataType: string

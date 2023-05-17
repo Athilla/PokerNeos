@@ -1,0 +1,4 @@
+- Name: GameInProgress
+  DotNetDataType: PokerNeos.Domain.Entities.GameInProgress
+- Name: IsSuccess
+  DotNetDataType: bool

@@ -3,6 +3,9 @@
 - Name: GameItemId
   DataType: Integer
   Required: true
+- Name: Id
+  DataType: AutoIncrementedInteger
+  Required: true
 - Name: UserId
   DataType: Integer
   Required: true

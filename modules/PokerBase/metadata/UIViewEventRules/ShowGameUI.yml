@@ -1,5 +1,15 @@
 - Name: Closing
-  Code: '@Fields.Unloaded = true;'
+  Code: |
+    @Fields.Unloaded = true;
+
+    int? gameId = (int?)ViewContext["GameId"];
+    if(gameId != null)
+    {
+        GameEventDO myevent = new GameEventDO();
+        myevent.GameId = gameId.Value;
+        myevent.Event = Event.HasLeft;
+        await ServerMethods.SendEvent.ExecuteAsync(myevent);
+    }
   Event: Closing
 - Name: GameIdPropertyChanged
   Code: |-
@@ -11,12 +21,12 @@
   Event: PropertyChanged
   PropertyName: GameId
 - Name: Initialized
-  Code: |+
+  Code: |-
     //init the game with all Cards => 0-1/2-1-2-3-5-8-13
-    Fields.PokerCardList = new List<PlayingCardInformation>();
+    Fields.PokerCardList = new List<PlayingCardInformationDO>();
     for(int i=0; i<8; i++)
     {
-        var card = new Abstractions.DataObjects.PlayingCardInformation();
+        var card = new Abstractions.DataObjects.PlayingCardInformationDO();
         card.Valeur = Computeds.ValuesOfCard[i];
         card.Selected = false;
         //Console.WriteLine(card);
@@ -37,6 +47,12 @@
     // Console.WriteLine(Datasource);
     // Console.WriteLine(this);
 
+    GameEventDO myevent = new GameEventDO();
+    myevent.GameId = gameId.Value;
+    myevent.Event = Event.HasJoined;
+    await ServerMethods.SendEvent.ExecuteAsync(myevent);
+
+    Methods.CoreGameAsync();
 - Name: Retrieved
   Code: |-
     if(DatasourceCurrent?.GameId != null)

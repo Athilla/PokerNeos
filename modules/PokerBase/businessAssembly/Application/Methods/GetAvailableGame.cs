@@ -1,13 +1,9 @@
-using GroupeIsa.Neos.Shared.Logging;
-using GroupeIsa.Neos.Shared.MultiTenant;
 using PokerNeos.Application.Abstractions.DataObjects;
 using PokerNeos.Application.Abstractions.Methods;
-using PokerNeos.Domain.Persistence;
 using PokerNeos.PokerBase.Domain.Utils;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Transversals.Business.Domain.Persistence;
 
 namespace PokerNeos.PokerBase.Application.Methods
 {
@@ -31,7 +27,7 @@ namespace PokerNeos.PokerBase.Application.Methods
         }
 
         /// <inheritdoc/>
-        public async Task<List<PokerGameInformation>> ExecuteAsync()
+        public async Task<List<PokerNeos.Application.Abstractions.DataObjects.PokerGameInformationDO>> ExecuteAsync()
         {
             try
             {
@@ -42,7 +38,7 @@ namespace PokerNeos.PokerBase.Application.Methods
             }
             catch (Exception)
             {
-                return new List<PokerGameInformation>();
+                return new List<PokerGameInformationDO>();
             }
 
         }

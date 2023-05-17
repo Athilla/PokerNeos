@@ -19,9 +19,9 @@ namespace PokerNeos.PokerBase.Domain.Utils
             _gameRepository = gameRepository;
         }
 
-        public async Task<List<PokerGameInformation>> GetGamesInformationAsync(List<int> groupes)
+        public async Task<List<PokerGameInformationDO>> GetGamesInformationAsync(List<int> groupes)
         {
-            List<PokerGameInformation> games = new List<PokerGameInformation>();
+            List<PokerGameInformationDO> games = new List<PokerGameInformationDO>();
 
             var gamesFromGroupes = await _gameRepository.GetQuery()
                                                         .Include(e => e.Groupe)
@@ -29,7 +29,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
                                                         .Where(g => groupes.Contains(g.GroupeId) && g.State == GameState.Started).ToListAsync();
             foreach (var game in gamesFromGroupes)
             {
-                var pgi = new PokerGameInformation
+                var pgi = new PokerGameInformationDO
                 {
                     GroupeName = game.Groupe.Name,
                     RomName = game.Name,
@@ -38,7 +38,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
                 };
                 foreach (var item in game.GameItemList)
                 {
-                    pgi.ItemList.Add(new Item
+                    pgi.ItemList.Add(new ItemDO
                     {
                         Description = item.Description ?? string.Empty,
                         Name = item.Name,

@@ -1,2 +1,2 @@
-DotNetReturnType: System.Threading.Tasks.Task<System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.Item>>
+DotNetReturnType: System.Threading.Tasks.Task<System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.ItemDO>>
 ExposeAsApi: true

@@ -13,11 +13,13 @@
   DefaultValue: false
   DotNetDataType: bool
 - Name: ItemList
-  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.Item>
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.ItemDO>
 - Name: PokerCardList
-  DefaultValue: new System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>()
+  DefaultValue: new System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformationDO>()
   Description: ' '
-  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformation>
+  DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformationDO>
+- Name: ShowVote
+  DotNetDataType: bool
 - Name: Unloaded
   DefaultValue: false
   DotNetDataType: bool

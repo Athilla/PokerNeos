@@ -1,3 +1,4 @@
+- Name: DefaultUserName
 - Name: GameId
   DataType: Integer
 - Name: Nickname

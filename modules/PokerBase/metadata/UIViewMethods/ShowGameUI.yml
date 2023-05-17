@@ -18,10 +18,58 @@
     @Fields.CurrentTitle = @Fields.ItemList[Fields.CurrentPosition.Value].Name;
 - Name: KeepAliveAsync
   Asynchronous: true
-  Code: |+
+  Code: |
     //Console.WriteLine("KeepAlive");
-    await ServerMethods.GetDetailsGame.ExecuteAsync((int)DatasourceCurrent.GameId);
+    PokerNeos.Application.Abstractions.DataObjects.GameDataDO data = await ServerMethods.GetLastGameInformation.ExecuteAsync((int)DatasourceCurrent.GameId);
+    if(data.IsSuccess)
+    {
+        ///////////////////////////////////////
+        ///
+        ///ManageCurrentPosition
+        ///
 
+        if(data.GameInProgress.CurrentItem.HasValue)
+        {
+            for(int i=0; i<@Fields.ItemList.Count; i++)
+            {
+                if(Fields.ItemList[i].Id == data.GameInProgress.CurrentItem.Value)
+                {
+                    if(@Fields.CurrentPosition == null)
+                    {
+                        @Fields.CurrentPosition = 0;
+                    }
+                    @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = false;
+                    Fields.CurrentPosition = i;
+                    @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
+                    break;
+                }
+            }
+        }
+
+        ///////////////////////////////////////
+        ///
+        ///IsStart
+        ///
+        @Fields.IsStart = data.GameInProgress.State.HasValue ? data.GameInProgress.State.Value == GameState.Started : false;
+
+        ///////////////////////////////////////
+        ///
+        ///ShowVote
+        ///
+        @Fields.ShowVote = data.GameInProgress.ShowVote.HasValue ? data.GameInProgress.ShowVote.Value : false;
+
+
+        ///////////////////////////////////////
+        ///
+        ///Manage User and Vote
+        ///
+
+        ///////////////////////////////////////
+        ///
+        ///CurrentTitle, IsLast, IsFirst
+        ///
+        Methods.UpdateGame();
+    }
 - Name: UpdateGame
   Code: |+
     @Fields.CurrentTitle = @Fields.ItemList[Fields.CurrentPosition.Value].Name;

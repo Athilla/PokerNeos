@@ -6,6 +6,6 @@ namespace PokerNeos.PokerBase.Domain.Utils
 {
     public interface IGamesInformation
     {
-        Task<List<PokerGameInformation>> GetGamesInformationAsync(List<int> groupes);
+        Task<List<PokerGameInformationDO>> GetGamesInformationAsync(List<int> groupes);
     }
 }

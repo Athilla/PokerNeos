@@ -1,4 +1,3 @@
 KeyProperties:
-- UserId
-- GameItemId
+- Id
 TableName: GameVote

@@ -14,9 +14,9 @@
   Caption: HasStarted
   PersistedValue: HasStarted
   Position: 4
-- Name: HasStoped
-  Caption: HasStoped
-  PersistedValue: HasStoped
+- Name: HasStopped
+  Caption: HasStopped
+  PersistedValue: HasStopped
   Position: 5
 - Name: HasVoted
   Caption: HasVoted
