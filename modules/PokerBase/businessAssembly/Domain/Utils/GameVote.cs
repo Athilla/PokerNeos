@@ -17,12 +17,21 @@ namespace PokerNeos.PokerBase.Domain.Utils
 
         public async Task AddGameVoteAsync(int gameId, int userId, int itemId, string vote)
         {
-            var gv = _gameVoteRepository.New();
-            gv.GameId = gameId;
-            gv.UserId = userId;
-            gv.Vote = vote;
-            gv.GameItemId = itemId;
-            _gameVoteRepository.Add(gv);
+            var gv = await _gameVoteRepository.FindAsync(gameId, itemId, userId);
+            if (gv != null)
+            {
+                gv.Vote = vote;
+
+            }
+            else
+            {
+                var nv = _gameVoteRepository.New();
+                nv.GameId = gameId;
+                nv.UserId = userId;
+                nv.Vote = vote;
+                nv.GameItemId = itemId;
+                _gameVoteRepository.Add(nv);
+            }
             await _unitOfWork.SaveAsync();
         }
     }

@@ -1,4 +1,0 @@
-- Name: UserAccountId
-  Documentation: L'Id de compte d'utilisateur qui est attribué au rôle d'utilisateur
-- Name: UserRoleId
-  Documentation: L'Id du rôle utilisateur qui est attribué au compte d'utilisateur

@@ -1,3 +1,6 @@
+- Name: GameState
+  DatagridPosition: 4
+  DatagridVisible: true
 - Name: GroupeId
   Caption: Groupe
   DatagridPosition: 2
@@ -8,7 +11,4 @@
   Sortable: false
 - Name: Name
   DatagridPosition: 3
-  DatagridVisible: true
-- Name: GameState
-  DatagridPosition: 4
   DatagridVisible: true

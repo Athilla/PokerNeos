@@ -1,9 +1,0 @@
-- Name: Email
-  Documentation: L'email est utilisé pour l'authentification au serveur Neos
-- Name: LastConnection
-  Documentation: Date depuis laquelle l'utilisateur s'est connecté
-- Name: Roles
-  Caption: Rôles
-  Documentation: collection de UserAccountUserRole liés à l'utilisateur et un rôle utilisateur
-- Name: Synchronized
-  Documentation: Synchronisé avec le module d'authentification

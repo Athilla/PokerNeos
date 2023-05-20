@@ -14,3 +14,5 @@
           card.Selected = false;
         }
     }
+
+    Parameters.SelectedValue = Parameters.Value;

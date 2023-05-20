@@ -18,57 +18,60 @@
     @Fields.CurrentTitle = @Fields.ItemList[Fields.CurrentPosition.Value].Name;
 - Name: KeepAliveAsync
   Asynchronous: true
-  Code: |
-    //Console.WriteLine("KeepAlive");
-    PokerNeos.Application.Abstractions.DataObjects.GameDataDO data = await ServerMethods.GetLastGameInformation.ExecuteAsync((int)DatasourceCurrent.GameId);
-    if(data.IsSuccess)
+  Code: |-
+    //Console.WriteLine(DatasourceCurrent);
+    if(DatasourceCurrent != null)
     {
-        ///////////////////////////////////////
-        ///
-        ///ManageCurrentPosition
-        ///
-
-        if(data.GameInProgress.CurrentItem.HasValue)
+        PokerNeos.Application.Abstractions.DataObjects.GameDataDO data = await ServerMethods.GetLastGameInformation.ExecuteAsync((int)DatasourceCurrent.GameId);
+        if(data.IsSuccess)
         {
-            for(int i=0; i<@Fields.ItemList.Count; i++)
+            ///////////////////////////////////////b
+            ///
+            ///ManageCurrentPosition
+            ///
+
+            if(data.GameInProgress.CurrentItem.HasValue)
             {
-                if(Fields.ItemList[i].Id == data.GameInProgress.CurrentItem.Value)
+                for(int i=0; i<@Fields.ItemList.Count; i++)
                 {
-                    if(@Fields.CurrentPosition == null)
+                    if(Fields.ItemList[i].Id == data.GameInProgress.CurrentItem.Value)
                     {
-                        @Fields.CurrentPosition = 0;
+                        if(@Fields.CurrentPosition == null)
+                        {
+                            @Fields.CurrentPosition = 0;
+                        }
+                        @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = false;
+                        Fields.CurrentPosition = i;
+                        @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
+                        break;
                     }
-                    @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = false;
-                    Fields.CurrentPosition = i;
-                    @Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
-                    break;
                 }
             }
+
+            ///////////////////////////////////////
+            ///
+            ///IsStart
+            ///
+            @Fields.IsStart = data.GameInProgress.State.HasValue ? data.GameInProgress.State.Value == GameState.Started : false;
+
+            ///////////////////////////////////////
+            ///
+            ///ShowVote
+            ///
+            @Fields.ShowVote = data.GameInProgress.ShowVote.HasValue ? data.GameInProgress.ShowVote.Value : false;
+
+
+            ///////////////////////////////////////
+            ///
+            ///Manage User and Vote
+            ///
+
+            ///////////////////////////////////////
+            ///
+            ///CurrentTitle, IsLast, IsFirst
+            ///
+            Methods.UpdateGame();
         }
-
-        ///////////////////////////////////////
-        ///
-        ///IsStart
-        ///
-        @Fields.IsStart = data.GameInProgress.State.HasValue ? data.GameInProgress.State.Value == GameState.Started : false;
-
-        ///////////////////////////////////////
-        ///
-        ///ShowVote
-        ///
-        @Fields.ShowVote = data.GameInProgress.ShowVote.HasValue ? data.GameInProgress.ShowVote.Value : false;
-
-
-        ///////////////////////////////////////
-        ///
-        ///Manage User and Vote
-        ///
-
-        ///////////////////////////////////////
-        ///
-        ///CurrentTitle, IsLast, IsFirst
-        ///
-        Methods.UpdateGame();
     }
 - Name: UpdateGame
   Code: |+

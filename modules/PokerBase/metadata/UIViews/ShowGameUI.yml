@@ -25,7 +25,7 @@ Template: |-
                   <table-cards />
               </horizontal-layout>
               <horizontal-layout>
-                  <poker-cards card-list="@Fields.PokerCardList" />
+                  <poker-cards card-list="@Fields.PokerCardList" selected-value="@Computeds.SelectedCard" />
               </horizontal-layout>
           </vertical-layout>
           <text layout:width="1" style:border-color="border"></text>

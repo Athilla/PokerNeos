@@ -1,5 +1,6 @@
 - Name: GameId
   DataType: Integer
+  Required: true
 - Name: GameItemId
   DataType: Integer
   Required: true

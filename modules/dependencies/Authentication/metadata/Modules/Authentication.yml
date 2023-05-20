@@ -1,3 +1,4 @@
 Caption: Authentication
-MetadataFormatVersion: 18
+MetadataFormatVersion: 19
+ReadOnly: true
 RootNamespace: Transversals.Business

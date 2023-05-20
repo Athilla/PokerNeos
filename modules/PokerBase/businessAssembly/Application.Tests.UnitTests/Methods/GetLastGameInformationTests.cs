@@ -35,7 +35,7 @@ namespace PokerNeos.PokerBase.Application.Tests.UnitTests.Methods
             IGetLastGameInformation method = Mocker.CreateInstance<GetLastGameInformation>();
 
             // Act
-            System.Action action = () => method.ExecuteAsync();
+            System.Action action = () => method.ExecuteAsync(1);
 
             // Assert
             action.Should().NotThrow();

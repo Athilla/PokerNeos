@@ -1,6 +1,0 @@
-- Name: IsNodeSelected
-  Documentation: Vrai si un noeud du tree-view est sélectionné, faux sinon
-- Name: SelectedNode
-  Documentation: Le nœud sélectionné dans le tree-view
-- Name: TreeViewSource
-  Documentation: Utilisé pour stocker la source de du tree-view

@@ -11,6 +11,9 @@
 - Name: selectedTextColor
   DefaultValue: '"black"'
   DotNetDataType: string
+- Name: selectedValue
+  BindingMode: TwoWay
+  DotNetDataType: string
 - Name: value
   DefaultValue: '"0"'
   DotNetDataType: string

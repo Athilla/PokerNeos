@@ -1,3 +1,13 @@
+- Name: SelectedCard
+  DotNetDataType: string
+  Getter: return "0";
+  Setter: |-
+    GameEventDO myevent = new GameEventDO();
+    myevent.GameId = DatasourceCurrent.GameId.Value;
+    myevent.Event = Event.HasVoted;
+    myevent.ItemId = Fields.ItemList[Fields.CurrentPosition.Value].Id;
+    myevent.Vote = value;
+    ServerMethods.SendEvent.ExecuteAsync(myevent);
 - Name: ValuesOfCard
   DotNetDataType: string[]
   Getter: return new string []{"0","1/2", "1", "2", "3", "5", "8", "13"};

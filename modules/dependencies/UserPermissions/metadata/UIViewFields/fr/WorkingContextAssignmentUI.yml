@@ -1,4 +1,0 @@
-- Name: UserAccount
-  Documentation: Compte utilisateur de la relation rôle-compte utilisateur sur laquelle nous attribuons des contextes de travail
-- Name: UserRole
-  Documentation: Rôle d'utilisateur de la relation rôle-compte utilisateur sur laquelle nous attribuons des contextes de travail
