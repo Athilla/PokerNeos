@@ -1,4 +1,3 @@
-BaseEntityName: BaseStateEntity
 Description: User account
 Documentation: Entity to manage User Accounts of the app
 KeyProperties:

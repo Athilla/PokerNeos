@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-<PropertyGroup>
-    <AssemblyName>Transversals.Business.Authentication.Domain </AssemblyName>
-    <rootNamespace>Transversals.Business.Authentication.Domain</rootNamespace>
-    </PropertyGroup>
-  <Import Project="../build/NeosReferences.Domain.gen.props" />
-</Project>

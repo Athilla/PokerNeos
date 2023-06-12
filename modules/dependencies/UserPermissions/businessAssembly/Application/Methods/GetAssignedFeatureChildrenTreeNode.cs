@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Transversals.Business.Application.Abstractions.DataObjects;
 using Transversals.Business.Application.Abstractions.Methods;
+using Transversals.Business.Domain.Entities;
+using Transversals.Business.Domain.Enums;
 using Transversals.Business.Domain.Persistence;
 
 namespace Transversals.Business.UserPermissions.Application.Methods
@@ -65,19 +67,20 @@ namespace Transversals.Business.UserPermissions.Application.Methods
 
             TreeNodeFeature? treeNodeFeature = null;
 
-            foreach (IGrouping<string, Domain.Entities.Permission> group in permissions)
+            foreach (IGrouping<string, Permission> group in permissions)
             {
                 if (treeNodeFeature == null)
                 {
                     treeNodeFeature = new()
                     {
                         Name = node.Name,
+                        Caption = node.Caption,
                         FeatureHasNoPermission = false,
                         Id = group.First().Id,
                         Code = node.Name,
                         ParentFeatureId = parentId,
                         Children = new List<TreeNodeFeature>() { },
-                        HasCRUDAccess = group.First().FunctionType == Domain.Enums.FunctionType.CRUD,
+                        HasCRUDAccess = group.First().FunctionType == FunctionType.CRUD,
                         HasAccess = group.First().HasAccess,
                         HasReadOnlyAccess = group.First().HasReadOnlyAccess,
                         HasCreationAccess = group.First().HasCreationAccess,
@@ -108,7 +111,7 @@ namespace Transversals.Business.UserPermissions.Application.Methods
         /// </summary>
         /// <param name="group"></param>
         /// <param name="n"></param>
-        private static void AssignPermissions(IGrouping<string, Domain.Entities.Permission> group, TreeNodeFeature node)
+        private static void AssignPermissions(IGrouping<string, Permission> group, TreeNodeFeature node)
         {
             //merge of permissions granted for the function
             for (int i = 1; i < group.Count(); i++)

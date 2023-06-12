@@ -5,7 +5,6 @@ using System.Diagnostics.CodeAnalysis;
 using Transversals.Business.Core.Domain.Configuration;
 using Transversals.Business.Core.Domain.Configuration.Counters;
 using Transversals.Business.Core.Domain.Configuration.Options;
-using Transversals.Business.Core.Domain.MemoryCache;
 
 namespace Transversals.Business.Core.Domain.Extensions
 {
@@ -14,11 +13,9 @@ namespace Transversals.Business.Core.Domain.Extensions
     {
         public static IServiceCollection AddCoreConfiguration(this IServiceCollection services)
         {
-            services.AddMemoryCache();
             services.TryAddScoped<ICounterService, CounterService>();
             services.TryAddScoped<IOptionService, OptionService>();
             services.TryAddScoped<ICoreConfiguration, CoreConfiguration>();
-            services.TryAddScoped<ICoreMemoryCache, CoreMemoryCache>();
             return services;
         }
 

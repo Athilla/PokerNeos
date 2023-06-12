@@ -1,0 +1,5 @@
+- Name: ContainerId
+  DefaultValue: '"UserAndRightSettingsContainerId"'
+  DotNetDataType: string
+  OverridenValues:
+  - DefaultValue

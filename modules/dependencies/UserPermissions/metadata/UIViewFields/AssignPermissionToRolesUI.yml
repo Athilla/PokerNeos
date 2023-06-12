@@ -6,10 +6,6 @@
   DefaultValue: true
   Description: Is Role New Or Not Selected
   DotNetDataType: bool
-- Name: PermissionTitle
-  DefaultValue: Resources.UserPermissions.PermissionTitle
-  Description: Title of the permission
-  DotNetDataType: string
 - Name: PreviousRoleId
   DefaultValue: -1
   Description: Previous Role Id

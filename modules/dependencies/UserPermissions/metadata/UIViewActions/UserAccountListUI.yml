@@ -4,8 +4,8 @@
     if(this.HasChanges)
     {
         ShowMessageAsync(MessageType.Danger,
-                Resources.Authentication.SaveBeforeUseTitle,
-                Resources.Authentication.SaveBeforeUse);
+                Resources.UserPermissions.SaveBeforeUseTitle,
+                Resources.UserPermissions.SaveBeforeUse);
     }
     else
     {
@@ -36,7 +36,7 @@
   Caption: Send mail
   Code: SystemEnvironment.Window.OpenUrl("mailto:" + Item.Email);
   DisplayMode: Icon
-  IconName: SendEmail
+  IconName: UserPermissionsSendEmail
   Location: Hidden
   Style: GhostPrimary
   Visible: =return Item.Email != null;
@@ -44,7 +44,40 @@
   Caption: Send SMS
   Code: SystemEnvironment.Window.OpenUrl("tel:" + Item.PhoneNumber);
   DisplayMode: Icon
-  IconName: SendSMS
+  IconName: UserPermissionsSendSMS
   Location: Hidden
   Style: GhostPrimary
   Visible: =return Item.PhoneNumber != null;
+- Name: SynchronizeUsers
+  Caption: Synchronize
+  Code: |-
+    if(SelectedItems.Any()) {
+        List<UserAuthentication> users = new List<UserAuthentication>();
+
+        foreach(var item in SelectedItems) {
+            UserAuthentication userAuthentication = new UserAuthentication();
+            userAuthentication.Email = item.Email;
+            userAuthentication.Name = item.Login;
+            userAuthentication.FirstName = item.FirstName;
+            userAuthentication.LastName = item.LastName;
+
+            users.Add(userAuthentication);
+        }
+
+        UserPermissionsMethodResult result = await ServerMethods.SaveUsersToAuthenticationServer.ExecuteAsync(users.ToArray());
+
+        if(result.Message != null) {
+            await ShowMessageAsync(MessageType.Danger, Resources.UserPermissions.SaveUsersToAuthenticationServerMessageTitle, result.Message);
+        }
+        else
+        {
+            await ShowMessageAsync(MessageType.Positive, Resources.UserPermissions.SaveUsersToAuthenticationServerMessageTitle, Resources.UserPermissions.SaveUsersToAuthenticationServerSuccessed);
+        }
+    }
+  Description: Synchronize selected users with authentication server.
+  Enabled: =return SelectedItems.Any();
+  IconName: sync_black
+  Location: ActionsMenu
+  ParentActionName: More
+  Position: 1
+  Style: Ghost

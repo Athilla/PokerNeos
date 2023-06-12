@@ -28,8 +28,6 @@ namespace Transversals.Business.Core.Domain.Extensions
                     await optionService.CreateNewOptionAsync(optionName, value);
                 }
             };
-
-            BackgroundTaskQueue.Instance.QueueBackgroundWorkItem(function);
             BackgroundTaskList.Instance.Add(function);
 
             return builder;
@@ -54,11 +52,8 @@ namespace Transversals.Business.Core.Domain.Extensions
                     await counterService.CreateNewCounterAsync(counterName, prefix, suffix, initialValue, maxValue);
                 }
             };
-
-            BackgroundTaskQueue.Instance.QueueBackgroundWorkItem(function);
             BackgroundTaskList.Instance.Add(function);
             return builder;
-
         }
     }
 }

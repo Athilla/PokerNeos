@@ -6,6 +6,14 @@
   Caption: Default currency
   PersistedValue: DefaultCurrency
   Position: 1
+- Name: DefaultDepartment
+  Caption: Default department
+  PersistedValue: DefaultDepartment
+  Position: 7
+- Name: DefaultVatPosition
+  Caption: VAT position
+  PersistedValue: DefaultVatPosition
+  Position: 6
 - Name: MultiCompanies
   Caption: Multi companies
   PersistedValue: MultiCompanies
@@ -14,6 +22,10 @@
   Caption: Multi currencies
   PersistedValue: MultiCurrencies
   Position: 2
+- Name: MultiDepartment
+  Caption: Multi department
+  PersistedValue: MultiDepartment
+  Position: 6
 - Name: MultiSites
   Caption: Multi sites
   PersistedValue: MultiSites

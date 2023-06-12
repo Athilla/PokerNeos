@@ -14,7 +14,6 @@
   Type: Reference
 - Name: WorkingContexts
   Caption: Working Contexts
-  Documentation: List of working contexts on which the link between user account and user role will apply
   Filterable: false
   RelatedEntityViewName: UserAccountUserRoleWorkingContextView
   Source: WorkingContexts

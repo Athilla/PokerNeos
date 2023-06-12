@@ -1,47 +1,32 @@
-ï»¿using GroupeIsa.Neos.Domain.Rules.EventRules;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using System.Threading.Tasks;
-using Transversals.Business.Core.Domain.MemoryCache;
+using GroupeIsa.Neos.Domain.Rules.EventRules;
 using Transversals.Business.Domain.Entities;
-using Transversals.Business.Domain.Enums;
 
 namespace Transversals.Business.UserPermissions.Domain.UserRoleEventRules
 {
+    /// <summary>
+    /// Represents Saved event rule.
+    /// </summary>
     public class Saved : ISavedRule<UserRole>
     {
-        private readonly ICoreMemoryCache _coreMemoryCache;
-
-        public Saved(ICoreMemoryCache coreMemoryCache)
-        {
-            _coreMemoryCache = coreMemoryCache;
-        }
-
-        public async Task OnSavedAsync(ISavedRuleArguments<UserRole> args)
-        {
-            foreach (var item in args.CreatedAndModifiedItems)
-            {
-                RemoveCache(item.Accounts.Select(a => a.UserAccount.Email));
-            }
-
-            foreach (var deletedItem in args.DeletedItems)
-            {
-                RemoveCache(deletedItem.Accounts.Select(a => a.UserAccount.Email));
-            }
-
-            await Task.CompletedTask;
-        }
-
         /// <summary>
-        /// Remove memory cache for given key
+        /// Initializes a new instance of the <see cref="Saved"/> class.
         /// </summary>
-        /// <param name="userMail"></param>
-        private void RemoveCache(IEnumerable<string> userEmails)
+        public Saved()
         {
-            foreach (string email in userEmails)
+        }
+
+        /// <inheritdoc/>
+        public Task OnSavedAsync(ISavedRuleArguments<UserRole> args)
+        {
+            // L'action 'invalidateCachePermissionsAction' est définie dans la règle saving.
+            if (args.Context.TryGet(Saving.ContextVariable_InvalidateCachePermissions, out Action? invalidateCachePermissionsAction))
             {
-                _coreMemoryCache.Remove(MemoryCacheCategories.Permissions.ToString(), email);
+                invalidateCachePermissionsAction();
             }
+
+            return Task.CompletedTask;
         }
     }
 }

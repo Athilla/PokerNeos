@@ -1,9 +1,10 @@
-using GroupeIsa.Neos.Domain.Rules.EventRules;
 using System.Threading.Tasks;
-using Transversals.Business.Core.Domain.MemoryCache;
+using GroupeIsa.Neos.Domain.Rules.EventRules;
+using GroupeIsa.Neos.Shared.Logging;
 using Transversals.Business.Domain.Entities;
 using Transversals.Business.Domain.Enums;
 using Transversals.Business.Domain.Persistence;
+using Transversals.Business.UserPermissions.Domain.MemoryCache;
 
 namespace Transversals.Business.UserPermissions.Domain.UserAccountUserRoleEventRules
 {
@@ -18,7 +19,8 @@ namespace Transversals.Business.UserPermissions.Domain.UserAccountUserRoleEventR
         /// <summary>
         /// Initializes a new instance of the <see cref="Saved"/> class.
         /// </summary>
-        /// <param name="logger">Logger.</param>
+        /// <param name="coreMemoryCache">Core memoryt cache.</param>
+        /// <param name="userAccountRepository">User account repository.</param>
         public Saved(ICoreMemoryCache coreMemoryCache,
             IUserAccountRepository userAccountRepository)
         {
@@ -32,7 +34,7 @@ namespace Transversals.Business.UserPermissions.Domain.UserAccountUserRoleEventR
             foreach (UserAccountUserRole item in args.CreatedAndModifiedItems)
             {
                 UserAccount? userAccount = await _userAccountRepository.FindAsync(item.UserAccountId);
-                if(userAccount != null)
+                if (userAccount != null)
                 {
                     RemoveCache(userAccount.Email);
                 }

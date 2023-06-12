@@ -24,7 +24,7 @@
   Event: ItemAdding
 - Name: ItemRemoving
   Code: |
-    if(DatasourceCurrent.Accounts.Any())
+    if (Item.Accounts.Any())
     {
         var choice = await ShowMessageAsync(MessageType.Warning, Resources.UserPermissions.DeleteWithMessageTitle, Resources.UserPermissions.DeleteWithMessageWarningMessage, new MessageButton(MessageButtonType.Yes,false), new MessageButton(MessageButtonType.No,false));
         if(choice.ButtonType != MessageButtonType.Yes)
@@ -48,13 +48,6 @@
                 permissionViewModel.Methods.ExpandAll(null);
                 Fields.PreviousRoleId = DatasourceCurrent.Id;
             }
-        }
-        if(DatasourceCurrent.Name?.GetCurrentValue() != null)
-        {
-            Fields.PermissionTitle = Resources.UserPermissions.PermissionTitle + $" : {DatasourceCurrent.Name?.GetCurrentValue()}";
-        }
-        else{
-            Fields.PermissionTitle = Resources.UserPermissions.PermissionTitle + $" : {DatasourceCurrent.Name.DefaultTranslation}";
         }
     }
   Event: PositionChanged

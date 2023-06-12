@@ -1,15 +1,16 @@
-﻿using GroupeIsa.Neos.Application.Permissions;
-using GroupeIsa.Neos.Shared.Linq;
-using GroupeIsa.Neos.Shared.MultiTenant;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GroupeIsa.Neos.Application.Permissions;
+using GroupeIsa.Neos.Shared.Linq;
+using GroupeIsa.Neos.Shared.Logging;
+using GroupeIsa.Neos.Shared.MultiTenant;
 using Transversals.Business.Application.Abstractions.DataObjects;
 using Transversals.Business.Application.Abstractions.Methods;
-using Transversals.Business.Core.Domain.MemoryCache;
 using Transversals.Business.Domain.Entities;
 using Transversals.Business.Domain.Enums;
 using Transversals.Business.Domain.Persistence;
+using Transversals.Business.UserPermissions.Domain.MemoryCache;
 
 namespace Transversals.Business.UserPermissions.Application.PermissionNeos
 {
@@ -21,13 +22,15 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
         private readonly IUserAccountUserRoleRepository _userAccountRoleRepository;
         private readonly IPermissionRepository _permissionRepository;
         private readonly ICoreMemoryCache _coreMemoryCache;
+        private readonly INeosLogger<PermissionLoader> _logger;
 
         public PermissionLoader(IUserInfoAccessor user,
             IUserAccountRepository userAccountRepository,
             IUserAccountUserRoleRepository userAccountRoleRepository,
             IPermissionRepository permissionRepository,
             ICoreMemoryCache coreMemoryCache,
-            IGetFunctionTree getFunctionTree)
+            IGetFunctionTree getFunctionTree,
+            INeosLogger<PermissionLoader> logger)
         {
             _user = user.User;
             _userAccountRepository = userAccountRepository;
@@ -35,6 +38,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
             _permissionRepository = permissionRepository;
             _coreMemoryCache = coreMemoryCache;
             _getFunctionTree = getFunctionTree;
+            _logger = logger;
         }
         public PermissionDefaultBehavior DefaultBehavior
         {
@@ -49,9 +53,9 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
         {
             string userEmail = _user?.Email?.ToLower() ?? string.Empty;
             var permissionsInCache = await _coreMemoryCache.GetOrCreateAsync(MemoryCacheCategories.Permissions.ToString(), userEmail, () => GetPermissionsAsync(userEmail));
+            _logger.LogInformation($"PermissionLoader FunctionName : {string.Join(',', functionNames)}");
 #if DEBUG
-            System.Console.WriteLine($"PermissionLoader FunctionName : {string.Join(',', functionNames)}");
-            System.Console.WriteLine($"Reading from cache :");
+            _logger.LogInformation($"Reading from cache :");
             LogPermissions(permissionsInCache);
 #endif
             List<GroupeIsa.Neos.Application.Permissions.Permission> permissions = new();
@@ -61,7 +65,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                     permissions.Add(permissionsInCache.First(x => x.FunctionName == functionName));
             }
 #if DEBUG
-            System.Console.WriteLine($"retourné :");
+            _logger.LogInformation($"return : :");
             LogPermissions(permissions);
 #endif
             return permissions;
@@ -77,7 +81,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                                             .Include(e => e.UserRole)
                                             .Where(e => e.UserAccountId == userAccount.Id)
                                             .Select(e => e.UserRole.Id).ToList();
-                List<Domain.Entities.Permission> permissionsRoleFunction = _permissionRepository.GetQuery().Where(e => userRolesIds.Contains(e.UserRoleId)).ToList();
+                List<Business.Domain.Entities.Permission> permissionsRoleFunction = _permissionRepository.GetQuery().Where(e => userRolesIds.Contains(e.UserRoleId)).ToList();
                 // On ajoute les permissions pour chaque fonction de l'arbre
                 foreach (var node in functionTree)
                 {
@@ -87,19 +91,17 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
             return await Task.FromResult(permissions);
         }
 #if DEBUG
-        private static void LogPermissions(IEnumerable<GroupeIsa.Neos.Application.Permissions.Permission> permissions)
+        private void LogPermissions(IEnumerable<GroupeIsa.Neos.Application.Permissions.Permission> permissions)
         {
             foreach (var perm in permissions)
             {
-                if (perm is AllowDenyPermission)
+                if (perm is AllowDenyPermission adp)
                 {
-                    var adp = perm as AllowDenyPermission;
-                    System.Console.WriteLine($" {adp.FunctionName} => {adp.Allow}");
+                    _logger.LogInformation($" {adp.FunctionName} => {adp.Allow}");
                 }
-                else if (perm is CrudPermission)
+                else if (perm is CrudPermission crud)
                 {
-                    var crud = perm as CrudPermission;
-                    System.Console.WriteLine($" {crud.FunctionName} => {crud.Create}-{crud.Read}-{crud.Update}-{crud.Delete}");
+                    _logger.LogInformation($" {crud.FunctionName} => {crud.Create}-{crud.Read}-{crud.Update}-{crud.Delete}");
                 }
             }
         }
@@ -116,10 +118,10 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
         private void GetNodePermission(FunctionTreeNode node,
             FunctionTreeNode? parentNode,
             List<GroupeIsa.Neos.Application.Permissions.Permission> permissions,
-            List<Domain.Entities.Permission> userPermissions,
+            List<Business.Domain.Entities.Permission> userPermissions,
             List<int> userRolesIds)
         {
-            Domain.Entities.Permission[] functionPermissions = userPermissions.Where(e => e.FunctionName == node.Name).ToArray();
+            Business.Domain.Entities.Permission[] functionPermissions = userPermissions.Where(e => e.FunctionName == node.Name).ToArray();
             //Récupérer les permissions des fonctions parentes pour les rôles qui n'ont pas de permission sur la fonction
             foreach (int userRoleId in userRolesIds)
             {
@@ -127,7 +129,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                 {
                     if (parentNode != null)
                     {
-                        Domain.Entities.Permission? parentPermission = userPermissions.FirstOrDefault(e => e.FunctionName == parentNode.Name && e.UserRoleId == userRoleId);
+                        Business.Domain.Entities.Permission? parentPermission = userPermissions.FirstOrDefault(e => e.FunctionName == parentNode.Name && e.UserRoleId == userRoleId);
                         userPermissions.Add(GetPermissionFromParentFunctionRole(node, parentPermission, userRoleId));
                     }
                     else
@@ -152,8 +154,8 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
         /// <param name="parentPermission"></param>
         /// <param name="userRoleId"></param>
         /// <returns>La permission héritée par le noeud</returns>
-        private static Domain.Entities.Permission GetPermissionFromParentFunctionRole(FunctionTreeNode node,
-            Domain.Entities.Permission? parentPermission,
+        private static Business.Domain.Entities.Permission GetPermissionFromParentFunctionRole(FunctionTreeNode node,
+            Business.Domain.Entities.Permission? parentPermission,
             int userRoleId
             )
         {
@@ -163,7 +165,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                 {
                     if (parentPermission.FunctionType == FunctionType.AllowDeny)
                     {
-                        return new Domain.Entities.Permission()
+                        return new Business.Domain.Entities.Permission()
                         {
                             FunctionType = node.FunctionType,
                             FunctionName = node.Name,
@@ -177,7 +179,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                     }
                     else
                     {
-                        return new Domain.Entities.Permission()
+                        return new Business.Domain.Entities.Permission()
                         {
                             FunctionType = node.FunctionType,
                             FunctionName = node.Name,
@@ -194,7 +196,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                 {
                     if (parentPermission.FunctionType == FunctionType.AllowDeny)
                     {
-                        return new Domain.Entities.Permission()
+                        return new Business.Domain.Entities.Permission()
                         {
                             FunctionType = node.FunctionType,
                             FunctionName = node.Name,
@@ -208,7 +210,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                     }
                     else
                     {
-                        return new Domain.Entities.Permission()
+                        return new Business.Domain.Entities.Permission()
                         {
                             FunctionType = node.FunctionType,
                             FunctionName = node.Name,
@@ -222,7 +224,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
                     }
                 }
             }
-            return new Domain.Entities.Permission()
+            return new Business.Domain.Entities.Permission()
             {
                 FunctionType = node.FunctionType,
                 FunctionName = node.Name,
@@ -243,7 +245,7 @@ namespace Transversals.Business.UserPermissions.Application.PermissionNeos
         /// <param name="functionPermissions"></param>
         /// <returns>La permission Neos</returns>
         private static GroupeIsa.Neos.Application.Permissions.Permission GetNeosPermissionForFunction(FunctionTreeNode node,
-            Domain.Entities.Permission[] functionPermissions
+            Business.Domain.Entities.Permission[] functionPermissions
             )
         {
             if (node.FunctionType == FunctionType.CRUD)

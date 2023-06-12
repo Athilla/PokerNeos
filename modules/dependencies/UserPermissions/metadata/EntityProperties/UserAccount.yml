@@ -10,9 +10,17 @@
   Caption: First name
   MaxLength: 50
   Required: true
+- Name: FromDate
+  Caption: From date
+  DataType: Date
 - Name: Id
   Caption: Id
   DataType: AutoIncrementedInteger
+  Required: true
+- Name: IsActive
+  Caption: Active
+  DataType: Boolean
+  DefaultValue: true
   Required: true
 - Name: LastConnection
   Caption: Last connection
@@ -35,3 +43,6 @@
   DefaultValue: false
   Documentation: Synchronized with authentication module
   Required: true
+- Name: ToDate
+  Caption: Thru date
+  DataType: Date

@@ -89,12 +89,19 @@
   Caption: Roles
   DatagridPosition: 9
   DatagridVisible: true
+  DatagridWidth: 400
   DataType: StringArray
   Documentation: Property that correspond to the list of the user's roles name
   Filterable: false
   FormVisible: false
   Getter: |-
-    =List<string> roleNames = new List<string>();
+    =// In this list we have all the roles
+    List<string> roleNames = new List<string>();
+
+    // In this list we have the first two roles
+    List<string> firstTwoNames = new List<string>();
+    int RolesCount = Item.Roles.Count();
+
     foreach(UserAccountUserRoleEntityUI role in Item.Roles)
     {
         if(role.WorkingContexts.Any(e => e.UserAccountUserRole.UserAccount.Id == Item.Id))
@@ -105,7 +112,14 @@
             roleNames.Add(role.UserRole.Name.GetCurrentValue() ?? role.UserRole.Name.DefaultTranslation);
         }
     }
-    return roleNames;
+    roleNames = roleNames.OrderBy(q => q).ToList();
+    firstTwoNames = roleNames.Take(2).ToList();
+
+    if(RolesCount > 2)
+    {
+        firstTwoNames.Add("+" + (RolesCount - 2 ).ToString());
+    }
+    return firstTwoNames;
   Multiline: false
   ReadOnly: true
   Required: false

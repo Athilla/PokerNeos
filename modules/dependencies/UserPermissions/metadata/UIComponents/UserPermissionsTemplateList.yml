@@ -1,0 +1,40 @@
+Description: Template for the list
+Documentation: Component used to display a template for UIs with list of items
+Template: |-
+  <vertical-layout layout:height="fill" layout:padding="large" space="large">
+      <horizontal-layout layout:width="fill" vertical-align="center" wrap="false">
+          <if condition="@Parameters.ReturnButton">
+              <button type="method" method-name="ReturnUIView" variant="ghost" size="large" tooltip="Return">
+                  <image name="ArrowLeft" size="large" />
+              </button>
+          </if>
+          <if condition="@Parameters.Icon">
+              <image name="@Parameters.Icon" size="extralarge" />
+          </if>
+          <if condition="@Parameters.Title">
+              <heading level="3">
+                  @Parameters.Title
+              </heading>
+          </if>
+          <horizontal-layout layout:width="fill">
+              <toolbar actions="@Parameters.ActionsToolbar" refresh="@Parameters.Refresh" clone="@Parameters.Clone" automation:id="templateListToolbar" />
+          </horizontal-layout>
+      </horizontal-layout>
+      <content name="quickFilter" />
+      <card style:border-color="transparent" style:shadow-color="border">
+          <filter-bar />
+      </card>
+      <if condition="@Parameters.Message">
+          <message>
+              <text>
+                  @Parameters.Message
+              </text>
+          </message>
+      </if>
+      <card layout:height="fill" style:border-color="transparent" style:shadow-color="border">
+          <content name="grid">
+              <datagrid editable="@Parameters.Editable" layout:height="fill" automation:id="templatelistDG" />
+          </content>
+          <pagination-bar layout:horizontal-alignment="center" />
+      </card>
+  </vertical-layout>

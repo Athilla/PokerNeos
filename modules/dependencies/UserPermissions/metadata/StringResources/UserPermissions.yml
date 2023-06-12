@@ -20,11 +20,14 @@
   Value: Working contexts assignment
 - Name: AssignWorkingContextToUserAccountUserRoleTitleWithUserAndRole
   Value: Working contexts assignment of {0} {1} for the role {2}
+- Name: AuthNeosErrorLoginAlreadyUsedEmail
+  Value: This login is already used with another email address. Please change the login.
+- Name: AvailableUserTitle
+  Value: List of available users
 - Name: CantAssignChildFeatureExceptionMessage
   Value: Cannot assign the feature to the role if the parent feature isn't assign too.
 - Name: ChangePositionFeatureSaveMessage
-  Value: |
-    Do you want to save the changes made? Otherwise they will be lost.
+  Value: Do you want to save the changes made? Otherwise they will be lost.
 - Name: ChangePositionSaveTitle
   Value: Save
 - Name: DeletePermissionButtonText
@@ -36,7 +39,7 @@
 - Name: EmailBadFormat
   Value: This email address is not valid
 - Name: ErrorAssignFeatureSameKeysMessage
-  Value: Some of the assignment you have done already exist. Please remove the duplicated assignment before saving
+  Value: Some of the assignment you have done already exist. Please remove the duplicated assignment before saving.
 - Name: ErrorAssignFeatureTitle
   Value: Error Assign Feature
 - Name: ErrorReadAccessIsNotGiven
@@ -77,6 +80,25 @@
   Value: The role you gave does not exists.
 - Name: RolesText
   Value: Roles
+- Name: SaveBeforeUse
+  Value: You must save your changes before trying to get the available users.
+- Name: SaveBeforeUseTitle
+  Value: Error
+- Name: SaveUsersToAuthenticationServerFailed
+  Value: Synchronization failed.
+- Name: SaveUsersToAuthenticationServerFailedForUsers
+  Value: |-
+    The following users could not be synchronized:
+
+    - {0}
+- Name: SaveUsersToAuthenticationServerMessageTitle
+  Value: Synchronization
+- Name: SaveUsersToAuthenticationServerSuccessed
+  Value: Synchronization succeeded.
+- Name: SavingDateErrorMessage
+  Value: From date must be earlier than thru date.
+- Name: Select
+  Value: Select
 - Name: SortedFeatureRadioLabelFalse
   Value: Assigned
 - Name: SortedFeatureRadioLabelTrue

@@ -1,4 +1,5 @@
-﻿using GroupeIsa.Neos.Domain.Persistence;
+﻿using GroupeIsa.Neos.Application.MultiTenant;
+using GroupeIsa.Neos.Domain.Persistence;
 using GroupeIsa.Neos.Domain.Persistence.Sequences;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,20 +22,23 @@ namespace Transversals.Business.Core.Domain.Configuration.Counters
         private readonly ISequence _sequence;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IServiceProvider _sp;
-        private static string ComputeSequenceName(Counter counter) => $"Counter_{counter.Name}";
+        private readonly ITenants _tenants;
+
+        private string ComputeSequenceName(Counter counter) => $"Counter_{counter.Name}_{(_tenants.MultitenancyEnabled ? _tenants.GetCurrentTenant()!.Id : "0")}";
 
         public CounterService(ICounterRepository counterRepository,
             ISequenceManager sequenceManager,
             ISequence sequence,
             IUnitOfWork unitOfWork,
-            IServiceProvider sp)
+            IServiceProvider sp,
+            ITenants tenants)
         {
             _counterRepository = counterRepository;
             _sequenceManager = sequenceManager;
             _sequence = sequence;
             _unitOfWork = unitOfWork;
             _sp = sp;
-
+            _tenants = tenants;
         }
         public static Counter CreateCounterEntity(string name, string? prefix, string? suffix, int initialValue, int maxValue = int.MaxValue - 1)
         {

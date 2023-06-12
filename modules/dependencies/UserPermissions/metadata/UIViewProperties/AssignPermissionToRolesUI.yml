@@ -21,6 +21,21 @@
   DatagridMinWidth: 200
   DatagridPosition: 1
   DatagridVisible: true
+- Name: PermissionTitle
+  Caption: ' '
+  DataType: String
+  Filterable: false
+  Getter: |-
+    =if(Item?.Name != null)
+    {
+        return Resources.UserPermissions.PermissionTitle + $" : {Item.Name.GetCurrentValue() ?? Item.Name.DefaultTranslation}";
+    }
+
+    return Resources.UserPermissions.PermissionTitle;
+  Multiline: false
+  ReadOnly: true
+  Required: true
+  Sortable: false
 - Name: ShowAllPermissions
   Caption: Functions
   DataType: Boolean

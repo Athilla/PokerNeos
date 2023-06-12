@@ -1,0 +1,7 @@
+- Name: ReturnUIView
+  Code: |-
+    if (Parameters.ReturnButton != null)
+    {
+        GetParentViewModel().NavigateAsync(
+            new NavigationOptions(Parameters.ReturnButton).WithContainerId("RefGeoSettingsContainerId"));
+    }

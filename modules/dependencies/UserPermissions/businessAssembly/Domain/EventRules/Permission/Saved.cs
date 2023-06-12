@@ -1,12 +1,12 @@
-using GroupeIsa.Neos.Domain.Rules.EventRules;
-using GroupeIsa.Neos.Shared.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Transversals.Business.Core.Domain.MemoryCache;
+using GroupeIsa.Neos.Domain.Rules.EventRules;
+using GroupeIsa.Neos.Shared.Linq;
 using Transversals.Business.Domain.Entities;
 using Transversals.Business.Domain.Enums;
 using Transversals.Business.Domain.Persistence;
+using Transversals.Business.UserPermissions.Domain.MemoryCache;
 
 namespace Transversals.Business.UserPermissions.Domain.PermissionEventRules
 {
@@ -21,7 +21,6 @@ namespace Transversals.Business.UserPermissions.Domain.PermissionEventRules
         /// <summary>
         /// Initializes a new instance of the <see cref="Saved"/> class.
         /// </summary>
-        /// <param name="logger">Logger.</param>
         public Saved(IUserAccountUserRoleRepository userAccountUserRoleRepository,
             ICoreMemoryCache coreMemoryCache)
         {

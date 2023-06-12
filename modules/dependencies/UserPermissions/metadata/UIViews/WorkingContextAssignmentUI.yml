@@ -5,12 +5,12 @@ Documentation: UI That allow the user to assign the working context to a relatio
 EntityViewName: WorkingContextView
 OpenMode: PopupFullSize
 Template: |-
-  <template-list>
+  <user-permissions-template-list>
       <grid>
           <datagrid editable="true" />
           <context relation-property-name="UserAccountUserRoles" />
       </grid>
-  </template-list>
+  </user-permissions-template-list>
 Title: |-
   =if(Fields.UserAccount != null && Fields.UserRole != null)
   {

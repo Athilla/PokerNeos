@@ -5,7 +5,7 @@ EditingUIViewName: UserAccountUI
 EntityViewName: UserAccountView
 Icon: UserAccount
 Template: |-
-  <template-list title="@Title">
+  <user-permissions-template-list title="@Title">
       <grid>
           <datagrid layout:height="fill">
               <column-template property-name="IconColor">
@@ -57,5 +57,5 @@ Template: |-
               </column-template>
           </datagrid>
       </grid>
-  </template-list>
+  </user-permissions-template-list>
 Title: =return Resources.UserPermissions.UserAccountListTitle;

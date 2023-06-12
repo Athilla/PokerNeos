@@ -1,6 +1,6 @@
 - Name: UserAccount
-  Documentation: The user account which is assigned to the user role
+  DatagridPosition: 1
+  DatagridVisible: true
   Sortable: false
 - Name: UserRole
-  Documentation: The user role which is assigned to the user account
   Sortable: false

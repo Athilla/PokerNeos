@@ -1,4 +1,4 @@
 Description: Check Email Already Exist
 Documentation: Check if the email given is not already used by another user account
-DotNetReturnType: System.Boolean
+DotNetReturnType: bool
 ExposeAsApi: true

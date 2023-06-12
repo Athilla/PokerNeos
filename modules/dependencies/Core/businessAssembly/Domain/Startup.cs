@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GroupeIsa.Neos.Application.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 using Transversals.Business.Core.Domain.Extensions;
 using Transversals.Business.Core.Domain.Factory;
-using Transversals.Business.Core.Domain.HostedServices;
+using Transversals.Business.Core.Domain.Migration;
 
 namespace Transversals.Business.Core.Domain
 {
@@ -25,8 +26,8 @@ namespace Transversals.Business.Core.Domain
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddCoreConfiguration();
-            services.AddHostedService<CoreConfigurationHostedService>();
             services.AddScoped<IFactoryOptions, FactoryOptions>();
+            services.AddTenantDatabaseMigrationInterceptor<MTTenantDatabaseMigrationInterceptor>();
         }
 
     }

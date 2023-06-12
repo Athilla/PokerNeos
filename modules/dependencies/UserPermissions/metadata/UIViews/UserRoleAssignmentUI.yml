@@ -5,7 +5,7 @@ Documentation: Entity UI that allow the user to assign user roles to user accoun
 EntityViewName: UserRoleView
 OpenMode: PopupFullSize
 Template: |-
-  <template-list>
+  <user-permissions-template-list>
       <grid>
           <datagrid editable="true" selection-column="false">
               <column-template property-name="WorkingContextsName">
@@ -27,7 +27,7 @@ Template: |-
           </datagrid>
           <context relation-property-name="Accounts" />
       </grid>
-  </template-list>
+  </user-permissions-template-list>
 Title: |-
   =if(Fields.UserAccount != null)
   {

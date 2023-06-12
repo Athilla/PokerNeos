@@ -7,9 +7,10 @@ namespace Transversals.Business.UserPermissions.Domain.UserAccountValidationRule
     /// <summary>
     /// Represents Check if phone number is in correct format.
     /// </summary>
-    public class CheckPhoneNumber : ValidationRule<Transversals.Business.Domain.Entities.UserAccount>, Transversals.Business.Domain.Rules.ValidationRules.UserAccount.ICheckPhoneNumber
+    public partial class CheckPhoneNumber : ValidationRule<Business.Domain.Entities.UserAccount>, Business.Domain.Rules.ValidationRules.UserAccount.ICheckPhoneNumber
     {
-        private readonly string _regexValidation = @"^(0)[1-9]((?:[\s.-]|)\d{2}){4}$";
+        [GeneratedRegex("^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$")]
+        private static partial Regex validatePhoneNumberRegex();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckPhoneNumber"/> class.
@@ -24,7 +25,7 @@ namespace Transversals.Business.UserPermissions.Domain.UserAccountValidationRule
         {
             if (Item.PhoneNumber != null)
             {
-                bool result = Regex.IsMatch(Item.PhoneNumber, _regexValidation);
+                bool result = validatePhoneNumberRegex().IsMatch(Item.PhoneNumber);
                 return result ? Success() : Error(Resources.UserPermissions.PhoneNumberBadFormat);
             }
             return Success();

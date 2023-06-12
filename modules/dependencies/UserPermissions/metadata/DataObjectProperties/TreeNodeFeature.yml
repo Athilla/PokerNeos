@@ -1,3 +1,6 @@
+- Name: Caption
+  Description: Caption
+  DotNetDataType: GroupeIsa.Neos.Shared.Localization.LocalizableString
 - Name: Children
   Description: Children
   DotNetDataType: System.Collections.Generic.IList<Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature>
