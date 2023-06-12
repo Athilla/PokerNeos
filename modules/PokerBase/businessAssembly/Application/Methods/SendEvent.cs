@@ -73,7 +73,7 @@ namespace PokerNeos.PokerBase.Application.Methods
                 {
                     case Event.HasStarted:
                         //on rajoute l'evenement
-                        await _gameEvent.AddStartEventAsync(gameEvent.GameId, userData.UserAccountId);
+                        await _gameEvent.AddStartEventAsync(gameEvent.GameId, userData.UserAccount.Id);
                         //on change le status de la partie
                         await _gameInProgress.ChangeStateAsync(gameEvent.GameId, GameState.Started);
                         //on ce positionne sur l'US courrante ? ou la premiere a d�faut
@@ -84,39 +84,39 @@ namespace PokerNeos.PokerBase.Application.Methods
                         break;
                     case Event.HasStopped:
                         //on rajoute l'evenement
-                        await _gameEvent.AddStopEventAsync(gameEvent.GameId, userData.UserAccountId);
+                        await _gameEvent.AddStopEventAsync(gameEvent.GameId, userData.UserAccount.Id);
                         //on change le status de la partie
                         await _gameInProgress.ChangeStateAsync(gameEvent.GameId, GameState.Stopped);
 
                         break;
                     case Event.HasJoined:
                         //on rajoute l'evenement
-                        await _gameEvent.AddJoinEventAsync(gameEvent.GameId, userData.UserAccountId);
+                        await _gameEvent.AddJoinEventAsync(gameEvent.GameId, userData.UserAccount.Id);
                         //on rajoute le joueur a la partie
-                        await _userInGame.AddUserInGameAsync(gameEvent.GameId, userData.UserAccountId);
+                        await _userInGame.AddUserInGameAsync(gameEvent.GameId, userData.UserAccount);
                         break;
                     case Event.HasLeft:
                         //on rajoute l'evenement
-                        await _gameEvent.AddLeaveEventAsync(gameEvent.GameId, userData.UserAccountId);
+                        await _gameEvent.AddLeaveEventAsync(gameEvent.GameId, userData.UserAccount.Id);
                         //on enleve le joueur de la partie
-                        await _userInGame.RemoveUserInGameAsync(gameEvent.GameId, userData.UserAccountId);
+                        await _userInGame.RemoveUserInGameAsync(gameEvent.GameId, userData.UserAccount.Id);
                         break;
 
                     case Event.HasVoted:
                         //on rajoute l'evenement
-                        await _gameEvent.AddVoteEventAsync(gameEvent.GameId, userData.UserAccountId, gameEvent.Vote.ToString(), gameEvent.ItemId);
+                        await _gameEvent.AddVoteEventAsync(gameEvent.GameId, userData.UserAccount.Id, gameEvent.Vote.ToString(), gameEvent.ItemId);
                         //on rajoute le vote de l'utilisateur sur la l'itemId (US)
-                        await _gameVote.AddGameVoteAsync(gameEvent.GameId, userData.UserAccountId, gameEvent.ItemId, gameEvent.Vote.ToString());
+                        await _gameVote.AddGameVoteAsync(gameEvent.GameId, userData.UserAccount.Id, gameEvent.ItemId, gameEvent.Vote.ToString());
                         break;
                     case Event.ChangeUS:
                         //on rajoute l'evenement
-                        await _gameEvent.AddChangeUSEventAsync(gameEvent.GameId, userData.UserAccountId, gameEvent.ItemId);
+                        await _gameEvent.AddChangeUSEventAsync(gameEvent.GameId, userData.UserAccount.Id, gameEvent.ItemId);
                         //on change l'US courrante + ShowVote a false
                         await _gameInProgress.ChangeItemAsync(gameEvent.GameId, gameEvent.ItemId);
                         break;
                     case Event.ShowVote:
                         //on rajoute l'evenement
-                        await _gameEvent.AddShowVoteEventAsync(gameEvent.GameId, userData.UserAccountId, gameEvent.ItemId);
+                        await _gameEvent.AddShowVoteEventAsync(gameEvent.GameId, userData.UserAccount.Id, gameEvent.ItemId);
                         //ShowVote a true
                         await _gameInProgress.ShowVoteAsync(gameEvent.GameId);
                         break;

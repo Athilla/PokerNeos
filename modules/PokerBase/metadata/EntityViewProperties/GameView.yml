@@ -2,7 +2,6 @@
   Caption: GameItemList
   Filterable: false
   RelatedEntityViewName: GameItemView
-  Required: false
   Source: GameItemList
   Type: Collection
 - Name: GameState

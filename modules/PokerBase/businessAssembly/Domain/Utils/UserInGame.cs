@@ -1,6 +1,7 @@
 ﻿using GroupeIsa.Neos.Domain.Persistence;
 using PokerNeos.Domain.Persistence;
 using System.Threading.Tasks;
+using Transversals.Business.Domain.Entities;
 
 namespace PokerNeos.PokerBase.Domain.Utils
 {
@@ -15,17 +16,23 @@ namespace PokerNeos.PokerBase.Domain.Utils
             _unitOfWork = unitOfWork;
         }
 
-        public async Task AddUserInGameAsync(int gameId, int userId)
+        public async Task AddUserInGameAsync(int gameId, UserAccount userAccount)
         {
-            var user = await _userInGameRepository.FindAsync(userId);
-            if(user == null)
+            var user = await _userInGameRepository.FindAsync(userAccount.Id);
+            if (user == null)
             {
                 var userInGame = _userInGameRepository.New();
                 userInGame.GameId = gameId;
-                userInGame.UserId = userId;
+                userInGame.UserId = userAccount.Id;
+                userInGame.DefaultUserName = userAccount.FirstName + " " + userAccount.LastName;
                 _userInGameRepository.Add(userInGame);
-                await _unitOfWork.SaveAsync();
+                userInGame.IsOnline = true;
             }
+            else
+            {
+                user.IsOnline = false;
+            }
+            await _unitOfWork.SaveAsync();
         }
 
         public async Task RemoveUserInGameAsync(int gameId, int userId)
@@ -33,7 +40,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
             var user = await _userInGameRepository.FindAsync(userId);
             if (user != null && user.GameId == gameId)
             {
-                _userInGameRepository.Remove(user);
+                user.IsOnline = false;
                 await _unitOfWork.SaveAsync();
             }
         }

@@ -1,0 +1,5 @@
+- Name: SelectedCard
+  DotNetDataType: string
+  Getter: 'return "0"; '
+  Setter: |
+    Parameters.SelectedValue = value;

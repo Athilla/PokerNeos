@@ -1,27 +1,24 @@
 Template: |-
-  <button type="method" method-name="ClickButtonAsync" variant="ghost">
-      <horizontal-layout layout:height="150" layout:width="110" layout:padding="small small small small" style:border-color="black" style:corner-radius="medium" style:background="@Computeds.BackGroundColor">
-          <vertical-layout layout:width="fill">
-              <text weight="strong" layout:vertical-alignment="stretch" size="small" layout:horizontal-alignment="left"  style:color="@Computeds.TextColor">
+  <button type="method" method-name="ClickButtonAsync" variant="ghost" layout:height="150" layout:width="110" layout:padding="small" style:border-color="black" style:corner-radius="medium" style:background="@Computeds.BackGroundColor">
+      <vertical-layout layout:height="fill" layout:width="fill">
+          <!-- CONTENT -->
+          <text weight="strong" size="small" style:color="@Computeds.TextColor" layout:horizontal-alignment="left">
+              @Parameters.Value
+          </text>
+          <!-- valeur de la carte -->
+          <horizontal-layout align="center" vertical-align="center" layout:height="fill">
+              <heading level="1" style:color="@Computeds.TextColor">
+                  @Parameters.Value
+              </heading>
+          </horizontal-layout>
+          <!-- bas -->
+          <horizontal-layout layout:width="fill" align="space-between">
+              <text weight="regular" size="small" layout:horizontal-alignment="left" style:color="black">
+                  NeosPoker
+              </text>
+              <text weight="strong" size="small" layout:horizontal-alignment="right" style:color="@Computeds.TextColor">
                   @Parameters.Value
               </text>
-              <vertical-layout layout:width="fill" layout:height="fill">
-                  <heading level="1" layout:horizontal-alignment="center" layout:height="fill" layout:padding="large small small small"  style:color="@Computeds.TextColor">
-                      @Parameters.Value
-                  </heading>
-              </vertical-layout>
-              <horizontal-layout layout:width="fill" >
-                  <horizontal-layout layout:width="fill" >
-                      <text weight="regular" size="small" layout:horizontal-alignment="left" style:color="black">
-                          NeosPoker
-                      </text>
-                  </horizontal-layout>
-                  <horizontal-layout  >
-                      <text weight="strong" size="small" layout:horizontal-alignment="right"  style:color="@Computeds.TextColor">
-                          @Parameters.Value
-                      </text>
-                  </horizontal-layout>
-              </horizontal-layout>
-          </vertical-layout>
-      </horizontal-layout>
+          </horizontal-layout>
+      </vertical-layout>
   </button>

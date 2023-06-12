@@ -1,7 +1,5 @@
 - Name: Description
   Sortable: false
-- Name: GameId
-  Sortable: false
 - Name: Id
   Sortable: false
 - Name: Link
@@ -9,3 +7,4 @@
 - Name: Name
   DatagridPosition: 1
   DatagridVisible: true
+- Name: Note

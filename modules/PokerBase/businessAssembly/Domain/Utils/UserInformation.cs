@@ -35,7 +35,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
             var groupeIds = await GetCurrentUserGroupeInternalAsync(userAccount.Id);
             return new UserData
             {
-                UserAccountId = userAccount.Id,
+                UserAccount = userAccount,
                 GroupeIdList = groupeIds
             };
         }
@@ -71,9 +71,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
 
     public class UserData
     {
-        public int UserAccountId { get; set; }
+        public required UserAccount UserAccount { get; set; }
         public List<int> GroupeIdList { get; set; } = new List<int>();
-
-
     }
 }

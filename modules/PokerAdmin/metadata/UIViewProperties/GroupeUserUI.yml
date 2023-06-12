@@ -1,5 +1,3 @@
-- Name: GroupeId
-  Sortable: false
 - Name: User
   DatagridMaxWidth: 600
   DatagridMinWidth: 300

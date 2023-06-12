@@ -21,9 +21,7 @@ Template: |-
       </horizontal-layout>
       <horizontal-layout layout:height="fill" layout:width="fill">
           <panel-menu automation:id="MainPanelMenu" logo="Neos" title="@Computeds.Title" items="@ApplicationContext.MenuItems" layout:height="fill" />
-          <vertical-layout layout:height="fill" layout:width="fill" space="none">
               <frames-container container-id="PokerPageContainer" frames="@Fields.Frames" selected-tab-index="@Fields.SelectedTabIndex" layout:width="fill" layout:height="fill" />
-          </vertical-layout>
       </horizontal-layout>
   </vertical-layout>
 Title: Home page

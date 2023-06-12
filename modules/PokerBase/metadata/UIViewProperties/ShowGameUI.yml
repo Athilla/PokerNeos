@@ -1,9 +1,6 @@
 - Name: Game.GameState
   Filterable: false
   Sortable: false
-- Name: Game.GroupeId
-  Filterable: false
-  Sortable: false
 - Name: Game.Name
   Filterable: false
   Sortable: false
