@@ -42,6 +42,13 @@ jobs:
       run: dotnet tool install GroupeIsa.Neos.Console --global --ignore-failed-sources --no-cache --interactive --verbosity minimal
     - name: dotnet tool restore
       run: dotnet tool restore
+    - name: Set persistence to PostgreSQL
+      run: |
+        cat << EOF > "pokerneos.connectionstring.yml"
+        PersistenceType: PostgreSQL
+        ConnectionString: Data Source=notexistingserver;Initial Catalog=notexsitingdatabase;
+        EOF
+      shell: bash
     - name: Neos Generate
       run: neos generate
 #    - name: Restore dependencies
