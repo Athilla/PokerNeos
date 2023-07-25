@@ -1,0 +1,6 @@
+- Name: AdditionnalInfo
+  DotNetDataType: string?
+- Name: Caption
+  DotNetDataType: string
+- Name: Image
+  DotNetDataType: string

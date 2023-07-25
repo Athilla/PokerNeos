@@ -32,6 +32,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
                 .Include(e => e.UserList)
                 .Include(e => e.EventList)
                 .Include(e => e.GameVoteList)  
+                .Include(e=> e.UserList)
                 .FirstOrDefault(g => g.GameId == gameId);
             if (game == null)
             {

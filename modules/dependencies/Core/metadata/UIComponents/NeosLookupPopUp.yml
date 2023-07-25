@@ -1,0 +1,8 @@
+Description: This component is use for create
+Template: |-
+  <vertical-layout layout:height="fill" space="none">
+      <content />
+      <horizontal-layout align="right" layout:padding="medium none none none">
+          <button type="save" />
+      </horizontal-layout>
+  </vertical-layout>

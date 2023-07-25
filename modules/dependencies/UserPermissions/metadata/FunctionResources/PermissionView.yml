@@ -1,2 +1,6 @@
 - Type: EntityView
   Name: PermissionView
+- Type: ServerMethod
+  Name: GetAssignedFeatureChildrenTreeNode
+- Type: ServerMethod
+  Name: GetFunctionTree

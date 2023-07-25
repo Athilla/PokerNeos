@@ -1,6 +1,7 @@
 - Name: DefaultUserName
 - Name: GameId
   DataType: Integer
+  Required: true
 - Name: GameIdMimeType
   MaxLength: 
 - Name: IsOnline

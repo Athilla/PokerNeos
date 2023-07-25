@@ -1,0 +1,6 @@
+CreationAllowed: false
+DeletionAllowed: false
+Description: Gets cultures
+KeyProperties:
+- Code
+UpdateAllowed: false

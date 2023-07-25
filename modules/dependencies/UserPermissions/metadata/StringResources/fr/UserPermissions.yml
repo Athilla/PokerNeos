@@ -30,6 +30,8 @@
   Value: Voulez vous enregistrer les modifications effectuées? Sinon elles seront perdues.
 - Name: ChangePositionSaveTitle
   Value: Sauvegarde
+- Name: CulturesTitle
+  Value: Langues
 - Name: DeletePermissionButtonText
   Value: Retirer
 - Name: DeleteWithMessageTitle

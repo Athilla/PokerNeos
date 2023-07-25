@@ -35,6 +35,8 @@ Template: |-
           <content name="grid">
               <datagrid editable="@Parameters.Editable" layout:height="fill" automation:id="templatelistDG" />
           </content>
-          <pagination-bar layout:horizontal-alignment="center" />
+      </card>
+      <card style:border-color="transparent" style:shadow-color="border">
+          <pagination-bar layout:horizontal-alignment="center" always-display="true" />
       </card>
   </vertical-layout>

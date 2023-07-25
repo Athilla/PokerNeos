@@ -23,8 +23,8 @@ namespace Transversals.Business.UserPermissions.Application.Methods
 
         public bool Execute(string? email)
         {
-            return !string.IsNullOrEmpty(email) && _userAccountRepository.GetQuery().Any(u => string.Equals(u.Email, email.ToLower()));
+            email = email?.ToLower();
+            return !string.IsNullOrEmpty(email) && _userAccountRepository.GetQuery().Any(u => u.Email.ToLower() == email);
         }
-
     }
 }

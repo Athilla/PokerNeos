@@ -1,3 +1,4 @@
 KeyProperties:
 - UserId
+- GameId
 TableName: UserInGame

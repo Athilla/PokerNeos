@@ -30,6 +30,8 @@
   Value: Do you want to save the changes made? Otherwise they will be lost.
 - Name: ChangePositionSaveTitle
   Value: Save
+- Name: CulturesTitle
+  Value: Languages
 - Name: DeletePermissionButtonText
   Value: Revoke
 - Name: DeleteWithMessageTitle

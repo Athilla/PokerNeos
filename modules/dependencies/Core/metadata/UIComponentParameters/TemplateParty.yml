@@ -1,0 +1,12 @@
+- Name: imageLeft
+  DotNetDataType: string?
+- Name: imageMiddle
+  DotNetDataType: string?
+- Name: imageRight
+  DotNetDataType: string?
+- Name: titleLeft
+  DotNetDataType: string
+- Name: titleMiddle
+  DotNetDataType: string
+- Name: titleRight
+  DotNetDataType: string

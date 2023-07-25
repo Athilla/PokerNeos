@@ -1,3 +1,7 @@
+- Name: DisplayCultureCode
+  Caption: Display language
+  Documentation: The user's display culture determines the application language.
+  MaxLength: 5
 - Name: Email
   Caption: E-mail
   Documentation: Email is used to authenticate to Neos server
@@ -17,6 +21,14 @@
   Caption: Id
   DataType: AutoIncrementedInteger
   Required: true
+- Name: InputCultureCodes
+  Caption: Input languages
+  DataType: StringArray
+  Documentation: |-
+    User input languages.
+    Determines the language as wella as display culture when entering and displaying data.
+    The order is important, because if you want the first input language to be identical to the display culture, then you'll need the equivalent language first.
+  MaxLength: 5
 - Name: IsActive
   Caption: Active
   DataType: Boolean

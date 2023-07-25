@@ -1,3 +1,6 @@
+- Name: DisplayCultureCode
+  Caption: Langue d'affichage
+  Documentation: La culture d'affichage de l'utilisateur détermine la langue d'affichage de l'application.
 - Name: Email
   Caption: E-mail
   Documentation: L'email est utilisé pour l'authentification au serveur Neos
@@ -9,6 +12,12 @@
   Caption: Date de début d'activité
 - Name: Id
   Caption: Identifiant
+- Name: InputCultureCodes
+  Caption: Langues de saisie
+  Documentation: |-
+    Langues de saisie de l'utilisateur.
+    Détermine la langue ainsi que la culture d'affichage lors de la saisie et l'affichage des données.
+    L'ordre est important car si vous souhaitez que la première langue de saisie soit identique à la culture d'affichage, alors il faudra la langue équivalente en premier.
 - Name: IsActive
   Caption: Actif
 - Name: LastConnection

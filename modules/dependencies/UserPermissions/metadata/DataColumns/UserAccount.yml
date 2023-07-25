@@ -1,3 +1,5 @@
+- Name: DisplayCultureCode
+  MaxLength: 5
 - Name: Email
   MaxLength: 50
   Required: true
@@ -11,6 +13,8 @@
 - Name: Id
   DataType: AutoIncrementedInteger
   Required: true
+- Name: InputCultureCodes
+  DataType: StringArray
 - Name: IsActive
   DataType: Boolean
   DefaultValue: true

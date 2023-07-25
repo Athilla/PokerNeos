@@ -1,0 +1,5 @@
+DisplayProperty: Name
+DontExecuteUIViewRules: false
+UIViewName: CultureListUI
+UseUIViewTemplate: true
+ValueProperty: Code

@@ -1,7 +1,7 @@
 - Name: Id
   Source: Id
 - Name: Locked
-  ReadOnly: true
+  ClientSideReadOnly: true
   Source: Locked
 - Name: Name
   QuickSearch: true

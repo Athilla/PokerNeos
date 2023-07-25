@@ -10,7 +10,7 @@ using Transversals.Business.Application.Abstractions.Methods;
 using Transversals.Business.Domain.Entities;
 using Transversals.Business.Domain.Persistence;
 
-namespace GroupeIsa.Neos.TenantManagement.Tenants.Application.Migration
+namespace Transversals.Business.UserPermissions.Application.Migration
 {
     /// <summary>
     /// Represents <see cref="ITenantDatabaseMigrationInterceptor"/> implementation to prepare and migrate data of user permissions.
@@ -108,6 +108,7 @@ namespace GroupeIsa.Neos.TenantManagement.Tenants.Application.Migration
             });
             UserAuthentication adminAuthentication = new()
             {
+                Name = adminAccount.Login,
                 Email = adminAccount.Email,
                 FirstName = adminAccount.FirstName,
                 LastName = adminAccount.LastName,

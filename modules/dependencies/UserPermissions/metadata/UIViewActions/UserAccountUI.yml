@@ -1,0 +1,28 @@
+- Name: AddInputCulture
+  Caption: Add a language
+  Code: |+
+    NavigateAsync(new NavigationOptions(nameof(CultureListUI))
+    .WithCallback<ICulture>((result) => {
+        if( result.State != NavigationResultState.Ok)
+        {
+            return;
+        }
+
+        // La culture ajoutée n'est pas présente dans la liste des cultures en cache alors il faut la rajouter
+        if(!Fields.InputCultures.Any(c => c.Culture.Code == result.Value.Code))
+        {
+            var cultures = Fields.InputCultures.ToList();
+            cultures.Add(Methods.GetCultureFlagFromCulture(result.Value));
+            Fields.InputCultures = cultures;
+        }
+
+        // Ne pas enlever le .Select(c => c) qui permet de faire une copie de tableau sinon le changement du string array n'est pas pris en compte car
+        // il y a un problème avec le string array
+        // Bug 15525: StringArray : modification par code su string array : l'indicateur de changement n'apparaît pas
+        var inputCultureCodes = (Item.InputCultureCodes ?? new string[0]).Select(c => c).ToList();
+        inputCultureCodes.Add(result.Value.Code);
+        Item.InputCultureCodes = inputCultureCodes;
+    }));
+
+  Location: Hidden
+  Style: Primary

@@ -1,0 +1,10 @@
+- Name: AssigneRoleToUser
+  Enabled: true
+  Given: In the users menu
+  Then: 'the role should be assigned successfully '
+  When: 'I want to assigne a role to a new user '
+- Name: CreateAndModifyUserShouldWork
+  Enabled: true
+  Given: In the users menu
+  Then: the user should be created with sucess
+  When: I create a new user

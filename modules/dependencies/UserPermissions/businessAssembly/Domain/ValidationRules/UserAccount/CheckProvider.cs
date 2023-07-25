@@ -23,12 +23,12 @@ namespace Transversals.Business.UserPermissions.Domain.UserAccountValidationRule
         /// <inheritdoc/>
         public override IValidationRuleResult Execute()
         {
-            if (_configuration["AuthenticationMode"] == "AzureB2C" && !string.Equals(Item.Login, Item.Email))
+            if (_configuration["AuthenticationMode"] == "AzureB2C" && !string.Equals(Item.Login, Item.Email, System.StringComparison.OrdinalIgnoreCase))
             {
                 return Error(Resources.UserPermissions.LoginBadFormat);
             }
-            return Success();
 
+            return Success();
         }
     }
 }

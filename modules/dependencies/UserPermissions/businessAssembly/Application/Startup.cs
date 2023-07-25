@@ -2,13 +2,13 @@
 using Flurl.Http.Configuration;
 using GroupeIsa.Neos.Application.Extensions;
 using GroupeIsa.Neos.Application.Permissions;
-using GroupeIsa.Neos.TenantManagement.Tenants.Application.Migration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SendGrid.Extensions.DependencyInjection;
 using Transversals.Business.UserPermissions.Application.AuthenticationNeos;
 using Transversals.Business.UserPermissions.Application.AzureADB2C;
 using Transversals.Business.UserPermissions.Application.Factory;
+using Transversals.Business.UserPermissions.Application.Migration;
 using Transversals.Business.UserPermissions.Application.PermissionNeos;
 using Transversals.Business.UserPermissions.Application.Services;
 
@@ -49,6 +49,7 @@ namespace Transversals.Business.UserPermissions.Application
                 }
             });
             services.AddTenantDatabaseMigrationInterceptor<UserPermissionsMigrationInterceptor>();
+            services.AddTenantResolvedInterceptor<TenantResolvedInterceptor>();
         }
     }
 }

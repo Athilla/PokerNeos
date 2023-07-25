@@ -1,3 +1,6 @@
+- Name: InputCultures
+  DefaultValue: Array.Empty<Transversals.Business.Application.Abstractions.DataObjects.CultureFlag>()
+  DotNetDataType: System.Collections.Generic.IEnumerable<Transversals.Business.Application.Abstractions.DataObjects.CultureFlag>
 - Name: IsOpenModal
   DefaultValue: true
   DotNetDataType: bool
