@@ -10,10 +10,6 @@
         DatasourceCurrent.Login = DatasourceCurrent.Email;
     }
   Event: DataSaving
-- Name: Initialized
-  Code: |2
-
-    if(ApplicationContext.ContainsKey("AuthProvider"))
-    {
-        Console.WriteLine(ApplicationContext.GetValue<string>("AuthProvider"));
-    }
+- Name: Retrieved
+  Code: await Methods.InitInputCulturesAsync(DatasourceCurrent);
+  Event: Retrieved

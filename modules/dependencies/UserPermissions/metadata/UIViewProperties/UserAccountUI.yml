@@ -1,9 +1,26 @@
+- Name: DisplayCultureCode
+  LookupName: CultureLookup
+- Name: DisplayCultureFlag
+  Caption: ' '
+  DataType: String
+  Filterable: false
+  Getter: '=return Item.DisplayCultureCode?.Length >=5 ?  $"flag{Item.DisplayCultureCode[^2..].ToUpper()}" : null;'
+  Multiline: false
+  ReadOnly: true
+  Required: false
+  Sortable: false
 - Name: Email
 - Name: ExpirationDate
 - Name: FirstName
 - Name: Id
   Filterable: false
   FormVisible: false
+- Name: InputCultureCodes
+  Documentation: |-
+    User input languages.
+    Détermine la langue ainsi que la culture d'affichage lors de la saisie et l'affichage des données.
+    Determines the language as wella as display culture when entering and displaying data.
+    The order is important, because if you want the first input language to be identical to the display culture, then you'll need the equivalent language first.
 - Name: IsActive
 - Name: LastConnection
   ReadOnly: true
@@ -11,3 +28,4 @@
 - Name: Login
 - Name: PhoneNumber
 - Name: Synchronized
+  ReadOnly: true

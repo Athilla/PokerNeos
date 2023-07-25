@@ -65,8 +65,7 @@ namespace Transversals.Business.UserPermissions.Application.UserAccountDomainEve
             }
             foreach (var item in args.CreatedAndModifiedItems)
             {
-                if (item.Email != item.Email.ToLower())
-                    item.Email = item.Email.ToLower();
+                item.Email = item.Email.ToLower();
 
                 if (!Regex.IsMatch(item.Email, _regexValidation))
                 {

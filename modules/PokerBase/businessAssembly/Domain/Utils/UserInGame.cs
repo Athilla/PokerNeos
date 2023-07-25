@@ -18,26 +18,26 @@ namespace PokerNeos.PokerBase.Domain.Utils
 
         public async Task AddUserInGameAsync(int gameId, UserAccount userAccount)
         {
-            var user = await _userInGameRepository.FindAsync(userAccount.Id);
+            var user = await _userInGameRepository.FindAsync(userAccount.Id, gameId);
             if (user == null)
             {
                 var userInGame = _userInGameRepository.New();
                 userInGame.GameId = gameId;
                 userInGame.UserId = userAccount.Id;
                 userInGame.DefaultUserName = userAccount.FirstName + " " + userAccount.LastName;
-                _userInGameRepository.Add(userInGame);
                 userInGame.IsOnline = true;
+                _userInGameRepository.Add(userInGame);
             }
             else
             {
-                user.IsOnline = false;
+                user.IsOnline = true;
             }
             await _unitOfWork.SaveAsync();
         }
 
         public async Task RemoveUserInGameAsync(int gameId, int userId)
         {
-            var user = await _userInGameRepository.FindAsync(userId);
+            var user = await _userInGameRepository.FindAsync(userId, gameId);
             if (user != null && user.GameId == gameId)
             {
                 user.IsOnline = false;

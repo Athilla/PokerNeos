@@ -1,6 +1,5 @@
 ﻿using GroupeIsa.Neos.Domain.Persistence;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,10 +37,7 @@ namespace Transversals.Business.Core.Domain.Configuration.Options
             return new Business.Domain.Entities.Option()
             {
                 Name = name,
-                Value = JsonConvert.SerializeObject(value, new JsonSerializerSettings()
-                {
-                    TypeNameHandling = TypeNameHandling.All,
-                }),
+                Value = value?.ToString() ?? string.Empty,
                 Type = typeof(T).Name,
             };
         }

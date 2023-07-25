@@ -11,3 +11,6 @@
   PropertyName: Email
 - Name: Initialized
   Code: SetFilter(new Filter("IsActive", FilterOperator.In, true));
+- Name: Navigating
+  Code: Arguments.Options.WithPopupPosition(PopupPosition.Right);
+  Event: Navigating

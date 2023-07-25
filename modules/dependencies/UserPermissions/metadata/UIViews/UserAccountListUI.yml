@@ -1,4 +1,5 @@
 AddingUIViewName: UserAccountUI
+DeletionAllowed: false
 Description: User account list
 Documentation: Display the list of users account
 EditingUIViewName: UserAccountUI
@@ -59,3 +60,4 @@ Template: |-
       </grid>
   </user-permissions-template-list>
 Title: =return Resources.UserPermissions.UserAccountListTitle;
+UpdateAllowed: false

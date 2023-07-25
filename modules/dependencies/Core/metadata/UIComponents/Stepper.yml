@@ -1,0 +1,30 @@
+Template: |-
+  <horizontal-layout wrap="false" space="none">
+      <repeat values="@Computeds.Steps" item="step">
+          <grid-layout>
+              <grid-layout-definition gap="none">
+                  <grid-layout-rows auto-height="*" />
+                  <grid-layout-columns>
+                      <grid-layout-column />
+                      <grid-layout-column width="fit"/>
+                      <grid-layout-column />
+                  </grid-layout-columns>
+              </grid-layout-definition>
+              <grid-layout-content>
+                  <horizontal-line height="@Parameters.SeparatorHeight" color="$step.BackgroundColorBeforeStep" />
+                  <horizontal-layout align="center" vertical-align="center" layout:padding="none small none small">
+                      <image name="$step.Step.Image" size="extralarge" style:background="$step.BackgroundColor" />
+                  </horizontal-layout>
+                  <horizontal-line height="@Parameters.SeparatorHeight" color="$step.BackgroundColorAfterStep" />
+                  <vertical-layout align="center" space="none" grid:colspan="3">
+                      <text size="small">
+                          $step.Step.Caption
+                      </text>
+                      <text size="small">
+                          $step.Step.AdditionnalInfo
+                      </text>
+                  </vertical-layout>
+              </grid-layout-content>
+          </grid-layout>
+      </repeat>
+  </horizontal-layout>

@@ -1,5 +1,6 @@
+- Name: DisplayCultureCode
+  Source: DisplayCultureCode
 - Name: Email
-  Documentation: Email is used to authenticate to Neos server
   Source: Email
 - Name: ExpirationDate
   Source: ExpirationDate
@@ -8,10 +9,11 @@
   Source: FirstName
 - Name: Id
   Source: Id
+- Name: InputCultureCodes
+  Source: InputCultureCodes
 - Name: IsActive
   Source: IsActive
 - Name: LastConnection
-  Documentation: Date since the last connection of the user
   Source: LastConnection
 - Name: LastName
   QuickSearch: true
@@ -27,5 +29,4 @@
   Source: Roles
   Type: Collection
 - Name: Synchronized
-  Documentation: Synchronized with authentication module
   Source: Synchronized

@@ -1,0 +1,3 @@
+- Name: ChooseCultureAsync
+  Asynchronous: true
+  Code: await this.CloseAsync(false, new NavigationResult(NavigationResultState.Ok, item));

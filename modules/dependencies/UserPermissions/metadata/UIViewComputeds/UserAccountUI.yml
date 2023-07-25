@@ -1,3 +1,16 @@
+- Name: InputCultures
+  DotNetDataType: System.Collections.Generic.IEnumerable<Transversals.Business.Application.Abstractions.DataObjects.CultureFlag>
+  Getter: |-
+    if(DatasourceCurrent?.InputCultureCodes != null)
+    {
+        var result = DatasourceCurrent.InputCultureCodes
+            .Select( code => Fields.InputCultures.SingleOrDefault( c => c.Culture.Code == code))
+            .Where( c => c != null);
+        return result;
+    }
+
+    return Array.Empty<Transversals.Business.Application.Abstractions.DataObjects.CultureFlag>();
+  Setter: DatasourceCurrent.InputCultureCodes = value.Select(c => c.Culture.Code).ToArray();
 - Name: IsAzureAdB2C
   DotNetDataType: bool
   Getter: |-

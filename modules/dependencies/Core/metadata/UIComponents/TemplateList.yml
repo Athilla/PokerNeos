@@ -21,9 +21,6 @@ Template: |-
           </horizontal-layout>
       </horizontal-layout>
       <content name="quickFilter" />
-      <card style:border-color="transparent" style:shadow-color="border">
-          <filter-bar />
-      </card>
       <if condition="@Parameters.Message">
           <message>
               <text>
@@ -32,6 +29,7 @@ Template: |-
           </message>
       </if>
       <card layout:height="fill" style:border-color="transparent" style:shadow-color="border">
+          <filter-bar />
           <content name="grid">
               <datagrid editable="@Parameters.Editable" layout:height="fill" automation:id="templatelistDG" />
           </content>

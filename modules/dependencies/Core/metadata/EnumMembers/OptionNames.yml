@@ -14,6 +14,34 @@
   Caption: VAT position
   PersistedValue: DefaultVatPosition
   Position: 6
+- Name: FacturXAPI
+  Caption: API key
+  PersistedValue: FacturXAPI
+  Position: 14
+- Name: FacturXEnable
+  Caption: Enable electronic invoice
+  PersistedValue: FacturXEnable
+  Position: 13
+- Name: FacturXPassword
+  Caption: Password
+  PersistedValue: FacturXPassword
+  Position: 9
+- Name: FacturXSolutionName
+  Caption: Solution name
+  PersistedValue: FacturXSolutionName
+  Position: 10
+- Name: FacturXSolutionReference
+  Caption: Solution reference
+  PersistedValue: FacturXSolutionReference
+  Position: 11
+- Name: FacturXSubscriptionId
+  Caption: Subscription id
+  PersistedValue: FacturXSubscriptionId
+  Position: 12
+- Name: FacturXUserName
+  Caption: User name
+  PersistedValue: FacturXUserName
+  Position: 8
 - Name: MultiCompanies
   Caption: Multi companies
   PersistedValue: MultiCompanies

@@ -1,0 +1,5 @@
+- Name: CreateaRoleAndthePermissions
+  Enabled: true
+  Given: In the role and permissions menu
+  Then: the role should be created
+  When: I create the role and assigne the permissions

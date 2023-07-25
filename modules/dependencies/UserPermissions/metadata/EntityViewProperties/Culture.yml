@@ -1,0 +1,16 @@
+- Name: Code
+  Caption: Code
+  DataType: String
+  IsExpression: false
+  MaxLength: 5
+  Multiline: false
+  QuickSearch: true
+  Required: true
+- Name: Name
+  Caption: Name
+  DataType: String
+  IsExpression: false
+  MaxLength: 100
+  Multiline: false
+  QuickSearch: true
+  Required: true

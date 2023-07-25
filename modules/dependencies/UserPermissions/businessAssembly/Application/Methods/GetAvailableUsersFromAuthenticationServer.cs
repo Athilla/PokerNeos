@@ -42,7 +42,8 @@ namespace Transversals.Business.UserPermissions.Application.Methods
             List<UserAuthentication> resultFiltered = new List<UserAuthentication>();
             foreach (var user in result)
             {
-                if (listUsers.Any(lu => lu.Email.ToLower() == user.Email.ToLower()))
+                string userEmail = user.Email.ToLower();
+                if (listUsers.Any(lu => lu.Email.ToLower() == userEmail))
                 {
                     continue;
                 }

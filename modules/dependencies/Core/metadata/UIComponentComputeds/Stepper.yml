@@ -1,0 +1,20 @@
+- Name: ShowLine
+  DotNetDataType: bool
+  Getter: return Computeds.Steps.Any(s => s.BackgroundColorBeforeStep != "Transparent");
+- Name: Steps
+  DotNetDataType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.InternalStep>
+  Getter: |-
+    var steps = Parameters.Steps.Select(s => (new InternalStep(){Step = s})).ToList();
+    var currentPosition = Parameters.CurrentPosition ?? -1;
+
+    for (int i = 0; i < steps.Count; i++)
+    {
+        steps[i].BackgroundColor = i <= currentPosition ? Parameters.ActiveColor : Parameters.Color;
+        steps[i].BackgroundColorBeforeStep = steps[i].BackgroundColor;
+        steps[i].BackgroundColorAfterStep = i + 1 <= currentPosition ? Parameters.ActiveColor : Parameters.Color;
+    }
+
+    steps.First().BackgroundColorBeforeStep = "transparent";
+    steps.Last().BackgroundColorAfterStep = "transparent";
+
+    return steps;
