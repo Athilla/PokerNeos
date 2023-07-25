@@ -35,6 +35,17 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v3.2.0
+      with:
+          dotnet-version: 7
+          
+    - name: Install Nuget source
+      run: dotnet nuget add source "https://pkgs.dev.azure.com/POLE-ERP-GROUPEISA/Neos-Public/_packaging/Neos-Public/nuget/v3/index.json" -n "Neos-Public"
+    - name: Install Neos
+      run: dotnet tool install GroupeIsa.Neos.Console --global --ignore-failed-sources --no-cache --interactive --verbosity minimal
+    - name: Neos Generate
+      run: neos generate
 #    - name: Restore dependencies
 #      run: dotnet restore
 #    - name: Build
