@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-postgres
 {
-    "name": "C# (.NET) and PostgreSQL",
+    "name": "Neos, C# and PostgreSQL",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -13,7 +13,7 @@
 	// "customizations": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000, 5001, 5432],
+	"forwardPorts": [5000, 5001, 5432, 443],
 	"portsAttributes": {
 			"5001": {
 				"protocol": "https"
