@@ -1,7 +1,7 @@
 # The root namespace for the generated application
 RootNamespace: PokerNeos
 # The cluster name
-ClusterName: pokerNeos
+ClusterName: PokerNeos
 # The cluster version
 ClusterVersion: 0.5
 # The cluster description
