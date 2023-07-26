@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0
+FROM mcr.microsoft.com/devcontainers/dotnet:0-7.0
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -31,4 +31,4 @@ RUN dotnet tool install GroupeIsa.Neos.Console --global --ignore-failed-sources 
 ENV PATH="${PATH}:/root/.dotnet/tools"
 ENV NODE_OPTIONS="--max_old_space_size=16384"
 
-ENTRYPOINT "/bin/bash"
+#ENTRYPOINT "/bin/bash"
