@@ -27,7 +27,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -44,7 +44,7 @@ jobs:
       run: dotnet tool restore
     - name: Set persistence to PostgreSQL
       run: |
-        cat << EOF > "pokerneos.connectionstring.yml"
+        cat << EOF > "Pokerneos.connectionstring.yml"
         PersistenceType: PostgreSQL
         ConnectionString: Data Source=notexistingserver;Initial Catalog=notexsitingdatabase;
         EOF
