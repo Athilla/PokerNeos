@@ -1,4 +1,0 @@
-- Name: HasAccess
-  Documentation: Vrai si l'autorisation donne accès à la fonction et qu'elle n'a pas un accès CRUD, faux sinon
-- Name: HasAll
-  Caption: Tout

@@ -1,4 +1,0 @@
-- Name: DisplayAssignedFeatures
-  Documentation: Ouvre une pop-up affichant la liste des fonctions attribuées à l'utilisateur sélectionné
-- Name: GoToRoleAssignement
-  Documentation: Méthode qui ouvre la pop-up pour attribuer des rôles utilisateur au compte utilisateur courant

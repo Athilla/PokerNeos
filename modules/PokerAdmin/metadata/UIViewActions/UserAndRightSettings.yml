@@ -1,11 +1,11 @@
-- Name: GroupPoker
-  Caption: Groupe des pokers
-  Code: Methods.CheckAndNavigateAsync("GroupeListUi");
 - Name: AssignPermission
   Caption: Roles and permissions
   Code: Methods.CheckAndNavigateAsync("AssignPermissionToRolesUI");
   Location: Hidden
   Style: Ghost
+- Name: GroupPoker
+  Caption: Groupe des pokers
+  Code: Methods.CheckAndNavigateAsync("GroupeListUi");
 - Name: UserAccount
   Caption: Users
   Code: Methods.CheckAndNavigateAsync("UserAccountListUI");

@@ -1,4 +1,0 @@
-- Name: OnClickMethodNodeAsync
-  Documentation: Affiche l'autorisation qui correspond au nœud qui a été sélectionné
-- Name: OnLoadMethodNodeAsync
-  Documentation: Obtient les fonctionnalités enfants (du nœud développé) qui son attribuées à l'utilisateur.
