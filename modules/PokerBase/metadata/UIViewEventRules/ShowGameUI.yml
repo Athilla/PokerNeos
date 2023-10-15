@@ -35,7 +35,7 @@
     int? gameId = (int?)ViewContext["GameId"];
     if(gameId == null)
     {
-        this.CloseAsync();
+        _= this.CloseAsync();
     }
     else
     {
@@ -48,11 +48,11 @@
     // Console.WriteLine(this);
 
     GameEventDO myevent = new GameEventDO();
-    myevent.GameId = gameId.Value;
+    myevent.GameId = EntityViewParameters.GameId;
     myevent.Event = Event.HasJoined;
     await ServerMethods.SendEvent.ExecuteAsync(myevent);
 
-    Methods.CoreGameAsync();
+    _ = Methods.CoreGameAsync();
 - Name: Retrieved
   Code: |-
     if(DatasourceCurrent?.GameId != null)
@@ -60,6 +60,6 @@
         Console.WriteLine(DatasourceCurrent.GameId);
         Fields.ItemList =  await ServerMethods.GetDetailsGame.ExecuteAsync((int)DatasourceCurrent.GameId);
         Methods.InitGame();
-        Methods.KeepAliveAsync();
+        _ = Methods.KeepAliveAsync();
     }
   Event: Retrieved

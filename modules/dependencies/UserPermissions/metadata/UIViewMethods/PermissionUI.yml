@@ -37,6 +37,8 @@
         displayedNode.Selected = node.Selected;
         displayedNode.Children = null;
         displayedNode.Expanded = false;
+        displayedNode.AuthorizationCondition = node.AuthorizationCondition;
+        displayedNode.Documentation = node.Documentation;
 
         if(Datasource.Any(p => p.FunctionName == node.Name))
         {

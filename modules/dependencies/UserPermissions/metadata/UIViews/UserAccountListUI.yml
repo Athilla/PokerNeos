@@ -45,11 +45,9 @@ Template: |-
                   </horizontal-layout>
               </column-template>
               <column-template property-name="AssignRoles">
-                  <if condition="@Item.IsNew">
-                      <button type="method" method-name="GoToRoleAssignement" variant="ghost" style:border-color="neutral-500">
-                          <image name="Edit" />
-                      </button>
-                  </if>
+                  <button type="method" method-name="GoToRoleAssignement" variant="ghost" style:border-color="neutral-500">
+                      <image name="Edit" />
+                  </button>
               </column-template>
               <column-template property-name="AssignedFeatures">
                   <button type="method" method-name="DisplayAssignedFeatures" variant="ghost">

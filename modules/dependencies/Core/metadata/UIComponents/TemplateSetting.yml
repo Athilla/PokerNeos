@@ -1,13 +1,13 @@
 Template: |-
-  <grid-layout layout:height="fill" layout:margin="extralarge">
-      <grid-layout-definition>
+  <grid-layout layout:height="fill">
+      <grid-layout-definition gap="small">
           <grid-layout-columns>
               <grid-layout-column width="fit" />
               <grid-layout-column />
           </grid-layout-columns>
       </grid-layout-definition>
       <grid-layout-content>
-          <card layout:height="fill" align="left" style:corner-radius="small none none small">
+          <vertical-layout layout:height="fill" align="left" layout:padding="small" style:background="white">
               <horizontal-layout wrap="false">
                   <image name="@Parameters.Icon" />
                   <text weight="strong" layout:width="160">
@@ -15,9 +15,7 @@ Template: |-
                   </text>
               </horizontal-layout>
               <content name="leftPanel" />
-          </card>
-          <card layout:height="fill" style:corner-radius="none small small none">
-              <content name="rightPanel" />
-          </card>
+          </vertical-layout>
+          <content name="rightPanel" />
       </grid-layout-content>
   </grid-layout>

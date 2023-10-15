@@ -1,5 +1,5 @@
 - Name: UserAccount
-  Documentation: The user account which is assigned to the user role
+  LookupName: UserAccountLookup
   Sortable: false
 - Name: UserName
   Caption: Name
@@ -8,13 +8,13 @@
   DataType: String
   Documentation: User firstname and name concatenated
   Filterable: false
-  Getter: =return Item.UserAccount.LastName + " " + Item.UserAccount.FirstName;
+  Getter: '=return Item != null ? Item.UserAccount.LastName + " " + Item.UserAccount.FirstName : string.Empty;'
   Multiline: false
   ReadOnly: true
   Required: false
   Sortable: false
 - Name: UserRole
-  Documentation: The user role which is assigned to the user account
+  LookupName: UserRoleLookup
   Sortable: false
 - Name: UserRole.Name
   Filterable: false

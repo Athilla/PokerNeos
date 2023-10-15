@@ -15,7 +15,7 @@
         }
         if(!Fields.IsInactiveShown)
         {
-            GetParentViewModel().Datafilter.Add(new Filter("isActive", FilterOperator.IsTrue));
+            GetParentViewModel().Datafilter.Add(new Filter("isActive", FilterOperator.Equal, true));
         }
     }
   Description: Gestion de l'ajout/supression du filtre sur la notion "isActive".

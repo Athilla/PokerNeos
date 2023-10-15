@@ -4,13 +4,16 @@
     if(DatasourceCurrent?.InputCultureCodes != null)
     {
         var result = DatasourceCurrent.InputCultureCodes
-            .Select( code => Fields.InputCultures.SingleOrDefault( c => c.Culture.Code == code))
+            .Select(code => Fields.InputCultures.SingleOrDefault( c => c.Culture.Code == code))
             .Where( c => c != null);
-        return result;
+        return result!;
     }
 
     return Array.Empty<Transversals.Business.Application.Abstractions.DataObjects.CultureFlag>();
-  Setter: DatasourceCurrent.InputCultureCodes = value.Select(c => c.Culture.Code).ToArray();
+  Setter: |-
+    if (DatasourceCurrent != null) {
+        DatasourceCurrent.InputCultureCodes = value.Select(c => c.Culture.Code).ToArray();
+    }
 - Name: IsAzureAdB2C
   DotNetDataType: bool
   Getter: |-

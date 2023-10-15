@@ -27,4 +27,5 @@
   FormVisible: false
   Sortable: false
 - Name: UserRoleId
+  LookupName: UserRoleIdLookup
   Sortable: false

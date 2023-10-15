@@ -5,7 +5,7 @@
 - Name: HasAccess
   DatagridPosition: 7
   DatagridVisible: =return true;
-  Documentation: True if the permission give acces to the feature and that the feature does not have a CRUD access, else if not
+  Documentation: Grants full access (create, read, update, delete) to resources associated with this functionality.
   FormVisible: =return Fields.SelectedNode?.FunctionType != FunctionType.CRUD && (Fields.SelectedNode?.Selected ?? false);
   ReadOnly: =return false;
 - Name: HasAll
@@ -41,4 +41,5 @@
   FormVisible: false
   Sortable: false
 - Name: UserRoleId
+  LookupName: UserRoleLookup
   Sortable: false

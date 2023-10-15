@@ -2,6 +2,7 @@
 using Flurl.Http.Configuration;
 using GroupeIsa.Neos.Application.Extensions;
 using GroupeIsa.Neos.Application.Permissions;
+using GroupeIsa.Neos.Migration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SendGrid.Extensions.DependencyInjection;
@@ -48,7 +49,8 @@ namespace Transversals.Business.UserPermissions.Application
                     option.ApiKey = configuration["SendGrid:Key"];
                 }
             });
-            services.AddTenantDatabaseMigrationInterceptor<UserPermissionsMigrationInterceptor>();
+            services.AddTenantDatabaseMigrationInterceptor<UserPermissionsTenantDatabaseMigrationInterceptor>();
+            services.AddMigrationInterceptor<UserPermissionsMigrationInterceptor>();
             services.AddTenantResolvedInterceptor<TenantResolvedInterceptor>();
         }
     }

@@ -4,6 +4,12 @@
   DotNetDataType: string?
 - Name: imageRight
   DotNetDataType: string?
+- Name: showToolbar
+  DefaultValue: true
+  DotNetDataType: bool
+- Name: title
+  DefaultValue: 'null'
+  DotNetDataType: string?
 - Name: titleLeft
   DotNetDataType: string
 - Name: titleMiddle

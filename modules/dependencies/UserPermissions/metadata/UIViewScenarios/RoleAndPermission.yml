@@ -1,5 +1,15 @@
+- Name: CheckUsersAssignedToANewRoleShouldDisplayUsersInReadOnlyMode
+  Enabled: true
+  Given: A role with no assigned users
+  Then: the UI should not allow interactions (Create / Refresh / Remove)
+  When: I open the assigned user UI from the roles list
 - Name: CreateaRoleAndthePermissions
   Enabled: true
   Given: In the role and permissions menu
   Then: the role should be created
   When: I create the role and assigne the permissions
+- Name: RefreshingUserRoleAssignementUIShouldNotDisplayMessage
+  Enabled: true
+  Given: I open the UI to assign roles to a user
+  Then: I should not see any message
+  When: I refresh the list of available roles
