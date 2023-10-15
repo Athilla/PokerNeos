@@ -1,0 +1,3 @@
+Description: Accounting process lookup UI
+EntityViewName: AccountingProcessView
+Title: =return Resources.Core.AccountingProcessesTitle;

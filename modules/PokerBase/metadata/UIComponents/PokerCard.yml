@@ -1,6 +1,6 @@
 Template: |-
   <button type="method" method-name="ClickButtonAsync" variant="ghost" layout:height="150" layout:width="110" layout:padding="small" style:border-color="black" style:corner-radius="medium" style:background="@Computeds.BackGroundColor">
-      <vertical-layout layout:height="fill" layout:width="fill">
+      <vertical-layout layout:height="fill" layout:vertical-alignment="stretch" layout:width="fill">
           <!-- CONTENT -->
           <text weight="strong" size="small" style:color="@Computeds.TextColor" layout:horizontal-alignment="left">
               @Parameters.Value

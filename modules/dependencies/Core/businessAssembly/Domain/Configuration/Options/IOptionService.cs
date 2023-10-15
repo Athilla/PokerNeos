@@ -9,5 +9,6 @@ namespace Transversals.Business.Core.Domain.Configuration.Options
         Task CreateNewOptionAsync<T>(string name, T value);
         void LoadOptions();
         bool TryFindOption(string key);
+        bool TryFindOption(string key, out Option? option);
     }
 }

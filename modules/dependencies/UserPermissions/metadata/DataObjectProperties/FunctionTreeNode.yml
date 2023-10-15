@@ -1,7 +1,11 @@
+- Name: AuthorizationCondition
+  DotNetDataType: string?
 - Name: Caption
   DotNetDataType: GroupeIsa.Neos.Shared.Localization.LocalizableString
 - Name: Children
   DotNetDataType: System.Collections.Generic.IList<Transversals.Business.Application.Abstractions.DataObjects.FunctionTreeNode>
+- Name: Documentation
+  DotNetDataType: GroupeIsa.Neos.Shared.Localization.LocalizableString?
 - Name: Expanded
   DotNetDataType: bool
 - Name: FunctionType

@@ -38,6 +38,8 @@ namespace Transversals.Business.UserPermissions.Application.Methods
                 Caption = function.Caption,
                 FunctionType = function.PermissionType == PermissionType.CRUD ? FunctionType.CRUD : FunctionType.AllowDeny,
                 Children = function.Children?.Select(MapToFunctionTreeNode).ToArray() ?? Array.Empty<FunctionTreeNode>(),
+                AuthorizationCondition = function.AuthorizationCondition,
+                Documentation = function.Documentation,
             };
         }
     }

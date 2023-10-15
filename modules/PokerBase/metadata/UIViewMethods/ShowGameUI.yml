@@ -8,7 +8,7 @@
             await Methods.KeepAliveAsync();
             await Task.Delay(2000);
         }
-        catch(Exception ex)
+        catch(Exception)
         {
             Console.WriteLine("Erreur recuperation data");
         }
@@ -27,7 +27,7 @@
   Asynchronous: true
   Code: |-
     //Console.WriteLine(DatasourceCurrent);
-    if(DatasourceCurrent != null)
+    if(DatasourceCurrent?.GameId != null )
     {
         PokerNeos.Application.Abstractions.DataObjects.GameDataDO data = await ServerMethods.GetLastGameInformation.ExecuteAsync((int)DatasourceCurrent.GameId);
         if(data.IsSuccess)
@@ -81,8 +81,10 @@
         }
     }
 - Name: UpdateGame
-  Code: |+
-    @Fields.CurrentTitle = @Fields.ItemList[Fields.CurrentPosition.Value].Name;
-    @Fields.IsLast = @Fields.CurrentPosition.Value == Fields.ItemList.Count-1 ? true : false ;
-    @Fields.IsFirst = @Fields.CurrentPosition.Value == 0 ? true : false ;
-
+  Code: |
+    if(Fields.CurrentPosition != null)
+    {
+        @Fields.CurrentTitle = @Fields.ItemList[Fields.CurrentPosition.Value].Name;
+        @Fields.IsLast = @Fields.CurrentPosition.Value == Fields.ItemList.Count-1 ? true : false ;
+        @Fields.IsFirst = @Fields.CurrentPosition.Value == 0 ? true : false ;
+    }

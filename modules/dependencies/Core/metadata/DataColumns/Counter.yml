@@ -12,7 +12,7 @@
 - Name: Name
   Required: true
 - Name: Prefixe
-  MaxLength: 5
+  MaxLength: 10
 - Name: Suffixe
   MaxLength: 5
 - Name: Value

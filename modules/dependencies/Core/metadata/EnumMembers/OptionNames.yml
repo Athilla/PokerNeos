@@ -18,6 +18,10 @@
   Caption: API key
   PersistedValue: FacturXAPI
   Position: 14
+- Name: FacturXDistributionMode
+  Caption: default invoice distribution method
+  PersistedValue: FacturXDistributionMode
+  Position: 15
 - Name: FacturXEnable
   Caption: Enable electronic invoice
   PersistedValue: FacturXEnable

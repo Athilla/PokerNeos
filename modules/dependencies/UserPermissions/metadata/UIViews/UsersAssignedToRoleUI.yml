@@ -1,3 +1,5 @@
+CreationAllowed: false
+DeletionAllowed: false
 Description: Users Assigned To Role
 Documentation: UI that display the list of the user that are assigned to the role
 EntityViewName: UserRoleView
@@ -5,8 +7,9 @@ OpenMode: PopupAutoSize
 Template: |-
   <vertical-layout  layout:min-height="400" layout:min-width="500">
       <context relation-property-name="Accounts">
-              <datagrid />
+              <datagrid selection-column="false" />
               <pagination-bar />
       </context>
   </vertical-layout>
 Title: =return Resources.UserPermissions.UsersAssignedToRoleTitle;
+UpdateAllowed: false

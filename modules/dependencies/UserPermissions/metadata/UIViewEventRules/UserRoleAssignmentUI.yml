@@ -1,8 +1,11 @@
+- Name: DataSaved
+  Code: |-
+    if(!HasErrors)
+        await CloseAsync();
+  Event: DataSaved
 - Name: Retrieved
   Code: |-
     SetSort("isAssigned", SortDirection.Desc);
-    await this.SortAsync();
+    await SortAsync();
+    ClearSort();
   Event: Retrieved
-- Name: Retrieving
-  Code: DataSorts.ToList().Clear();
-  Event: Retrieving

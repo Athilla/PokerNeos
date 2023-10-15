@@ -1,16 +1,11 @@
-- Name: EmailPropertyChanged
-  Code: |-
-    if(!String.IsNullOrEmpty(Item.Email)) {
-        bool emailAlreadyExist = await ServerMethods.CheckEmailAlreadyExist.ExecuteAsync(Item.Email);
-        if(emailAlreadyExist)
-        {
-            ShowToast(MessageType.Warning, Resources.UserPermissions.UserAccountEmailUnicityWarningTitle, String.Format(Resources.UserPermissions.UserAccountEmailUnicityWarningMessage, Item.Login ?? Resources.UserPermissions.UserAccountNewMessage), 5000);
-        }
-    }
-  Event: PropertyChanged
-  PropertyName: Email
 - Name: Initialized
-  Code: SetFilter(new Filter("IsActive", FilterOperator.In, true));
+  Code: SetFilter(new Filter("IsActive", FilterOperator.Equal, true));
 - Name: Navigating
-  Code: Arguments.Options.WithPopupPosition(PopupPosition.Right);
+  Code: |-
+    Arguments.Options.WithPopupPosition(PopupPosition.Right);
+    Arguments.Options.WithCallback<NavigationResult>(r => {
+        if (r.State == NavigationResultState.Ok) {
+            LoadDataAsync();
+        }
+    });
   Event: Navigating

@@ -12,13 +12,14 @@
         @Fields.CurrentPosition++;
         Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
     }
-
-    GameEventDO myevent = new GameEventDO();
-    myevent.GameId = DatasourceCurrent.GameId.Value;
-    myevent.Event = Event.ChangeUS;
-    myevent.ItemId = Fields.ItemList[Fields.CurrentPosition.Value].Id;
-    await ServerMethods.SendEvent.ExecuteAsync(myevent);
-
+    if(DatasourceCurrent?.GameId != null && Fields.CurrentPosition!=null )
+    {
+        GameEventDO myevent = new GameEventDO();
+        myevent.GameId = DatasourceCurrent.GameId.Value;
+        myevent.Event = Event.ChangeUS;
+        myevent.ItemId = Fields.ItemList[Fields.CurrentPosition.Value].Id;
+        await ServerMethods.SendEvent.ExecuteAsync(myevent);
+    }
     Methods.UpdateGame();
   DisplayMode: Icon
   Enabled: =return !Fields.IsLast && Fields.IsStart;
@@ -40,15 +41,14 @@
         @Fields.CurrentPosition--;
         Fields.ItemList[Fields.CurrentPosition.Value].IsCurrent = true;
     }
-
-    GameEventDO myevent = new GameEventDO();
-    myevent.GameId = DatasourceCurrent.GameId.Value;
-    myevent.Event = Event.ChangeUS;
-    myevent.ItemId = Fields.ItemList[Fields.CurrentPosition.Value].Id;
-    await ServerMethods.SendEvent.ExecuteAsync(myevent);
-
-    Methods.UpdateGame();
-
+    if(DatasourceCurrent?.GameId != null && Fields.CurrentPosition!=null )
+    {
+        GameEventDO myevent = new GameEventDO();
+        myevent.GameId = DatasourceCurrent.GameId.Value;
+        myevent.Event = Event.ChangeUS;
+        myevent.ItemId = Fields.ItemList[Fields.CurrentPosition.Value].Id;
+        await ServerMethods.SendEvent.ExecuteAsync(myevent);
+    }
     Methods.UpdateGame();
   DisplayMode: Icon
   Enabled: =return !Fields.IsFirst && Fields.IsStart;
@@ -58,17 +58,21 @@
   Style: GhostPrimary
 - Name: RunGame
   Caption: Run game
-  Code: |
+  Code: |-
     // Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
     // Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
     // Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
     // Console.WriteLine($"IsLast : {@Fields.IsLast}");
 
 
-    GameEventDO myevent = new GameEventDO();
-    myevent.GameId = DatasourceCurrent.GameId.Value;
-    myevent.Event = Event.HasStarted;
-    await ServerMethods.SendEvent.ExecuteAsync(myevent);
+    if(DatasourceCurrent?.GameId != null)
+    {
+        GameEventDO myevent = new GameEventDO();
+        myevent.GameId = DatasourceCurrent.GameId.Value;
+        myevent.Event = Event.HasStarted;
+        await ServerMethods.SendEvent.ExecuteAsync(myevent);
+        Fields.IsStart = true;
+    }
   DisplayMode: Icon
   IconName: Play2
   Location: Hidden
@@ -77,19 +81,16 @@
   Visible: =return !Fields.IsStart;
 - Name: StopGame
   Caption: Stop game
-  Code: |-
-    // Console.WriteLine($"Nb item : {@Fields.ItemList.Count}");
-    // Console.WriteLine($"Current position : {@Fields.CurrentPosition}");
-    // Console.WriteLine($"IsFirst : {@Fields.IsFirst}");
-    // Console.WriteLine($"IsLast : {@Fields.IsLast}");
+  Code: |2-
 
-
-    //Fields.IsStart = false;
-
-    GameEventDO myevent = new GameEventDO();
-    myevent.GameId = DatasourceCurrent.GameId.Value;
-    myevent.Event = Event.HasStopped;
-    await ServerMethods.SendEvent.ExecuteAsync(myevent);
+    if(DatasourceCurrent?.GameId != null)
+    {
+        GameEventDO myevent = new GameEventDO();
+        myevent.GameId = DatasourceCurrent.GameId.Value;
+        myevent.Event = Event.HasStopped;
+        await ServerMethods.SendEvent.ExecuteAsync(myevent);
+        Fields.IsStart = false;
+    }
   DisplayMode: Icon
   IconName: Stop
   Location: Hidden

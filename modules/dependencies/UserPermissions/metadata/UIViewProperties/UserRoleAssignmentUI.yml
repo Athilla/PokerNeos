@@ -23,12 +23,16 @@
   DataType: Boolean
   Documentation: True if the user account is assigned to the user role, false if not
   Filterable: false
-  Getter: =return Item.Accounts.Any(e => e.UserAccount.Id == Fields.UserAccount.Id);
+  Getter: =return Item != null && Item.Accounts.Any(e => e.UserAccount.Id == Fields.UserAccount.Id);
   Multiline: false
   ReadOnly: false
   Required: true
   Setter: |-
-    =if(value)
+    =if (Item == null) {
+        return;
+    }
+
+    if(value)
     {
         UserAccountUserRoleEntityUI newAssignation = new UserAccountUserRoleEntityUI();
         newAssignation.UserAccount = (IUserAccountView) Fields.UserAccount;
@@ -36,7 +40,10 @@
     }
     else
     {
-        Item.Accounts.Remove(Item.Accounts.SingleOrDefault(e=>e.UserAccount.Id == Fields.UserAccount.Id));
+        UserAccountUserRoleEntityUI? account = Item.Accounts.SingleOrDefault(e=>e.UserAccount.Id == Fields.UserAccount.Id);
+        if (account != null) {
+            Item.Accounts.Remove(account);
+        }
     }
   Sortable: false
 - Name: IsAssignedAndIsNotNew
@@ -46,7 +53,7 @@
   Filterable: false
   FormVisible: false
   Getter: |-
-    =UserAccountUserRoleEntityUI? relationEntity = Item.Accounts.FirstOrDefault(e => e.UserAccount.Id == Fields.UserAccount.Id);
+    =UserAccountUserRoleEntityUI? relationEntity = Item?.Accounts.FirstOrDefault(e => e.UserAccount.Id == Fields.UserAccount.Id);
     if(relationEntity != null)
     {
         return !relationEntity.IsNew();
@@ -72,10 +79,13 @@
   Filterable: false
   Getter: |-
     =List<string> result = new List<string>();
-    IEnumerable<IEnumerable<string>> arrayOfNames = Item.Accounts.Where(a => a.UserAccount.Id == Fields.UserAccount.Id).Select(e => e.WorkingContexts.Select(wc => wc.WorkingContext.Name)).ToArray();
-    foreach(IEnumerable<string> temp in arrayOfNames)
+    if (Item != null)
     {
-        result.AddRange(temp);
+        IEnumerable<IEnumerable<string>> arrayOfNames = Item.Accounts.Where(a => a.UserAccount.Id == Fields.UserAccount.Id).Select(e => e.WorkingContexts.Select(wc => wc.WorkingContext.Name)).ToArray();
+        foreach(IEnumerable<string> temp in arrayOfNames)
+        {
+            result.AddRange(temp);
+        }
     }
     return result;
   Multiline: false
