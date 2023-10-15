@@ -3,12 +3,13 @@ Template: |-
       <horizontal-layout layout:height="90" layout:width="70" layout:padding="small small small small" style:border-color="black" style:corner-radius="medium" style:background="white">
           <vertical-layout layout:width="fill">
               <vertical-layout layout:width="fill" layout:height="fill">
-                  <if condition="@Computeds.IsEmptyValue">
+                  <!-- <if condition="@Computeds.IsEmptyValue">
                       <image name="CardWaiting" layout:height="fill" layout:width="fill" size="large"/>
                   </if>
-                  <else-if-not condition="@Parameters.IsShow">
+                  <else-if-not condition="@Parameters.IsShow"> -->
+                  <if-not condition="@Parameters.IsShow">
                       <image name="CardRecto2" layout:height="fill" layout:width="fill" size="large"/>
-                  </else-if-not>
+                  </if-not>
                   <else>
                       <heading level="1" layout:horizontal-alignment="center" layout:height="fill" layout:padding="large small small small" style:color="@Computeds.TextColor">
                           @Parameters.Value
