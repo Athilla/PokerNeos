@@ -24,7 +24,6 @@
   DatagridMinWidth: 250
   DatagridPosition: 3
   DatagridVisible: true
-  ReadOnly: =return !Item.IsNew();
 - Name: ExpirationDate
   DatagridMaxWidth: 200
   DatagridMinWidth: 150
@@ -42,7 +41,7 @@
   DataType: String
   Filterable: false
   FormVisible: false
-  Getter: '=return Item.IsActive ? "positive" : "danger";'
+  Getter: '=return (Item != null && Item.IsActive) ? "positive" : "danger";'
   Multiline: false
   ReadOnly: true
   Required: false
@@ -55,15 +54,6 @@
   Documentation: True if the user account is active, else if noit
   FilterPosition: 1
   FilterVisible: true
-  Sortable: false
-- Name: IsNew
-  Caption: New
-  DataType: Boolean
-  Filterable: false
-  Getter: =return !Item.IsNew();
-  Multiline: false
-  ReadOnly: true
-  Required: false
   Sortable: false
 - Name: LastConnection
   DatagridMaxWidth: 200
@@ -78,7 +68,6 @@
   DatagridPosition: 2
   DatagridVisible: true
 - Name: Login
-  ReadOnly: =return !Item.IsNew();
   Sortable: false
 - Name: PhoneNumber
   DatagridMaxWidth: 150
@@ -95,7 +84,11 @@
   Filterable: false
   FormVisible: false
   Getter: |-
-    =// In this list we have all the roles
+    =if (Item == null) {
+        return new();
+    }
+
+    // In this list we have all the roles
     List<string> roleNames = new List<string>();
 
     // In this list we have the first two roles
@@ -125,6 +118,5 @@
   Required: false
   Sortable: false
 - Name: Synchronized
-  DatagridPosition: 7
-  DatagridVisible: true
-  ReadOnly: true
+  FormVisible: false
+  Sortable: false

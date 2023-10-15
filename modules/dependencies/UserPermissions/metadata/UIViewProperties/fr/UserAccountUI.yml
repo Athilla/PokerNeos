@@ -1,7 +1,0 @@
-- Name: DisplayCultureFlag
-  Caption: ' '
-- Name: InputCultureCodes
-  Documentation: |-
-    Langues de saisie de l'utilisateur.
-    Détermine la langue ainsi que la culture d'affichage lors de la saisie et l'affichage des données.
-    L'ordre est important car si vous souhaitez que la première langue de saisie soit identique à la culture d'affichage, alors il faudra la langue équivalente en premier.

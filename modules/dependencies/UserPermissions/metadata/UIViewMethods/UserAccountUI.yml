@@ -3,6 +3,8 @@
     // Ne pas enlever le .Select(c => c) qui permet de faire une copie de tableau sinon le changement du string array n'est pas pris en compte car
     // il y a un problème avec le string array
     // Bug 15525: StringArray : modification par code su string array : l'indicateur de changement n'apparaît pas
+    if (DatasourceCurrent == null) { return; }
+
     var newInputCultures = Methods.GetUserAccountInputCultures(DatasourceCurrent);
     var itemPosition = newInputCultures.IndexOf(item.Culture.Code);
     if(itemPosition < newInputCultures.Count)
@@ -23,6 +25,8 @@
 - Name: DropCulture
   Code: |+
     var cultureFrom = args.GetInternalObjectData() as CultureFlag;
+    if (cultureFrom == null || DatasourceCurrent == null) { return; }
+
     cultureFrom.DropZoneBackground = "transparent";
     item.DropZoneBackground = "transparent";
 
@@ -40,8 +44,10 @@
   Code: |-
     CultureFlag c = new CultureFlag();
     c.Culture =  culture;
-    c.CountryCode = culture.Code.Length >=5 ? culture.Code[^2..].ToUpper() : null;
-    c.Flag = c.CountryCode != null ?  $"flag{c.CountryCode}" : null;
+    if (culture.Code != null) {
+        c.CountryCode = culture.Code.Length >=5 ? culture.Code[^2..].ToUpper() : string.Empty;
+        c.Flag = $"flag{c.CountryCode}";
+    }
     return c;
   DotNetReturnType: Transversals.Business.Application.Abstractions.DataObjects.CultureFlag
 - Name: GetUserAccountInputCultures
@@ -49,20 +55,15 @@
     // Ne pas enlever le .Select(c => c) qui permet de faire une copie de tableau sinon le changement du string array n'est pas pris en compte car
     // il y a un problème avec le string array
     // Bug 15525: StringArray : modification par code su string array : l'indicateur de changement n'apparaît pas
-    return DatasourceCurrent.InputCultureCodes.Select(c => c).ToList();
+    if (userAccount.InputCultureCodes == null) {
+        return new();
+    }
+
+    return userAccount.InputCultureCodes.Select(c => c).ToList();
   DotNetReturnType: System.Collections.Generic.List<string>
 - Name: InitInputCulturesAsync
   Asynchronous: true
   Code: |-
-    CultureFlag GetCultureFlagFromCulture(ICulture c)
-    {
-        CultureFlag culture = new CultureFlag();
-        culture.Culture =  c;
-        culture.CountryCode = c.Code.Length >=5 ? c.Code[^2..].ToUpper() : null;
-        culture.Flag = culture.CountryCode != null ?  $"flag{culture.CountryCode}" : null;
-        return culture;
-    }
-
     if(item.InputCultureCodes != null && item.InputCultureCodes.Any())
     {
         var response = await ApiClient.GetAllAsync<ICulture>(new ApiGetAllRequest(){
@@ -70,7 +71,7 @@
             Filter = $"code in ({string.Join(",", item.InputCultureCodes.Select( c => $"'{c}'"))})"
         });
 
-        if(response.Succeeded)
+        if(response.Succeeded && response.Data != null)
         {
             IEnumerable<CultureFlag> cultures = response.Data.Select( c => Methods.GetCultureFlagFromCulture(c));
             Fields.InputCultures = cultures;
@@ -78,6 +79,8 @@
     }
 - Name: RemoveCulture
   Code: |-
+    if (DatasourceCurrent == null) { return; }
+
     var newInputCultures = Methods.GetUserAccountInputCultures(DatasourceCurrent);
     var itemPosition = newInputCultures.IndexOf(item.Culture.Code);
     if(itemPosition >= 0)
@@ -88,6 +91,8 @@
     DatasourceCurrent.InputCultureCodes = newInputCultures;
 - Name: UpCulture
   Code: |-
+    if (DatasourceCurrent == null) { return; }
+
     var newInputCultures = Methods.GetUserAccountInputCultures(DatasourceCurrent);
     var itemPosition = newInputCultures.IndexOf(item.Culture.Code);
     if(itemPosition > 0)

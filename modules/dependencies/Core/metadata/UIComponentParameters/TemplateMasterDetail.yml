@@ -2,12 +2,18 @@
   DefaultValue: false
   Description: editable
   DotNetDataType: bool
+- Name: filterBar
+  DefaultValue: true
+  DotNetDataType: bool
 - Name: initialMasterSize
   DefaultValue: 35
   DotNetDataType: int
 - Name: message
   DefaultValue: 'null'
   DotNetDataType: string?
+- Name: showToolbar
+  DefaultValue: true
+  DotNetDataType: bool
 - Name: title
   DefaultValue: 'null'
   Description: Title

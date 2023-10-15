@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GroupeIsa.Neos.Application;
 using GroupeIsa.Neos.Application.MultiTenant;
+using GroupeIsa.Neos.Domain.Exceptions;
 using GroupeIsa.Neos.Domain.Persistence;
 using GroupeIsa.Neos.Shared.Logging;
 using GroupeIsa.Neos.Shared.MultiTenant;
@@ -64,7 +65,20 @@ namespace Transversals.Business.UserPermissions.Application
                 && (userAccount.ExpirationDate ?? System.DateTime.Now.Date) >= System.DateTime.Now.Date)
             {
                 userAccount.LastConnection = System.DateTime.Now;
-                await _unitOfWork.SaveAsync();
+                try
+                {
+                    await _unitOfWork.SaveAsync();
+                }
+                catch (ConcurrencyException concurrencyException)
+                when (concurrencyException.EntityName == nameof(UserAccount)
+                    && concurrencyException.KeyPropertyValues.TryGetValue("Id", out object? keyValue)
+                    && keyValue is int id
+                    && id == userAccount.Id)
+                {
+                    // Concurrency exception on UserAccount.LastConnection is ignored.                  
+                    _logger.LogWarning(concurrencyException.Detail);
+                }
+
                 _logger.LogInformation("We fount user : {email} => authorized", userEmail);
 
                 var context = new Dictionary<string, object>()
@@ -88,7 +102,7 @@ namespace Transversals.Business.UserPermissions.Application
             //check on bypass list
             var section = _configuration.GetSection("AuthorizedEmails");
             IEnumerable<string>? authorizedEmails = section.Get<string[]>();
-            
+
             if (authorizedEmails != null && authorizedEmails.Contains(userEmail))
             {
                 //passage d'un dictionnaire vide pour l'initialisation de l'application context

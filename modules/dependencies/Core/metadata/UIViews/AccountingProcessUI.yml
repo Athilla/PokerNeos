@@ -1,0 +1,3 @@
+EntityViewName: AccountingProcessView
+Template: <template-list title="@Title" editable="true" message="@Resources.Core.AccountingProcessDescription" />
+Title: =return Resources.Core.AccountingProcessesTitle;

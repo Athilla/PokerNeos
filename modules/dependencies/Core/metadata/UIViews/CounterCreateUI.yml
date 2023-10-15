@@ -1,11 +1,11 @@
+CreationAllowed: false
+DeletionAllowed: false
 Description: Create a counter in Lookup
 EntityViewName: CounterView
 MonoRecord: true
 Template: |-
   <vertical-layout layout:padding="small">
-      <horizontal-layout layout:padding="small">
-          <toolbar add="false" refresh="false" remove="false" clone="false"/>
-      </horizontal-layout>
+      <template-toolbar refresh="false" clone="false" />
       <card>
           <form-field property-name="Name" />
           <form-field property-name="Prefixe" />

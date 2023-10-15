@@ -9,11 +9,7 @@
   Code: |-
     NavigationOptions options = new NavigationOptions("UserRoleAssignmentUI")
     .WithFrameId($"UserRoleAssignmentUI/{user.Id}")
-    .WithParameter("User", user)
-    .WithCallback<Task>(async r =>
-        {
-            await LoadDataAsync();
-        });
+    .WithParameter("User", user);
     NavigateAsync(options);
   Description: Go To Role Assignement
   Documentation: Method that open the PopUp that permit to assign Roles to the current user account

@@ -1,35 +1,34 @@
 Description: Template for master detail
 Template: |-
-  <vertical-layout layout:height="fill" layout:padding="large" space="large">
-      <horizontal-layout layout:width="fill" vertical-align="center" wrap="false">
-          <if condition="@Parameters.Title">
-              <heading level="3">
-                  @Parameters.Title
-              </heading>
-          </if>
-          <horizontal-layout layout:width="fill">
-              <toolbar automation:id="templateListToolbar" clone="false" />
-          </horizontal-layout>
-      </horizontal-layout>
-       <if condition="@Parameters.Message">
-          <message>
-              <text>
-                  @Parameters.Message
-              </text>
-          </message>
-      </if>
-      <splitter layout:height="fill">
-          <splitter-panel max-size="50" min-size="20" size="@Parameters.InitialMasterSize" layout:padding="none large none none">
-              <vertical-layout layout:height="fill">
-                  <filter-bar />
-                  <content name="MasterTemplate">
-                      <datagrid layout:height="fill" />
-                  </content>
-              </vertical-layout>
-          </splitter-panel>
-          <splitter-panel layout:padding="none none none large">
+  <grid-layout layout:height="fill">
+      <grid-layout-definition>
+          <grid-layout-columns>
+              <grid-layout-column />
+              <grid-layout-column />
+              <grid-layout-column />
+              <grid-layout-column />
+              <grid-layout-column />
+          </grid-layout-columns>
+      </grid-layout-definition>
+      <grid-layout-content>
+          <vertical-layout layout:height="fill" style:background="white" grid:colspan="3" space="large" layout:padding="@Fields.Padding">
+              <if condition="@Parameters.ShowToolbar">
+                  <template-toolbar title="@Parameters.Title" filter-bar="@Parameters.FilterBar" />
+                  <if condition="@Parameters.Message">
+                      <message>
+                          <text>
+                              @Parameters.Message
+                          </text>
+                      </message>
+                  </if>
+              </if>
+              <content name="MasterTemplate">
+                  <datagrid editable="@Parameters.Editable" layout:height="fill" automation:id="templatelistDG" row-height="70" />
+              </content>
+              <pagination-bar layout:horizontal-alignment="center" />
+          </vertical-layout>
+          <card layout:margin="large" grid:colspan="2" style:background="white" style:shadow-color="border" layout:padding="large">
               <content name="DetailTemplate" />
-          </splitter-panel>
-      </splitter>
-      <pagination-bar layout:horizontal-alignment="center" />
-  </vertical-layout>
+          </card>
+      </grid-layout-content>
+  </grid-layout>

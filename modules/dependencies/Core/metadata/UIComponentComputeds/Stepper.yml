@@ -9,9 +9,19 @@
 
     for (int i = 0; i < steps.Count; i++)
     {
-        steps[i].BackgroundColor = i <= currentPosition ? Parameters.ActiveColor : Parameters.Color;
-        steps[i].BackgroundColorBeforeStep = steps[i].BackgroundColor;
-        steps[i].BackgroundColorAfterStep = i + 1 <= currentPosition ? Parameters.ActiveColor : Parameters.Color;
+
+        if(steps[i].Step.UseAlternativeColor)
+        {
+            steps[i].BackgroundColor = Parameters.AlternativeColor;
+        }
+        else
+        {
+            steps[i].BackgroundColor = i <= currentPosition ? Parameters.ActiveColor : Parameters.Color;
+        }
+        steps[i].BackgroundColorBeforeStep = Parameters.Color;
+        steps[i].BackgroundColorAfterStep = Parameters.Color;
+        // steps[i].BackgroundColorBeforeStep = steps[i].BackgroundColor;
+        // steps[i].BackgroundColorAfterStep = i + 1 <= currentPosition ? Parameters.ActiveColor : Parameters.Color;
     }
 
     steps.First().BackgroundColorBeforeStep = "transparent";

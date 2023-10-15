@@ -1,0 +1,6 @@
+- Name: Initialized
+  Code: |-
+    if(Parameters.ShowToolbar)
+    {
+        Fields.Padding = "large";
+    }

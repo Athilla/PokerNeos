@@ -3,8 +3,8 @@ Template: |-
       <vertical-layout layout:height="fill" layout:width="fill" layout:vertical-alignment="center">
           <horizontal-layout vertical-align="stretch" full-height="true" space="extralarge" layout:horizontal-alignment="space-between" layout:padding="large">
               <min-card value=""/>
-              <min-card value=""/>
-              <min-card value=""/>
+              <min-card value="5" is-show="false"/>
+              <min-card value="5" is-show="true"/>
           </horizontal-layout>
           <horizontal-layout>
 

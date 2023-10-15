@@ -1,0 +1,14 @@
+- Name: Code
+  QuickSearch: true
+  Source: Code
+- Name: Id
+  Source: Id
+- Name: IsActive
+  Source: IsActive
+- Name: IsInternalCession
+  Source: IsInternalCession
+- Name: Label
+  QuickSearch: true
+  Source: Label
+- Name: ProcessType
+  Source: ProcessType

@@ -1,6 +1,0 @@
-- Name: UserAccountUserRole
-  Caption: Comptes Utilisateurs Rôles Utilisateurs
-  Documentation: La relation entre un compte utilisateur et un rôle utilisateur qui est lié au contexte de travail.
-- Name: WorkingContext
-  Caption: Contextes de Travail
-  Documentation: Le contexte de travail qui est lié à la relation entre un compte utilisateur et un rôle utilisateur

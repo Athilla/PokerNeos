@@ -7,6 +7,12 @@
         return GetParentItem<AssignPermissionToRolesUI>().IsNew();
     }
     return true;
+- Name: SelectedNodeAuthorizationCondition
+  DotNetDataType: string?
+  Getter: return Fields.SelectedNode?.AuthorizationCondition;
+- Name: SelectedNodeDocumentation
+  DotNetDataType: GroupeIsa.Neos.Shared.Localization.LocalizableString?
+  Getter: return Fields.SelectedNode?.Documentation;
 - Name: SelectedNodeName
   Description: Selected Node Name
   Documentation: Return the name of the selected node, return an empty string if the no node is selected

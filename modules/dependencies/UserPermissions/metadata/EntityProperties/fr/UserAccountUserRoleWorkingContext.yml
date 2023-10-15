@@ -1,9 +1,0 @@
-- Name: UserAccountId
-  Caption: Id Compte Utilisateur
-  Documentation: L'Id de compte d'utilisateur qui est attribué au rôle d'utilisateur
-- Name: UserRoleId
-  Caption: Id Rôle Utilisateur
-  Documentation: L'Id du rôle utilisateur qui est attribué au compte d'utilisateur
-- Name: WorkingContextId
-  Caption: Id Contexte de Travail
-  Documentation: L'Id de contexte de travail qui est lié à la relation entre un compte utilisateur et un rôle utilisateur
