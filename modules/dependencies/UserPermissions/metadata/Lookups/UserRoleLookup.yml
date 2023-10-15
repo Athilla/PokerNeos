@@ -1,0 +1,4 @@
+DisplayProperty: Name
+DontExecuteUIViewRules: false
+UIViewName: UserRoleAssignmentUI
+ValueProperty: Id

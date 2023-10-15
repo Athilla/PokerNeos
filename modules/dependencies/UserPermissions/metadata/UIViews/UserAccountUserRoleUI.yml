@@ -1,3 +1,5 @@
+CreationAllowed: false
+DeletionAllowed: false
 Description: User Account User Role
 Documentation: Entity UI that get the UserAccountUserRole filtered by the user role Id
 EntityViewName: UserAccountUserRoleView
@@ -13,3 +15,4 @@ Template: |-
       </splitter>
   </vertical-layout>
 Title: =return Resources.UserPermissions.UserAccountUserRoleTitle;
+UpdateAllowed: false

@@ -1,3 +1,7 @@
+- Name: AccountingProcessDescription
+  Value: Flux métiers à identifier en comptabilité.
+- Name: AccountingProcessesTitle
+  Value: Accounting processes
 - Name: Close
   Value: Close
 - Name: CounterDescription
@@ -28,3 +32,15 @@
   Value: Show all
 - Name: ShowEnabledTitle
   Value: Show enabled
+- Name: SynchroIdNull
+  Value: SynchroId is null.
+- Name: SynchronizeError
+  Value: |-
+    Synchronisation error: 
+    {0}
+- Name: SynhronizeSuccess
+  Value: Successful synchronisation.
+- Name: SynhronizeTitle
+  Value: Synchronisation status
+- Name: UnableToReachClusterErrorMessage
+  Value: We were unable to reach cluster {0}.

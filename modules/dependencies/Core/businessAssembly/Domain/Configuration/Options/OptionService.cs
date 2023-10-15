@@ -68,6 +68,12 @@ namespace Transversals.Business.Core.Domain.Configuration.Options
             return false;
         }
 
+        public bool TryFindOption(string key, out Option? option)
+        {
+            option = _options.FirstOrDefault(c => c.Name == key);
+            return option != null;
+        }
+
         public Option this[string key] => FindOption(key);
     }
 }

@@ -3,13 +3,12 @@
   Code: |
     if(this.HasChanges)
     {
-        ShowMessageAsync(MessageType.Danger,
+        Task delayTask = ShowMessageAsync(MessageType.Danger,
                 Resources.UserPermissions.SaveBeforeUseTitle,
                 Resources.UserPermissions.SaveBeforeUse);
     }
     else
     {
-
         NavigationOptions options = new NavigationOptions("UserAccountAvailableUI")
         .WithCallback<List<UserAccountAvailableUI>>(async r =>
         {
@@ -18,15 +17,17 @@
                 foreach(var userAccount in r.Value)
                 {
                     var item = await this.AddNewAsync();
-                    item.Login = userAccount.Email;
-                    item.Email = userAccount.Email;
-                    item.FirstName = userAccount.FirstName;
-                    item.LastName = userAccount.LastName;
-                    item.Synchronized = true;
+                    if (item != null) {
+                        item.Login = userAccount.Email;
+                        item.Email = userAccount.Email;
+                        item.FirstName = userAccount.FirstName;
+                        item.LastName = userAccount.LastName;
+                        item.Synchronized = true;
+                    }
                 }
             }
         });
-        NavigateAsync(options);
+        Task delayTask = NavigateAsync(options);
     }
   Location: ActionsMenu
   ParentActionName: More
@@ -34,20 +35,20 @@
   Style: Ghost
 - Name: SendMail
   Caption: Send mail
-  Code: SystemEnvironment.Window.OpenUrl("mailto:" + Item.Email);
+  Code: SystemEnvironment.Window.OpenUrl("mailto:" + Item?.Email);
   DisplayMode: Icon
   IconName: UserPermissionsSendEmail
   Location: Hidden
   Style: GhostPrimary
-  Visible: =return Item.Email != null;
+  Visible: =return Item?.Email != null;
 - Name: SendSMS
   Caption: Send SMS
-  Code: SystemEnvironment.Window.OpenUrl("tel:" + Item.PhoneNumber);
+  Code: SystemEnvironment.Window.OpenUrl("tel:" + Item?.PhoneNumber);
   DisplayMode: Icon
   IconName: UserPermissionsSendSMS
   Location: Hidden
   Style: GhostPrimary
-  Visible: =return Item.PhoneNumber != null;
+  Visible: =return Item?.PhoneNumber != null;
 - Name: SynchronizeUsers
   Caption: Synchronize
   Code: |-
@@ -55,6 +56,10 @@
         List<UserAuthentication> users = new List<UserAuthentication>();
 
         foreach(var item in SelectedItems) {
+            if (item.Email == null || item.Login == null || item.FirstName == null || item.LastName == null) {
+                continue;
+            }
+
             UserAuthentication userAuthentication = new UserAuthentication();
             userAuthentication.Email = item.Email;
             userAuthentication.Name = item.Login;

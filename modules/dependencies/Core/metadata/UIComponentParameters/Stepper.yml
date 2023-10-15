@@ -1,5 +1,7 @@
 - Name: activeColor
   DotNetDataType: string
+- Name: alternativeColor
+  DotNetDataType: string
 - Name: color
   DotNetDataType: string
 - Name: currentPosition

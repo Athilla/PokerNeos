@@ -6,59 +6,60 @@ name: build
 on:
   workflow_dispatch:
     inputs:
-        logLevel:
-          description: 'Log level'
-          required: true
-          default: 'warning'
-          type: choice
-          options:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
           - info
           - warning
           - debug
 
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 #env:
-  
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 7.0.x
-         
-    - name: Install Nuget source
-      run: dotnet nuget add source "https://pkgs.dev.azure.com/POLE-ERP-GROUPEISA/Neos-Public/_packaging/Neos-Public/nuget/v3/index.json" -n "Neos-Public"
-    - name: Install Neos
-      run: dotnet tool install GroupeIsa.Neos.Console --global --ignore-failed-sources --no-cache --interactive --verbosity minimal
-    - name: dotnet tool restore
-      run: dotnet tool restore
-    - name: Set persistence to PostgreSQL
-      run: |
-        cat << EOF > "pokerneos.connectionstring.yml"
-        PersistenceType: PostgreSQL
-        ConnectionString: Data Source=notexistingserver;Initial Catalog=notexsitingdatabase;
-        EOF
-      shell: bash
-    - name: Neos Generate
-      run: neos generate
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Install Nuget source
+        run: dotnet nuget add source "https://pkgs.dev.azure.com/POLE-ERP-GROUPEISA/Neos-Public/_packaging/Neos-Public/nuget/v3/index.json" -n "Neos-Public"
+      - name: Install Neos
+        run: dotnet tool install GroupeIsa.Neos.Console --global --ignore-failed-sources --no-cache --interactive --verbosity minimal
+      - name: dotnet tool restore
+        run: dotnet tool restore
+      - name: Set persistence to PostgreSQL
+        run: |
+          cat << EOF > "Pokerneos.connectionstring.yml"
+          PersistenceType: PostgreSQL
+          ConnectionString: Data Source=notexistingserver;Initial Catalog=notexsitingdatabase;
+          EOF
+        shell: bash
+      - name: PowerShell script
+        uses: Amadevus/pwsh-script@v2.0.3
+        with:
+          script: |
+            "env | sort"
+      - name: Neos CheckMetadata
+        run: neos check-metadata
+      - name: Neos Generate
+        working-directory: ./src/Pokerneos
+        run: neos generate
 #    - name: Restore dependencies
 #      run: dotnet restore
 #    - name: Build
 #      run: dotnet build --no-restore
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
-    - name: PowerShell script
-      uses: Amadevus/pwsh-script@v2.0.3
-      with:
-        script: |
-          "env | sort"

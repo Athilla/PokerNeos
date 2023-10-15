@@ -31,7 +31,7 @@ namespace PokerNeos.PokerBase.Domain.Utils
             {
                 var pgi = new PokerGameInformationDO
                 {
-                    GroupeName = game.Groupe.Name,
+                    GroupeName = game.Groupe.Name ?? string.Empty,
                     RomName = game.Name,
                     GameId = game.Id,
                     ItemsCount = 0

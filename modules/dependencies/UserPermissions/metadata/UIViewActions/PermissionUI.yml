@@ -15,3 +15,10 @@
   IconName: Expand
   Location: Hidden
   Style: Ghost
+- Name: ShowFunctionAuthorizationCondition
+  Caption: Show function authorization condition
+  Code: await ShowMessageAsync(MessageType.Info, Resources.UserPermissions.FunctionAuthorizationCondition, Computeds.SelectedNodeAuthorizationCondition);
+  DisplayMode: Icon
+  IconName: Info
+  Location: Hidden
+  Style: GhostPrimary

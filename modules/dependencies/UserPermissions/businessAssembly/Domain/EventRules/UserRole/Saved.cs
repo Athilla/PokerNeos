@@ -20,7 +20,7 @@ namespace Transversals.Business.UserPermissions.Domain.UserRoleEventRules
         /// <inheritdoc/>
         public Task OnSavedAsync(ISavedRuleArguments<UserRole> args)
         {
-            // L'action 'invalidateCachePermissionsAction' est définie dans la règle saving.
+            // L'action 'invalidateCachePermissionsAction' est dÃ©finie dans la rÃ¨gle saving.
             if (args.Context.TryGet(Saving.ContextVariable_InvalidateCachePermissions, out Action? invalidateCachePermissionsAction))
             {
                 invalidateCachePermissionsAction();

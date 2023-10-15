@@ -1,0 +1,3 @@
+- Name: IsEmptyValue
+  DotNetDataType: bool
+  Getter: return Parameters.Value == "0" || string.IsNullOrEmpty(Parameters.Value);

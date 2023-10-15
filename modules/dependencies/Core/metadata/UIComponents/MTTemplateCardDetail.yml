@@ -1,0 +1,18 @@
+Template: |-
+  <card>
+      <grid-layout>
+          <grid-layout-definition gap="small">
+              <grid-layout-columns>
+                  <grid-layout-column width="fit" />
+                  <grid-layout-column />
+                  <grid-layout-column width="fit" />
+              </grid-layout-columns>
+          </grid-layout-definition>
+          <grid-layout-content>
+              <image name="@Parameters.Image" size="large" style:color="primary" />
+              <vertical-layout space="none" align="left" style:color="black">
+                  <content />
+              </vertical-layout>
+          </grid-layout-content>
+      </grid-layout>
+  </card>

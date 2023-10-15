@@ -10,7 +10,7 @@
   Required: true
 - Name: Prefixe
   Caption: Prefix
-  MaxLength: 5
+  MaxLength: 10
 - Name: Suffixe
   Caption: Suffix
   MaxLength: 5

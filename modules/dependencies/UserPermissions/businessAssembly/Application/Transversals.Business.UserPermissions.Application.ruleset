@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RuleSet Name="SonarQube - Designer GroupeIsa" ToolsVersion="17.0">
-  <Include Path="..\..\..\..\server\.sonarlint\designercsharp.ruleset" Action="Default" />
   <Include Path="..\.sonarlint\neos.mt.businesscsharp.ruleset" Action="Default" />
 </RuleSet>

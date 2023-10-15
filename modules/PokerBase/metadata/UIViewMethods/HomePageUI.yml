@@ -1,11 +1,11 @@
 - Name: HandleSearchAsync
   Asynchronous: true
-  Code: |2-
-     if (!string.IsNullOrWhiteSpace(searchText))
-        {
-            int i=0;
-            //return await ServerMethods.PartnersGlobalSearch.ExecuteAsync(searchText);
-        }
+  Code: |-
+    //  if (!string.IsNullOrWhiteSpace(searchText))
+    //     {
+    //         int i=0;
+    //         //return await ServerMethods.PartnersGlobalSearch.ExecuteAsync(searchText);
+    //     }
 
     return new List<GroupeIsa.Neos.Application.GlobalSearch.GlobalSearchResultGroup>();
   Description: Called when the global search is triggered

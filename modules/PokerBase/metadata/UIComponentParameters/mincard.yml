@@ -1,6 +1,9 @@
 - Name: fullList
   BindingMode: TwoWay
   DotNetDataType: System.Collections.Generic.List<PokerNeos.Application.Abstractions.DataObjects.PlayingCardInformationDO>
+- Name: isShow
+  DefaultValue: false
+  DotNetDataType: bool
 - Name: name
   DefaultValue: '"player name"'
   DotNetDataType: string

@@ -1,0 +1,9 @@
+- Name: OpenView
+  Code: |-
+    if(item.Id != null)
+    {
+        var options = new NavigationOptions(Parameters.OpenView)
+        .WithId(new Dictionary<string, object>{ ["Id"] = item.Id})
+        .WithFrameId($"{Parameters.OpenView}/{item.Id}");
+        GetParentViewModel().NavigateAsync(options);
+    }

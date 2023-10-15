@@ -4,3 +4,5 @@
   DotNetDataType: string
 - Name: Image
   DotNetDataType: string
+- Name: UseAlternativeColor
+  DotNetDataType: bool

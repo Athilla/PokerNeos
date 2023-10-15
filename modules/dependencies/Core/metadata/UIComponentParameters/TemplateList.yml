@@ -28,6 +28,9 @@
   DefaultValue: 'null'
   Description: Return
   DotNetDataType: string?
+- Name: selectionColumn
+  DefaultValue: true
+  DotNetDataType: bool
 - Name: title
   DefaultValue: 'null'
   Description: Title
