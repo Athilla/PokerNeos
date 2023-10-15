@@ -1,6 +1,0 @@
-- Name: UserAccount
-  Documentation: Le compte utilisateur qui est attribué au rôle d'utilisateur
-- Name: UserName
-  Documentation: Le prénom et nom de l'utilisateur concaténé
-- Name: UserRole
-  Documentation: Le rôle d'utilisateur qui est attribué au compte utilisateur

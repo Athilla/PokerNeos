@@ -1,8 +1,0 @@
-- Name: UserAccount
-  Caption: Utilisateur
-  Documentation: Le compte utilisateur qui est attribué au rôle d'utilisateur
-- Name: UserRole
-  Caption: Rôle
-  Documentation: Le rôle d'utilisateur qui est attribué au compte utilisateur
-- Name: WorkingContexts
-  Caption: Contextes de Travail

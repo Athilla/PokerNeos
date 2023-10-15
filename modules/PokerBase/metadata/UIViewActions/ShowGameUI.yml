@@ -22,7 +22,7 @@
     Methods.UpdateGame();
   DisplayMode: Icon
   Enabled: =return !Fields.IsLast && Fields.IsStart;
-  IconName: next
+  IconName: Next
   Location: Hidden
   Size: Large
   Style: GhostPrimary
@@ -52,7 +52,7 @@
     Methods.UpdateGame();
   DisplayMode: Icon
   Enabled: =return !Fields.IsFirst && Fields.IsStart;
-  IconName: previous
+  IconName: Previous
   Location: Hidden
   Size: Large
   Style: GhostPrimary
@@ -70,7 +70,7 @@
     myevent.Event = Event.HasStarted;
     await ServerMethods.SendEvent.ExecuteAsync(myevent);
   DisplayMode: Icon
-  IconName: play2
+  IconName: Play2
   Location: Hidden
   Size: Large
   Style: GhostPrimary
@@ -91,7 +91,7 @@
     myevent.Event = Event.HasStopped;
     await ServerMethods.SendEvent.ExecuteAsync(myevent);
   DisplayMode: Icon
-  IconName: stop
+  IconName: Stop
   Location: Hidden
   Size: Large
   Style: GhostDanger
