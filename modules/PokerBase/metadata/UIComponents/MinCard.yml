@@ -4,10 +4,10 @@ Template: |-
           <vertical-layout layout:width="fill">
               <vertical-layout layout:width="fill" layout:height="fill">
                   <if condition="@Computeds.IsEmptyValue">
-                      <image name="CardWaiting" layout:height="fill" layout:width="fill" size="large"/>
+                      <image name="CardWaiting" layout:height="fill" layout:width="fill" size="large" />
                   </if>
                   <else-if-not condition="@Parameters.IsShow">
-                      <image name="CardRecto2" layout:height="fill" layout:width="fill" size="large"/>
+                      <image name="CardRecto2" layout:height="fill" layout:width="fill" size="large" />
                   </else-if-not>
                   <else>
                       <heading level="1" layout:horizontal-alignment="center" layout:height="fill" layout:padding="large small small small" style:color="@Computeds.TextColor">

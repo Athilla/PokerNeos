@@ -55,7 +55,6 @@ jobs:
       - name: Neos CheckMetadata
         run: neos check-metadata
       - name: Neos Generate
-        working-directory: ./src/Pokerneos
         run: neos generate
 #    - name: Restore dependencies
 #      run: dotnet restore
