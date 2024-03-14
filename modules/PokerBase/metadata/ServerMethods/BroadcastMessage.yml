@@ -1,1 +1,2 @@
 DotNetReturnType: System.Threading.Tasks.Task
+ExposeAsApi: false

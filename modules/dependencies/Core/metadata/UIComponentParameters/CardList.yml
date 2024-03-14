@@ -1,8 +1,0 @@
-- Name: cardInformations
-  Description: Card informations
-  Documentation: List of information to create the cards
-  DotNetDataType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.CardInformation>
-- Name: openView
-  Description: View to open
-  Documentation: The view to open when editing the item of a card
-  DotNetDataType: string

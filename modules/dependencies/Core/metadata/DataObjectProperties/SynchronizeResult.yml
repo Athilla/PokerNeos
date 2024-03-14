@@ -1,5 +1,0 @@
-- Name: IsSuccess
-  DefaultValue: false
-  DotNetDataType: bool
-- Name: Message
-  DotNetDataType: string

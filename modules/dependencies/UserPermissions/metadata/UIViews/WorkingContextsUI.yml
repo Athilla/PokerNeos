@@ -1,5 +1,0 @@
-Description: Working Context
-Documentation: Entity View that allow to manage the working contexts
-EntityViewName: WorkingContextView
-Template: <user-permissions-template-list title="@Title" editable="true"/>
-Title: =return Resources.UserPermissions.WorkingContextTitle;

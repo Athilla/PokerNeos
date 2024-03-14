@@ -1,8 +1,0 @@
-- Name: OpenView
-  Code: |-
-    var options = new NavigationOptions(Parameters.OpenView)
-        .WithId(new Dictionary<string, object>{ ["Id"] = item.Id})
-        .WithFrameId($"{Parameters.OpenView}/{item.Id}");
-    GetParentViewModel().NavigateAsync(options);
-  Description: Open the editing view
-  Documentation: Open The vue used to edit the item of a card

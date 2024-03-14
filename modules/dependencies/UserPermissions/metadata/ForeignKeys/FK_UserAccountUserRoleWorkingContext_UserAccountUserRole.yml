@@ -1,6 +1,0 @@
-ColumnsList:
-- UserAccountId
-- UserRoleId
-OnDeleteAction: Cascade
-ReferencedTableName: UserAccountUserRole
-TableName: UserAccountUserRoleWorkingContext

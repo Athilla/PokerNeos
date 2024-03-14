@@ -1,4 +1,0 @@
-- Type: UIViewAction
-  Name: UserAccountListUI.SynchronizeUsers
-- Type: ServerMethod
-  Name: SaveUsersToAuthenticationServer

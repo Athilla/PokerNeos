@@ -1,7 +1,0 @@
-- Name: Id
-  Caption: Id
-  DataType: AutoIncrementedInteger
-  Required: true
-- Name: Name
-  Caption: Name
-  Required: true

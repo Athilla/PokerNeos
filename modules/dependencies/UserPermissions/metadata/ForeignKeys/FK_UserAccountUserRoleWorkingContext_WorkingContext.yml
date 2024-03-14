@@ -1,5 +1,0 @@
-ColumnsList:
-- WorkingContextId
-OnDeleteAction: Cascade
-ReferencedTableName: WorkingContext
-TableName: UserAccountUserRoleWorkingContext

@@ -1,8 +1,0 @@
-- Name: UserAccount
-  DatagridPosition: 1
-  DatagridVisible: true
-  LookupName: UserAccountLookup
-  Sortable: false
-- Name: UserRole
-  LookupName: UserRoleLookup
-  Sortable: false

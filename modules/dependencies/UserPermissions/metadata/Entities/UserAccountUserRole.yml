@@ -1,6 +1,0 @@
-Description: User Account User Role
-Documentation: Entity that make the link between a user account and a user role
-KeyProperties:
-- UserAccountId
-- UserRoleId
-TableName: UserAccountUserRole

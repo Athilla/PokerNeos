@@ -17,3 +17,7 @@ HttpServicePort: 6004
 
 MainUIViewName: HomePageUI
 MainFramesContainerId: PokerPageContainer
+
+ReferencedModules:
+  UserPermissions: 1.17.2
+  Core: 1.17.0-alpha.111413

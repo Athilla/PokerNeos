@@ -1,3 +1,0 @@
-- Name: Closing
-  Code: await Methods.CheckAsync(null);
-  Event: Closing

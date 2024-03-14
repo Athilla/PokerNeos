@@ -1,8 +1,0 @@
-- Name: BackgroundColor
-  DotNetDataType: string
-- Name: BackgroundColorAfterStep
-  DotNetDataType: string
-- Name: BackgroundColorBeforeStep
-  DotNetDataType: string
-- Name: Step
-  DotNetDataType: Transversals.Business.Application.Abstractions.DataObjects.StepperStep

@@ -376,3 +376,6 @@ NeosRepositoryPath.yml
 # remove from repository for protecting secret :)
 appsettings.Development.json
 pokerneos.auth.yml
+tenantsData/
+check-metadata*
+modules/dependencies/

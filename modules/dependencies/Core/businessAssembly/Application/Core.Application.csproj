@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../build/NeosReferences.Application.gen.props" />
-  <PropertyGroup>
-    <AssemblyName>Transversals.Business.Core.Application</AssemblyName>
-    <RootNamespace>Transversals.Business.Core.Application</RootNamespace>
-  </PropertyGroup>
-</Project>

@@ -1,5 +1,0 @@
-Description: Working Context
-Documentation: Entity that manage the working contexts for the user account's roles
-KeyProperties:
-- Id
-TableName: WorkingContext

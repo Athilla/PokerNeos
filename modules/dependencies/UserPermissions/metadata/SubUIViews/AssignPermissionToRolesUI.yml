@@ -1,6 +1,0 @@
-- Name: Accounts
-  RelationPropertyName: Accounts
-  SubUIViewName: UserAccountUserRoleUI
-- Name: Permissions
-  RelationPropertyName: Permissions
-  SubUIViewName: PermissionUI

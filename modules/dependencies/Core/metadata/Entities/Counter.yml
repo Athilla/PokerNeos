@@ -1,6 +1,0 @@
-BaseEntityName: BaseLockedEntity
-Description: counter management table
-KeyProperties:
-- Id
-- Name
-TableName: Counter

@@ -1,5 +1,0 @@
-Description: User Role
-Documentation: Entity to manage user roles
-KeyProperties:
-- Id
-TableName: UserRole

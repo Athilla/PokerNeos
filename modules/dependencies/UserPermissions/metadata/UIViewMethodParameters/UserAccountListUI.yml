@@ -1,8 +1,0 @@
-- UIViewMethodName: DisplayAssignedFeatures
-  Name: user
-  DotNetDataType: Transversals.Business.CSharpAbstractions.UserAccountListUI
-  Position: 1
-- UIViewMethodName: GoToRoleAssignement
-  Name: user
-  DotNetDataType: Transversals.Business.CSharpAbstractions.UserAccountListUI
-  Position: 1

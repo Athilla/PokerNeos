@@ -1,8 +1,0 @@
-- UIViewMethodName: CheckAndNavigateAsync
-  Name: uiViewName
-  DotNetDataType: string
-  Position: 1
-- UIViewMethodName: CheckAsync
-  Name: uiViewName
-  DotNetDataType: string?
-  Position: 1

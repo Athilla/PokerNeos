@@ -1,5 +1,0 @@
-Description: Permission
-Documentation: Entity that represent the permission given between a Feature and a UserRole
-KeyProperties:
-- Id
-TableName: Permission

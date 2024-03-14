@@ -1,5 +1,0 @@
-BaseEntityName: BaseStateEntity
-Description: Accounting process
-KeyProperties:
-- Id
-TableName: AccountingProcess

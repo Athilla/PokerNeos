@@ -1,1 +1,2 @@
 DotNetReturnType: System.Threading.Tasks.Task<GroupeIsa.Neos.Application.OnTenantResolvedResult>
+ExposeAsApi: false

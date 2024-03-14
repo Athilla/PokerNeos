@@ -1,4 +1,0 @@
-Description: User Account User Role Working Context
-Documentation: Entity UI without any process, that is used to manage the entity that make the link between UserAccountUserRole and WorkingContext in other UIs
-EntityViewName: UserAccountUserRoleWorkingContextView
-Title: UserAccountUserRoleWorkingContextUI

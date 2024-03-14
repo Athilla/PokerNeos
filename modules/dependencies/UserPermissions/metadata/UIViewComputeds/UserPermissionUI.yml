@@ -1,8 +1,0 @@
-- Name: SelectedNodeName
-  Description: Selected Node Name
-  Documentation: Return the name of the selected node, return an empty string if the no node is selected
-  DotNetDataType: GroupeIsa.Neos.Shared.Localization.LocalizableString
-  Getter: |-
-    return Fields.IsNodeSelected ? Fields.SelectedNode?.Caption ??
-    new GroupeIsa.Neos.Shared.Localization.LocalizableString() :
-    new GroupeIsa.Neos.Shared.Localization.LocalizableString();

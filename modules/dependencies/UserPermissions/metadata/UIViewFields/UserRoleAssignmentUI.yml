@@ -1,5 +1,0 @@
-- Name: UserAccount
-  DefaultValue: (UserAccountListUI)ViewContext["User"]
-  Description: User Account
-  Documentation: User Account on which we are assigning user roles
-  DotNetDataType: Transversals.Business.CSharpAbstractions.UserAccountListUI

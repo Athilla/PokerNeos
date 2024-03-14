@@ -1,8 +1,0 @@
-- Name: Retrieved
-  Code: |-
-    SetSort("isAssigned", SortDirection.Desc);
-    await this.SortAsync();
-  Event: Retrieved
-- Name: Retrieving
-  Code: DataSorts.ToList().Clear();
-  Event: Retrieving

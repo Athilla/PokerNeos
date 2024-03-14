@@ -1,3 +1,0 @@
-DotNetReturnType: System.Collections.Generic.List<Transversals.Business.Application.Abstractions.DataObjects.FunctionTreeNode>
-ExposeAsApi: true
-HttpMethod: Get

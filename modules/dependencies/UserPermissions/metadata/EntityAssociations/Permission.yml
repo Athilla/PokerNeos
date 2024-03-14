@@ -1,5 +1,0 @@
-- Name: UserRole
-  ReferencedEntityName: UserRole
-  ReferencedEntityNavigationPropertyName: Permissions
-  ScalarProperties:
-  - UserRoleId

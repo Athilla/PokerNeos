@@ -1,8 +1,0 @@
-Template: |-
-  <if condition="@Parameters.Visible">
-      <horizontal-layout layout:padding="small medium small medium" style:corner-radius="large" style:color="@Parameters.Color" style:background="@Parameters.Background" vertical-align="center">
-          <text weight="strong" size="@Parameters.Size">
-              @Parameters.Number
-          </text>
-      </horizontal-layout>
-  </if>

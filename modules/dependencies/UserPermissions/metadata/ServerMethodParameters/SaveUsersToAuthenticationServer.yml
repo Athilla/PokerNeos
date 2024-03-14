@@ -1,4 +1,0 @@
-- Name: userInformationList
-  Description: User list
-  DotNetDataType: Transversals.Business.Application.Abstractions.DataObjects.UserAuthentication[]
-  Position: 1

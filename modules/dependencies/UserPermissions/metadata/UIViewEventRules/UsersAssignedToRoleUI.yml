@@ -1,7 +1,0 @@
-- Name: Initialized
-  Code: |
-    int userRoleId;
-    if(Int32.TryParse((string)ViewContext["UserRoleId"], out userRoleId))
-    {
-        SetFilter(new Filter("Id",FilterOperator.Equal, userRoleId));
-    }

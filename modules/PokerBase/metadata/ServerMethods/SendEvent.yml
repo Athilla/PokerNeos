@@ -1,2 +1,1 @@
 DotNetReturnType: System.Threading.Tasks.Task<PokerNeos.Application.Abstractions.DataObjects.GameDataDO>
-ExposeAsApi: true

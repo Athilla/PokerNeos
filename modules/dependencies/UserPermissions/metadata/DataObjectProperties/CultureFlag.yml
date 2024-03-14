@@ -1,9 +1,0 @@
-- Name: CountryCode
-  DotNetDataType: string
-- Name: Culture
-  DotNetDataType: Transversals.Business.Application.Abstractions.EntityViews.ICulture
-- Name: DropZoneBackground
-  DefaultValue: '"transparent"'
-  DotNetDataType: string
-- Name: Flag
-  DotNetDataType: string

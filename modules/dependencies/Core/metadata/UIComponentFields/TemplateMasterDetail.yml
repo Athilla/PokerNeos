@@ -1,6 +1,0 @@
-- Name: Padding
-  DefaultValue: '"none"'
-  DotNetDataType: string
-- Name: ShowFilter
-  DefaultValue: false
-  DotNetDataType: bool

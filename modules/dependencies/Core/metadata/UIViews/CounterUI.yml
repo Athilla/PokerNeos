@@ -1,5 +1,0 @@
-DeletionAllowed: =return !Item.Locked;
-Documentation: Attribuer un numéro séquentiel à un enregistrement.
-EntityViewName: CounterView
-Template: <template-list title="@Title" editable="true" message="@Resources.Core.CounterDescription" />
-Title: =return Resources.Core.CounterTitle;

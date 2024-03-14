@@ -1,8 +1,0 @@
-- UIViewMethodName: OnClickMethodNodeAsync
-  Name: node
-  DotNetDataType: Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature
-  Position: 1
-- UIViewMethodName: OnLoadMethodNodeAsync
-  Name: node
-  DotNetDataType: Transversals.Business.Application.Abstractions.DataObjects.TreeNodeFeature
-  Position: 1
