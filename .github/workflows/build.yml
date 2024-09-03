@@ -52,6 +52,8 @@ jobs:
         with:
           script: |
             "env | sort"
+      - name: Neos restore
+        run: neos restore
       - name: Neos CheckMetadata
         run: neos check-metadata
       - name: Neos Generate
