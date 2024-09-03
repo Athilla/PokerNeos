@@ -4,4 +4,5 @@
   DatagridVisible: true
   FilterPosition: 1
   FilterVisible: true
+  FilterVisibleInPanel: true
   Required: true

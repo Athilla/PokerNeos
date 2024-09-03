@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "GroupeIsa.Neos.Console": {
-      "version": "1.17.2",
+      "version": "1.21.4",
       "commands": [
         "neos"
       ]

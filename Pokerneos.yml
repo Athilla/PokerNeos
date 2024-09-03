@@ -3,7 +3,7 @@ RootNamespace: PokerNeos
 # The cluster name
 ClusterName: PokerNeos
 # The cluster version
-ClusterVersion: 0.5
+ClusterVersion: 1.0.0
 # The cluster description
 ClusterTitle: Poker-Neos
 # The company name
@@ -19,5 +19,5 @@ MainUIViewName: HomePageUI
 MainFramesContainerId: PokerPageContainer
 
 ReferencedModules:
-  UserPermissions: 1.17.2
-  Core: 1.17.0-alpha.111413
+  UserPermissions: 1.21.4
+  Core: 1.21.1-153590
